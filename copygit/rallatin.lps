@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="rallatin.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="29" Y="10"/>
+        <UsageCount Value="85"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ralla.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="190"/>
+        <CursorPos X="27" Y="196"/>
+        <UsageCount Value="85"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="vanhapas/vanhariimiutils.pas"/>
+        <EditorIndex Value="7"/>
+        <CursorPos Y="13"/>
+        <UsageCount Value="43"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="vanhapas/vanhariimiuus.pas"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="124"/>
+        <CursorPos X="100" Y="166"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="rallautils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="12" Y="22"/>
+        <UsageCount Value="85"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="vanhapas/verbikama.pas"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="296"/>
+        <CursorPos Y="329"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="vanhapas/nominit.pas"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="117"/>
+        <CursorPos X="15" Y="141"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="sanasto.inc"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="140"/>
+        <CursorPos X="53" Y="177"/>
+        <UsageCount Value="82"/>
+        <Loaded Value="True"/>
+      </Unit7>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="169" Column="12" TopLine="135"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="180" Column="66" TopLine="146"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="184" Column="17" TopLine="150"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="195" Column="10" TopLine="161"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="197" Column="10" TopLine="163"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="200" Column="61" TopLine="166"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="201" Column="10" TopLine="167"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="204" Column="12" TopLine="170"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="220" Column="24" TopLine="196"/>
+      </Position9>
+      <Position10>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="180" Column="80" TopLine="150"/>
+      </Position10>
+      <Position11>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="194" Column="19" TopLine="161"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="236" Column="30" TopLine="94"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="252" Column="94" TopLine="227"/>
+      </Position13>
+      <Position14>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="189" Column="14" TopLine="95"/>
+      </Position14>
+      <Position15>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="181" Column="35" TopLine="149"/>
+      </Position15>
+      <Position16>
+        <Filename Value="vanhapas/nominit.pas"/>
+        <Caret Line="323" TopLine="304"/>
+      </Position16>
+      <Position17>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="9" Column="77"/>
+      </Position17>
+      <Position18>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="259" Column="7" TopLine="228"/>
+      </Position18>
+      <Position19>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="263" Column="42" TopLine="229"/>
+      </Position19>
+      <Position20>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="210" Column="12" TopLine="205"/>
+      </Position20>
+      <Position21>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="225" Column="12" TopLine="222"/>
+      </Position21>
+      <Position22>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="235" Column="50" TopLine="210"/>
+      </Position22>
+      <Position23>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="207" Column="36" TopLine="189"/>
+      </Position23>
+      <Position24>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="174" Column="21" TopLine="164"/>
+      </Position24>
+      <Position25>
+        <Filename Value="ralla.pas"/>
+        <Caret Line="223" Column="95" TopLine="188"/>
+      </Position25>
+      <Position26>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="21" Column="51" TopLine="67"/>
+      </Position26>
+      <Position27>
+        <Filename Value="sanasto.inc"/>
+        <Caret Column="12"/>
+      </Position27>
+      <Position28>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="27" Column="20"/>
+      </Position28>
+      <Position29>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="198" Column="45" TopLine="161"/>
+      </Position29>
+      <Position30>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="27" Column="20" TopLine="6"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

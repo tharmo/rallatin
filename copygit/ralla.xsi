@@ -1,0 +1,5 @@
+class name=riimit
+ test
+   xse:shellexec: ./rallatin test
+ 
+ 
