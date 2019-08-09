@@ -43,9 +43,11 @@ begin
     Terminate;
     Exit;
   end;
+   try
    sanasto:=tsanasto.create;
+   sanasto.free;
+   except writeln('runkku');end;
   { add your program here }
-
   // stop program loop
   Terminate;
 end;

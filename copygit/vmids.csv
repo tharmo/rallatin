@@ -21,7 +21,7 @@
 68  ;aterioida       ,d              ,tse/            ,tse/             ,tsee/           ,d               ,n               ,ts/-           ,                ,d              ,ts/-            ,tse/
 69  ;vangita         ,t              ,tse             ,tse             ,tsee            ,t               ,nn              ,ts              ,t               ,t              ,ts              ,tse             
 70  ;juosta          ,st             ,kse             ,kse             ,ksee            ,st              ,ss              ,ks              ,s               ,st             ,ks              ,kse             
-71  ;nähdä           ,hd             ,e               ,e               ,kee             ,hd              ,hn              ,k               ,h               ,hd             ,k               ,ke               
+71  ;nähdä           ,hd             ,e               ,e               ,kee             ,hd              ,hn              ,               ,h               ,hd             ,k               ,ke               
 72  ;vanheta         ,t              ,ne              ,ne              ,nee             ,t               ,nn              ,n               ,t               ,t              ,n               ,ne              
 73  ;niiata          ,t              ,a               ,a               ,a               ,t               ,nn              ,s               ,t               ,t              ,                ,a               
 74  ;katketa         ,t              ,a               ,a               ,aa              ,t               ,nn              ,s               ,t               ,t              ,a               ,a               
