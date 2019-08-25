@@ -1,5 +1,72 @@
 class name=riimit
- test
-   xse:shellexec: ./rallatin test
- 
- 
+ promanual
+   xse:from file="pron.html"
+    ul
+     xse:apply select="tr" xmaxtimes=25 xse:from="body/table/tbody"
+       xse:if test="{?and(?ne(td[2]/b,'0 ilo'),?gt(td/@count(),2))}" 
+        li xse:if="{?eq(td,'')}": {td}    
+           #xse:if test="{?lt(?length(?trim(td[1])),2)}" 
+           xse:apply select="td" counter="n=0"
+            #em xseif="{?ne(*[1],'')}": {*[1]} {*[5]},
+            ul 
+              xse:if test="{?ne(.,'')}"
+                li: <b>{.}  {*[3]}</b>
+                 # xse:apply counter=n=0
+                 #   em xse:if="{?ne(.,'')}": {@.}{$n}{.}, 
+              xse:else
+               li: <b>{b}:{*[5]}_</b>
+               # xse:apply counter=n=0
+               #   em xse:if="{?ne(.,'')}": {@.}{$n}{.}, 
+ pronominit
+   xse:shellexec: ./rallatin pronominit pronominit.tohfst
+   #  xse:shellexec:  cat pronominit.tohfst |iconv -f ISO-8859-1//TRANSLIT -t UTF-8| ./figen| iconv -t ISO-8859-1//TRANSLIT -f UTF-8> pronominit.ana;cat pronominit.ana
+   
+ hae
+  pre
+    xse:shellexec: ./rallatin hae
+ pron
+  pre
+    xse:shellexec: ./rallatin pronominit pronominit.tohfst
+          #xse:shellexec:    cat prono.gen |iconv -t ISO-8859-1//TRANSLIT -f UTF-8| gawk -F'/' '{ for (i=2;i<=NR;i++) if (index($i,"Pron")>0) print $i>"pron.noms"}'
+          #xse:shellexec:    cat prono.gen |iconv -t ISO-8859-1//TRANSLIT -f UTF-8| gawk -F'/' '{ for (i=2;i<=NR;i++) if (index($i,"Pron")>0) print $i}'
+          #xse:shellexec:    cat prono.gen |iconv -t ISO-8859-1//TRANSLIT -f UTF-8
+ aaa
+  pre
+   ###xse:gawk in=pron.ana BEGIN="FS='/'": '''
+    {  for (p=2;p<=NR;p++)  if (index($p,"Pron")>0 && index($p,"Foc_")<1 && index($p," Px")<1) { # && index($p,"Qnt")>0  && index($p,"Indef")<1  ) 
+      print $1 "," $p > "pron.tmp"
+      #=split($p,ss," "); print s #for (i=2;i++;i<=4) print ss[i] 
+     } 
+   } 
+  
+   '''
+  pre
+      xse:gawk  env="LC_ALL=fi_FI.ISO-8859-1" in="pron.tmp" BEGIN="FS=' '": '''
+       {
+         #if (NR>100) exit  
+         #$1="";$2=""
+         sraja=index($1,",")
+         lemma=substr($1,sraja+1,99)
+         muoto=substr($1,2,sraja-2)
+          gsub(/\$/,"",$0);
+          r=""
+          for (p=2;p<=NF;p++)  if (index(" Rel Dem Qnt Indef Refl Pron Pers Interr A ",$p)<1) r=r $p 
+          #tokat[$3]=$p
+            #print  $0 
+          kaikki[r]=r
+          print lemma "X" r "X" muoto > "pron2.tmp"   
+          
+        } 
+      END {  #for (i in tokat) print i,tokat[i]
+      for (i in kaikki) print i
+      } 
+     
+     '''
+    xse:shellexec: cat prons2.tmp |sort |uniq > pron3.tmp
+    xse:gawk  env="LC_ALL=fi_FI.ISO-8859-1" in="pron3.tmp" BEGIN="FS='X'": '''
+     {  if (f2==$2 && f1==$1) print $1 " " $2 " " f3 " " $3
+      f1=$1;f2=$2;f3=$3
+     } 
+    '''
+
+    

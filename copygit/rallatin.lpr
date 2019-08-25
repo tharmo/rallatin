@@ -44,11 +44,24 @@ begin
     Exit;
   end;
    try
-   sanasto:=tsanasto.create;
-   sanasto.free;
-   except writeln('runkku');end;
+   if paramstr(1)='hae' then
+   begin
+     writeln('hauhau:</pre>');
+     sanasto:=tsanasto.create;
+     //sanasto.haelista;
+     sanaSTO.listaa;
+     sanasto.free;
+   end;
+  if paramstr(1)='pronominit' then
+  begin
+    sanasto:=tsanasto.create;
+    writeln('HANSKAAPRONOMIT');
+    //sanasto.pronominit;
+   // sanasto.free;
+  end;
   { add your program here }
   // stop program loop
+   except writeln('!!!vitunpronominit');end;
   Terminate;
 end;
 

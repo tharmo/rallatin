@@ -5,21 +5,23 @@ unit rallautils;
 interface
 uses
   Classes, SysUtils;
-const vahvatverbiluokat=[52..63,76];
-const vahvatnominiluokat=[1..31,76];
+const vahvatverbiluokat=[52..63,76];                         const vahvatnominiluokat=[1..31];
+const vahvatluokat=[1..31,52..63,76];
 const rimis=64;
 type string31=string[31];
 type tlka=record esim:string;kot,ekasis,vikasis:word;vahva:boolean;vikasana:word;end;
 type tloppuvoks=record ekaav,vikaav:word;sis:string[8];vikasana,lk:word;end;
-type trunko=record san:string[15];akon:string[4];takavok:boolean;konlka:word;koko:string;end;
+type trunko=record san:string[15];akon:string[4];takavok:boolean;konlka:word;koko:string;tavus:byte;end;
 //type tsan=record san:string[15];akon:string[4];takavok:boolean;av:word;end;
 type tkonso=record ekasana,takia,vikasana,sis:word;h,v,av:string[1];end;  //lisää viekä .takia - se josta etuvokaalit alkavat
 const konsonantit ='bcdfghjklmnpqrstvwxz'''; vokaalit='aeiouyäö';
-
+const pronexamples:array[1..18] of string=('minä','me','sinä','te','hän','he',    'tämä','nämä','tuo','nuo','se','ne',  'itse','jompikumpi','joku','kuka','mikä','joka');
+const prontypes:array[1..18] of string=('Pers','Pers','Pers','Pers','Pers','Pers','Dem', 'Den', 'Dem','Dem','Dem','Dem','Refl',       'Qnt','','Inter','Inter','Rel');
 const nexamples:array[1..49] of ansistring=('ukko','hiomo','avio','elikko','häkki','seteli','kaikki','nukke','ankka','fokka','itara','urea','aluna','ulappa','upea','kumpi','keruu','jää','suo','bukee','gay','buffet','lohi','uni','liemi','veri','mesi','jälsi','lapsi','peitsi','yksi','tytär','asetin','hapan','lämmin','alin','vasen','öinen','ajos','etuus','rakas','mies','immyt','kevät','sadas','tuhat','mennyt','hake','kinner');
 const nendings:array[0..33] of ansistring =('','a','n','ssa','sta','lla','lta','lle','ksi','tta','na','n','t','issa','ista','illa','ilta','ille','iksi','itta','in','ina','a','ja','ita','in','in','ihin','en','en','iden','itten','in','ten');
 const nsijesims:array[0..33]of ansistring =('ilo','iloa','ilon','ilossa','ilosta','ilolla','ilolta','ilolle','iloksi','ilotta','ilona','iloon','ilot','iloissa','iloista','iloilla','iloilta','iloille','iloiksi','iloitta','iloin','iloina','iloja','iloja','omenoita','omeniin','uniin','iloihin','ilojen','ilojen','omenoiden','omenoitten','ulappain','unten');
-const nsijnams:array[0..33]of ansistring =('NNomSg','NParSg','NGenSg','NIneSg','NElaSg','NAdeSg','NAblSg','NAllSg','NTraSg','NAbeSg','NEssSg','NIllSg','NNomPl','NInePl','NElaPl','NAdePl','NAblPl','NAllPl','NTraPl','NAbePl','NInsPl','NEssPl','NParPl','NParPl','NParPl','NIllPl','NIllPl','NIllPl','NGenPl','NGenPl','NGenPl','NGenPl','NGenPl','NGenPl');
+const nsijnams:array[0..33]of ansistring =('NNomSg',   'NParSg',  'NGenSg',  'NIneSg',  'NElaSg',   'NAdeSg',  'NAblSg',  'NAllSg',  'NTraSg',  'NAbeSg',  'NEssSg',  'NIllSg',  'NNomPl',  'NInePl',  'NElaPl',  'NAdePl',   'NAblPl',  'NAllPl', 'NTraPl',  'NAbePl',  'NInsPl',  'NEssPl',  'NParPl',  'NParPl',  'NParPl','NIllPl',   'NIllPl',   'NIllPl','NGenPl',    'NGenPl',  'NGenPl',  'NGenPl','NGenPl','NGenPl');
+const nhfstnams:array[0..33]of ansistring =('N Nom Sg','N Par Sg','N Gen Sg','N Ine Sg','N Ela Sg','N Ade Sg','N Abl Sg','N All Sg','N Tra Sg','N Abe Sg','N Ess Sg','N Ill Sg','N Nom Pl','N Ine Pl','N Ela Pl','N Ade Pl','N Abl Pl','N All Pl','N Tra Pl','N Abe Pl','N Ins Pl','N Ess Pl','N Par Pl','N Par Pl','N Par Pl','N Ill Pl','N Ill Pl','N Ill Pl','N Gen Pl','N Gen Pl','N Gen Pl','N Gen Pl','N Gen Pl','N Gen Pl');
 const nvahvanvahvat =[0,1,10,11,21,22,23,25,27,28,32];
 const nheikonheikot=[0,1,33];
 const vluokkia=24;vsikoja=66;
@@ -41,13 +43,151 @@ var
 //function luenominiloput(fn:string):tstringlist;  //hanskaa samalla sijojen luonti luettavat sisuskalut on 1/1 sijoihin (todin kuin verbeillä, joilla on "protot")
 //function lueverbiloput(fn:string):tstringlist;  //hanskaa samalla sijojen luonti luettavat sisuskalut on 1/1 sijoihin (todin kuin verbeillä, joilla on "protot")
 function IFs(cond:boolean;st1,st2:ansistring):ansistring;
+function voktakarev(sana:string;vAR eietu,eitaka:boolean):string;
+function ontaka(sana:string):boolean;
+function taka(sana:string):string;
+function etu(sana:string):string;
+function hyphenfi(w:ansistring;tavus:tstringlist):word;
+function isdifto(c1,c2:ansichar):boolean;
 
 implementation
+function ontaka(sana:string):boolean;
+var i:word;
+begin
+   result:=false;
+   for i:=1 to length(sana) do if pos(sana[i],'aou')>0 then result:=true;
+end;
 function IFs(cond:boolean;st1,st2:ansistring):ansistring;
      begin
       if cond then result:=st1 else result:=st2;
      end;
+function isdifto(c1,c2:ansichar):boolean;
+ begin
+  result:=false;
+  if c1=c2 then result:=true else                       //arv  i o i da                ae ao ea eo ia io oa oe ua ue
+  case c1 of
+   'a': if pos(c2,'iu')>0 then result:=true;
+   'e','i': if pos(c2,'ieuy')>0 then result:=true;
+   'o','u': if pos(c2,'iuo')>0 then result:=true;
+   'y','ö': if pos(c2,'iyö')>0 then result:=true;
+   'ä': if pos(c2,'iy')>0 then result:=true;
+  end;
+ // if not result then write('*');
+ end;
 
+function hyphenfi(w:ansistring;tavus:tstringlist):word;
+  var i,k,len,vpos:integer;hy,alkkon:ansistring;ch,chprev:ansichar;lasttag:ansistring;
+   voks:word;
+begin
+ {
+ konsonantti vokaalin edellä - tavuraja ennen kons
+ yhteensopimattomat vokaalit - tavuraja väliin
+ kolme vokaalia - tr ennen kolmatta
+
+ }
+ // writeln('<li><b>',w,'</b><ul>');
+  if tavus<>nil then tavus.clear;
+  len:=length(w);
+  result:=0;//w[len];   duuoon  noouu
+ if len=0 then exit;
+ chprev:='R';//w[len];   //o
+ alkkon:='';
+ if (pos(w[1],konsonantit)>0) then
+ for i:=2 to 3 do if (pos(w[i],konsonantit)>0) then alkkon:=alkkon+w[i-1] else break;
+ if alkkon<>'' then w:=ansilowercase(copy(w,length(alkkon)+1,99));
+ len:=length(w);          //uuoon
+ voks:=0;
+
+ for i:=len downto 1 do
+ begin
+    ch:=w[i];
+    if voks>0 then
+    begin        //a ie  prev:e nyt:i  ie on dift
+      if (pos(ch,konsonantit)>0)  then
+      begin
+         inc(result);
+         voks:=0;
+         if tavus<>nil then tavus.insert(0,ch+hy);hy:='';ch:=' ';
+      end
+      else
+      begin //vokaali
+         if voks>1 then   //tripla
+          begin
+             inc(result);
+             if tavus<>nil then tavus.insert(0,hy);
+             voks:=1;
+             hy:=ch;
+          end
+          else  //ed vokaali, nyt vokaali
+          if (not isdifto(ch,chprev)) then //tavurajavokaali
+          begin
+            inc(result);
+            if tavus<>nil then tavus.insert(0,hy);
+            hy:=ch; //chprev:='y';//                     //  as-il a a is | os
+            voks:=1;
+          end else //diftonki, ei tavurajaa
+          begin
+               hy:=ch+hy; inc(voks);
+          end; //ignoroi kolmoiskons - mukana vain ei-yhd.sanojen perusmuodot,
+     end;
+   end else // edellinen aloitti tavun tai oli sen loppukons
+   begin
+    if pos(ch,vokaalit)>0 then inc(voks);
+    hy:=ch+hy;
+   end;
+   if i=1 then
+   begin
+      if hy<>'' then begin inc(result);if tavus<>nil then tavus.insert(0,hy);end;
+   end else
+   chprev:=ch;
+ end;
+ //HUOM: NÄÄ ON JOSKUS HALUTTU / YLIM ALKUKONONANTIT ERI TAVUNA, ei kuitenkaan lasketa resulttiin
+ if alkkon<>'' then tavus.insert(0,alkkon+'')
+ //else tavus.insert(0,'');
+ //result:=alkkon+'_'+result;
+ // result:=tavus.commatext;
+end;
+
+function voktakarev(sana:string;vAR eietu,eitaka:boolean):string;
+var i:word;
+BEGIN
+try
+  result:='';
+  eietu:=false;eitaka:=false;
+  for i:=1 to length(sana) do
+  begin
+      if pos(sana[i],'aou')>0 then begin eietu:=true;result:=sana[i]+result;end
+      else    if pos(sana[i],'äöy')>0 then begin eitaka:=true; result:='aou'[pos(sana[i],'äöy')]+result; end
+      else result:=sana[i]+result;
+  end;
+  //if eitaka and eietu then begin  eietu:=false;eitaka:=false;end;
+except writeln('failcvoksointu');raise;end;
+ //writeln('%%',sana,eietu,eitaka);
+end;
+function taka(sana:string):string;
+var i:word;
+BEGIN
+try
+  result:='';
+  for i:=1 to length(sana) do
+  begin
+      if pos(sana[i],'äöy')>0 then begin result:=result+'aou'[pos(sana[i],'äöy')]; end
+      else result:=result+sana[i];
+  end;
+  //if eitaka and eietu then begin  eietu:=false;eitaka:=false;end;
+except writeln('failcvoksointu');raise;end;
+ //writeln('%%',sana,eietu,eitaka);
+end;
+function etu(sana:string):string;
+var i:word;
+BEGIN
+try
+  result:='';
+  for i:=1 to length(sana) do
+      if pos(sana[i],'aou')>0 then begin result:=result+'äöy'[pos(sana[i],'aou')]; end
+      else result:=result+sana[i];
+except writeln('failcvoksointu');raise;end;
+end;
 
 end.
 

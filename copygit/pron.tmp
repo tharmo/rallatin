@@ -1,0 +1,1036 @@
+^er‰iksi,er‰s Pron Qnt Indef Tra Pl$
+^er‰ille,er‰s Pron Qnt Indef All Pl$
+^er‰ill‰,er‰s Pron Qnt Indef Ade Pl$
+^er‰ilt‰,er‰s Pron Qnt Indef Abl Pl$
+^er‰in,er‰s Pron Qnt Indef Ins Pl$
+^er‰ine,er‰s Pron Qnt Indef Com$
+^er‰in‰,er‰s Pron Qnt Indef Ess Pl$
+^er‰isiin,er‰s Pron Qnt Indef Ill Pl$
+^er‰iss‰,er‰s Pron Qnt Indef Ine Pl$
+^er‰ist‰,er‰s Pron Qnt Indef Ela Pl$
+^er‰itten,er‰s Pron Qnt Indef Gen Pl$
+^er‰itt‰,er‰s Pron Qnt Indef Abe Pl$
+^er‰it‰,er‰s Pron Qnt Indef Par Pl$
+^er‰s,er‰s Pron Qnt Indef Nom Sg$
+^er‰st‰,er‰s Pron Qnt Indef Par Sg$
+^er‰‰ksi,er‰s Pron Qnt Indef Tra Sg$
+^er‰‰lle,er‰s Pron Qnt Indef All Sg$
+^er‰‰ll‰,er‰s Pron Qnt Indef Ade Sg$
+^er‰‰lt‰,er‰s Pron Qnt Indef Abl Sg$
+^er‰‰n‰,er‰s Pron Qnt Indef Ess Sg$
+^er‰‰seen,er‰s Pron Qnt Indef Ill Sg$
+^er‰‰ss‰,er‰s Pron Qnt Indef Ine Sg$
+^er‰‰st‰,er‰s Pron Qnt Indef Ela Sg$
+^er‰‰t,er‰s Pron Qnt Indef Nom Pl$
+^er‰‰tt‰,er‰s Pron Qnt Indef Abe Sg$
+^heid‰n,he Pron Pers Gen Pl$
+^heid‰t,he Pron Pers Acc Pl$
+^heihin,he Pron Pers Ill Pl$
+^heiksi,he Pron Pers Tra Pl$
+^heille,he Pron Pers All Pl$
+^heill‰,he Pron Pers Ade Pl$
+^heilt‰,he Pron Pers Abl Pl$
+^hein,he Pron Pers Ins Pl$
+^heine,he Pron Pers Com$
+^hein‰,he Pron Pers Ess Pl
+^heiss‰,he Pron Pers Ine Pl$
+^heist‰,he Pron Pers Ela Pl$
+^heitt‰,he Pron Pers Abe Pl
+^heit‰,he Pron Pers Par Pl
+^h‰n,h‰n Pron Pers Nom Sg$
+^h‰neen,h‰n Pron Pers Ill Sg$
+^h‰neksi,h‰n Pron Pers Tra Sg$
+^h‰nelle,h‰n Pron Pers All Sg$
+^h‰nell‰,h‰n Pron Pers Ade Sg$
+^h‰nelt‰,h‰n Pron Pers Abl Sg$
+^h‰nen,h‰n Pron Pers Gen Sg$
+^h‰nen‰,h‰n Pron Pers Ess Sg$
+^h‰ness‰,h‰n Pron Pers Ine Sg$
+^h‰nest‰,h‰n Pron Pers Ela Sg$
+^h‰net,h‰n Pron Pers Acc Sg
+^h‰net,h‰n Pron Pers Nom Pl$
+^h‰nett‰,h‰n Pron Pers Abe Sg$
+^itse,itse Pron Refl Nom Sg$
+^itseen,itse Pron Refl Ill Sg
+^itseiksi,itse Pron Refl Tra Pl$
+^itsein,itse Pron Refl Gen Pl
+^itsein,itse Pron Refl Ins Pl$
+^itseksi,itse Pron Refl Tra Sg$
+^itselle,itse Pron Refl All Sg$
+^itsell‰,itse Pron Refl Ade Sg$
+^itselt‰,itse Pron Refl Abl Sg$
+^itsen‰,itse Pron Refl Ess Sg$
+^itsess‰,itse Pron Refl Ine Sg$
+^itsest‰,itse Pron Refl Ela Sg$
+^itset,itse Pron Refl Nom Pl$
+^itse‰,itse Pron Refl Par Sg$
+^johon,joka Pron Qnt Indef Ill Sg
+^johon,joka Pron Rel Ill Sg$
+^johonkin,jokin Pron Qnt Indef Ill Sg$
+^johonkuhun,joku Pron Qnt Indef Ill Sg$
+^joiden,joka Pron Qnt Indef Gen Pl
+^joiden,joka Pron Rel Gen Pl$
+^joidenkin,jokin Pron Qnt Indef Gen Pl$
+^joihin,joka Pron Qnt Indef Ill Pl
+^joihin,joka Pron Rel Ill Pl$
+^joihinkin,jokin Pron Qnt Indef Ill Pl$
+^joihinkuihin,joku Pron Qnt Indef Ill Pl$
+^joiksi,joka Pron Qnt Indef Tra Pl
+^joiksi,joka Pron Rel Tra Pl
+^joiksikin,jokin Pron Qnt Indef Tra Pl$
+^joiksikuiksi,joku Pron Qnt Indef Tra Pl$
+^joilla,joka Pron Qnt Indef Ade Pl
+^joilla,joka Pron Rel Ade Pl
+^joillakin,jokin Pron Qnt Indef Ade Pl$
+^joillakuilla,joku Pron Qnt Indef Ade Pl$
+^joille,joka Pron Qnt Indef All Pl
+^joille,joka Pron Rel All Pl
+^joillekin,jokin Pron Qnt Indef All Pl$
+^joillekuille,joku Pron Qnt Indef All Pl$
+^joilta,joka Pron Qnt Indef Abl Pl
+^joilta,joka Pron Rel Abl Pl
+^joiltakin,jokin Pron Qnt Indef Abl Pl$
+^joiltakuilta,joku Pron Qnt Indef Abl Pl$
+^join,joka Pron Qnt Indef Ins Pl
+^join,joka Pron Rel Ins Pl
+^joina,joka Pron Qnt Indef Ess Pl
+^joina,joka Pron Rel Ess Pl$
+^joissa,joka Pron Qnt Indef Ine Pl
+^joissa,joka Pron Rel Ine Pl
+^joissakin,jokin Pron Qnt Indef Ine Pl$
+^joissakuissa,joku Pron Qnt Indef Ine Pl$
+^joista,joka Pron Qnt Indef Ela Pl
+^joista,joka Pron Rel Ela Pl
+^joistakin,jokin Pron Qnt Indef Ela Pl$
+^joistakuista,joku Pron Qnt Indef Ela Pl$
+^joita,joka Pron Qnt Indef Par Pl
+^joita,joka Pron Rel Par Pl$
+^joitakin,jokin Pron Qnt Indef Par Pl$
+^joitakuita,joku Pron Qnt Indef Par Pl$
+^joitta,joka Pron Qnt Indef Abe Pl
+^joitta,joka Pron Rel Abe Pl
+^joitten,joka Pron Qnt Indef Gen Pl
+^joitten,joka Pron Rel Gen Pl$
+^joka,joka Pron Qnt Indef Nom Sg
+^joka,joka Pron Rel Nom Sg$
+^jokainen,jokainen Pron Qnt Nom Sg$
+^jokaiseen,jokainen Pron Qnt Ill Sg$
+^jokaiseksi,jokainen Pron Qnt Tra Sg$
+^jokaisella,jokainen Pron Qnt Ade Sg$
+^jokaiselle,jokainen Pron Qnt All Sg$
+^jokaiselta,jokainen Pron Qnt Abl Sg$
+^jokaisen,jokainen Pron Qnt Gen Sg$
+^jokaisena,jokainen Pron Qnt Ess Sg$
+^jokaisessa,jokainen Pron Qnt Ine Sg$
+^jokaisesta,jokainen Pron Qnt Ela Sg$
+^jokaiset,jokainen Pron Qnt Nom Pl$
+^jokaisetta,jokainen Pron Qnt Abe Sg$
+^jokaisia,jokainen Pron Qnt Par Pl$
+^jokaisien,jokainen Pron Qnt Gen Pl$
+^jokaisiin,jokainen Pron Qnt Ill Pl$
+^jokaisilla,jokainen Pron Qnt Ade Pl$
+^jokaisille,jokainen Pron Qnt All Pl$
+^jokaisilta,jokainen Pron Qnt Abl Pl$
+^jokaisin,jokainen Pron Qnt Ins Pl$
+^jokaisina,jokainen Pron Qnt Ess Pl$
+^jokaisissa,jokainen Pron Qnt Ine Pl$
+^jokaisista,jokainen Pron Qnt Ela Pl$
+^jokaista,jokainen Pron Qnt Par Sg$
+^jokaisten,jokainen Pron Qnt Gen Pl$
+^jokin,jokin Pron Qnt Indef Nom Sg$
+^joksi,joka Pron Qnt Indef Tra Sg
+^joksi,joka Pron Rel Tra Sg$
+^joksikin,jokin Pron Qnt Indef Tra Sg$
+^joksikuksi,joku Pron Qnt Indef Tra Sg$
+^joku,joku Pron Qnt Indef Nom Sg$
+^jokunen,jokunen Pron Qnt Nom Sg$
+^jokuseen,jokunen Pron Qnt Ill Sg$
+^jokuseksi,jokunen Pron Qnt Tra Sg$
+^jokusella,jokunen Pron Qnt Ade Sg$
+^jokuselle,jokunen Pron Qnt All Sg$
+^jokuselta,jokunen Pron Qnt Abl Sg$
+^jokusen,jokunen Pron Qnt Gen Sg$
+^jokusena,jokunen Pron Qnt Ess Sg$
+^jokusessa,jokunen Pron Qnt Ine Sg$
+^jokusesta,jokunen Pron Qnt Ela Sg$
+^jokuset,jokunen Pron Qnt Nom Pl$
+^jokusia,jokunen Pron Qnt Par Pl$
+^jokusien,jokunen Pron Qnt Gen Pl$
+^jokusiin,jokunen Pron Qnt Ill Pl$
+^jokusilla,jokunen Pron Qnt Ade Pl$
+^jokusille,jokunen Pron Qnt All Pl$
+^jokusista,jokunen Pron Qnt Ela Pl$
+^jokusta,jokunen Pron Qnt Par Sg$
+^jokusten,jokunen Pron Qnt Gen Pl$
+^jolla,joka Pron Qnt Indef Ade Sg
+^jolla,joka Pron Rel Ade Sg
+^jollainen,jollainen Pron A Nom Sg$
+^jollaiseen,jollainen Pron A Ill Sg$
+^jollaiseksi,jollainen Pron A Tra Sg$
+^jollaisella,jollainen Pron A Ade Sg$
+^jollaiselle,jollainen Pron A All Sg$
+^jollaisen,jollainen Pron A Gen Sg$
+^jollaisena,jollainen Pron A Ess Sg$
+^jollaisesta,jollainen Pron A Ela Sg$
+^jollaiset,jollainen Pron A Nom Pl$
+^jollaisia,jollainen Pron A Par Pl$
+^jollaisiksi,jollainen Pron A Tra Pl$
+^jollaisin,jollainen Pron A Ins Pl$
+^jollaisina,jollainen Pron A Ess Pl$
+^jollaisista,jollainen Pron A Ela Pl$
+^jollaista,jollainen Pron A Par Sg$
+^jollaisten,jollainen Pron A Gen Pl$
+^jollakin,jokin Pron Qnt Indef Ade Sg
+^jollakulla,joku Pron Qnt Indef Ade Sg$
+^jolle,joka Pron Qnt Indef All Sg
+^jolle,joka Pron Rel All Sg$
+^jollekin,jokin Pron Qnt Indef All Sg$
+^jollekulle,joku Pron Qnt Indef All Sg$
+^jolta,joka Pron Qnt Indef Abl Sg
+^jolta,joka Pron Rel Abl Sg$
+^joltakin,jokin Pron Qnt Indef Abl Sg$
+^joltakulta,joku Pron Qnt Indef Abl Sg$
+^jommaksi,jompi Pron Tra Sg$
+^jommalla,jompi Pron Ade Sg$
+^jommalle,jompi Pron All Sg$
+^jommalta,jompi Pron Abl Sg$
+^jommassa,jompi Pron Ine Sg$
+^jommasta,jompi Pron Ela Sg$
+^jommat,jompi Pron Nom Pl$
+^jompaa,jompi Pron Par Sg$
+^jompaan,jompi Pron Ill Sg$
+^jompana,jompi Pron Ess Sg$
+^jompi,jompi Pron Nom Sg$
+^jompia,jompi Pron Par Pl$
+^jompiin,jompi Pron Ill Pl$
+^jona,joka Pron Qnt Indef Ess Sg
+^jona,joka Pron Rel Ess Sg$
+^jonka,joka Pron Qnt Indef Gen Sg
+^jonka,joka Pron Rel Gen Sg$
+^jonkin,jokin Pron Qnt Indef Gen Sg$
+^jonkun,joku Pron Qnt Indef Gen Sg$
+^jonne,joka Pron Qnt Indef Ill Sg
+^jonne,joka Pron Rel Ill Sg
+^jonnekin,jokin Pron Qnt Indef Ill Sg
+^jossa,joka Pron Qnt Indef Ine Sg
+^jossa,joka Pron Rel Ine Sg$
+^jossakin,jokin Pron Qnt Indef Ine Sg
+^jossakussa,joku Pron Qnt Indef Ine Sg$
+^josta,joka Pron Qnt Indef Ela Sg
+^josta,joka Pron Rel Ela Sg$
+^jostakin,jokin Pron Qnt Indef Ela Sg
+^jostakusta,joku Pron Qnt Indef Ela Sg$
+^jot,joka Pron Qnt Indef Nom Pl
+^jot,joka Pron Rel Nom Pl$
+^jota,joka Pron Qnt Indef Par Sg
+^jota,joka Pron Rel Par Sg
+^jota,jota Pron$
+^jotakin,jokin Pron Qnt Indef Par Sg$
+^jotakuta,joku Pron Qnt Indef Par Sg$
+^jotka,joka Pron Qnt Indef Nom Pl
+^jotka,joka Pron Rel Nom Pl$
+^jotkin,jokin Pron Qnt Indef Nom Pl Nom Sg$
+^jotkut,joku Pron Qnt Indef Nom Pl$
+^jotta,joka Pron Qnt Indef Abe Sg
+^jotta,joka Pron Rel Abe Sg
+^kaikeksi,kaikki Pron Qnt Tra Sg$
+^kaikella,kaikki Pron Qnt Ade Sg$
+^kaikelle,kaikki Pron Qnt All Sg$
+^kaikelta,kaikki Pron Qnt Abl Sg$
+^kaiken,kaikki Pron Qnt Gen Sg$
+^kaikessa,kaikki Pron Qnt Ine Sg$
+^kaikesta,kaikki Pron Qnt Ela Sg$
+^kaiket,kaikki Pron Qnt Nom Pl$
+^kaiketta,kaikki Pron Qnt Abe Sg$
+^kaikiksi,kaikki Pron Qnt Tra Pl$
+^kaikilla,kaikki Pron Qnt Ade Pl$
+^kaikille,kaikki Pron Qnt All Pl$
+^kaikilta,kaikki Pron Qnt Abl Pl$
+^kaikin,kaikki Pron Qnt Ins Pl$
+^kaikissa,kaikki Pron Qnt Ine Pl$
+^kaikista,kaikki Pron Qnt Ela Pl$
+^kaikitta,kaikki Pron Qnt Abe Pl$
+^kaikkea,kaikki Pron Qnt Par Sg$
+^kaikkein,kaikki Pron Qnt Ill Sg$
+^kaikkena,kaikki Pron Qnt Ess Sg$
+^kaikki,kaikki Pron Qnt Nom Sg$
+^kaikkia,kaikki Pron Qnt Par Pl$
+^kaikkien,kaikki Pron Qnt Gen Pl$
+^kaikkiin,kaikki Pron Qnt Ill Pl$
+^kaikkina,kaikki Pron Qnt Ess Pl$
+^kaikkine,kaikki Pron Qnt Com$
+^keiksi,kuka Pron Interr Tra Pl$
+^keille,kuka Pron Interr All Pl$
+^keill‰,kuka Pron Interr Ade Pl$
+^keilt‰,kuka Pron Interr Abl Pl$
+^kein,kuka Pron Interr Ins Pl$
+^keine,kuka Pron Interr Com$
+^kein‰,kuka Pron Interr Ess Pl$
+^keiss‰,kuka Pron Interr Ine Pl$
+^keist‰,kuka Pron Interr Ela Pl$
+^keitt‰,kuka Pron Interr Abe Pl$
+^kelle,kuka Pron Interr All Sg$
+^kellek‰‰n,kukaan Pron Qnt All Sg$
+^kell‰,kuka Pron Interr Ade Sg$
+^kell‰‰n,kukaan Pron Qnt Ade Sg$
+^kelt‰,kuka Pron Interr Abl Sg$
+^kelt‰‰n,kukaan Pron Qnt Abl Sg$
+^ken,ken Pron Interr$
+^keneksi,kuka Pron Interr Tra Sg$
+^kenelle,kuka Pron Interr All Sg$
+^kenell‰,kuka Pron Interr Ade Sg$
+^kenelt‰,kuka Pron Interr Abl Sg$
+^kenenk‰‰n,kukaan Pron Qnt Gen Sg$
+^keness‰,kuka Pron Interr Ine Sg$
+^kenest‰,kuka Pron Interr Ela Sg$
+^kenet,kuka Pron Interr Acc Sg
+^kenet,kuka Pron Interr Nom Pl$
+^kenk‰‰n,kenk‰‰n Pron Interr$
+^ketk‰,kuka Pron Interr Nom Pl$
+^ketk‰‰n,kukaan Pron Qnt Nom Pl$
+^ket‰,kuka Pron Interr Par Sg$
+^ket‰‰n,kukaan Pron Qnt Par Sg$
+^koko,koko Pron Qnt$
+^kuhunkin,kukin Pron Qnt Ill Sg$
+^kuidenkin,kukin Pron Qnt Gen Pl
+^kuillakin,kukin Pron Qnt Ade Pl
+^kuillekin,kukin Pron Qnt All Pl
+^kuitakin,kukin Pron Qnt Par Pl
+^kuka,kuka Pron Interr Nom Sg$
+^kukaan,kukaan Pron Qnt Nom Sg$
+^kukin,kukin Pron Qnt Nom Sg
+^kuksi,kuka Pron Interr Tra Sg$
+^kuksikin,kukin Pron Qnt Tra Sg$
+^kullakin,kukin Pron Qnt Ade Sg$
+^kulle,kuka Pron Interr All Sg$
+^kullekin,kukin Pron Qnt All Sg$
+^kull‰,kuka Pron Interr Ade Sg$
+^kultakin,kukin Pron Qnt Abl Sg
+^kummaksi,kumpi Pron Interr Tra Sg$
+^kummalla,kumpi Pron Interr Ade Sg$
+^kummalle,kumpi Pron Interr All Sg$
+^kummalta,kumpi Pron Interr Abl Sg$
+^kummassa,kumpi Pron Interr Ine Sg$
+^kummasta,kumpi Pron Interr Ela Sg$
+^kummat,kumpi Pron Interr Nom Pl$
+^kummatta,kumpi Pron Interr Abe Sg$
+^kummiksi,kumpi Pron Interr Tra Pl$
+^kummilla,kumpi Pron Interr Ade Pl$
+^kummille,kumpi Pron Interr All Pl$
+^kummilta,kumpi Pron Interr Abl Pl$
+^kummin,kumpi Pron Interr Ins Pl$
+^kummissa,kumpi Pron Interr Ine Pl$
+^kummista,kumpi Pron Interr Ela Pl$
+^kumpaa,kumpi Pron Interr Par Sg$
+^kumpaan,kumpi Pron Interr Ill Sg$
+^kumpainen,kumpainen Pron A Nom Sg$
+^kumpaiseen,kumpainen Pron A Ill Sg$
+^kumpaisella,kumpainen Pron A Ade Sg$
+^kumpaiselle,kumpainen Pron A All Sg$
+^kumpaiselta,kumpainen Pron A Abl Sg$
+^kumpaisen,kumpainen Pron A Gen Sg$
+^kumpaisena,kumpainen Pron A Ess Sg$
+^kumpaisessa,kumpainen Pron A Ine Sg$
+^kumpaisesta,kumpainen Pron A Ela Sg$
+^kumpaiset,kumpainen Pron A Nom Pl$
+^kumpaisia,kumpainen Pron A Par Pl$
+^kumpaisissa,kumpainen Pron A Ine Pl$
+^kumpaista,kumpainen Pron A Par Sg$
+^kumpana,kumpi Pron Interr Ess Sg$
+^kumpi,kumpi Pron Interr Nom Sg$
+^kumpia,kumpi Pron Interr Par Pl$
+^kumpien,kumpi Pron Interr Gen Pl$
+^kumpiin,kumpi Pron Interr Ill Pl$
+^kumpiki,kumpikin Pron Qnt$
+^kunkin,kukin Pron Qnt Gen Sg$
+^kussakin,kukin Pron Qnt Ine Sg$
+^kustakin,kukin Pron Qnt Ela Sg
+^kut,kuka Pron Interr Nom Pl$
+^kuta,kuta Pron$
+^kutakin,kukin Pron Qnt Par Sg$
+^meid‰n,me Pron Pers Gen Pl$
+^meid‰t,me Pron Pers Acc Pl$
+^meihin,me Pron Pers Ill Pl$
+^meiksi,me Pron Pers Tra Pl$
+^meille,me Pron Pers All Pl$
+^meill‰,me Pron Pers Ade Pl$
+^meilt‰,me Pron Pers Abl Pl$
+^mein,me Pron Pers Ins Pl$
+^meine,me Pron Pers Com$
+^mein‰,me Pron Pers Ess Pl$
+^meiss‰,me Pron Pers Ine Pl$
+^meist‰,me Pron Pers Ela Pl
+^meitt‰,me Pron Pers Abe Pl$
+^meit‰,me Pron Pers Par Pl$
+^miksi,mik‰ Pron Interr Tra Sg
+^miksi,mik‰ Pron Rel Tra Sg$
+^mik‰,mik‰ Pron Interr Nom Sg
+^mik‰,mik‰ Pron Rel Nom Sg$
+^mik‰kin,mik‰kin Pron Qnt$
+^mik‰‰n,mik‰‰n Pron Qnt Nom Sg$
+^millainen,millainen Pron A Nom Sg$
+^millaiseen,millainen Pron A Ill Sg$
+^millaiseksi,millainen Pron A Tra Sg$
+^millaisella,millainen Pron A Ade Sg$
+^millaiselle,millainen Pron A All Sg$
+^millaiselta,millainen Pron A Abl Sg$
+^millaisen,millainen Pron A Gen Sg$
+^millaisena,millainen Pron A Ess Sg$
+^millaisessa,millainen Pron A Ine Sg$
+^millaisesta,millainen Pron A Ela Sg$
+^millaiset,millainen Pron A Nom Pl$
+^millaisia,millainen Pron A Par Pl$
+^millaisien,millainen Pron A Gen Pl$
+^millaisiin,millainen Pron A Ill Pl$
+^millaisiksi,millainen Pron A Tra Pl$
+^millaisilla,millainen Pron A Ade Pl$
+^millaisille,millainen Pron A All Pl$
+^millaisilta,millainen Pron A Abl Pl$
+^millaisin,millainen Pron A Ins Pl$
+^millaisina,millainen Pron A Ess Pl$
+^millaisissa,millainen Pron A Ine Pl$
+^millaisista,millainen Pron A Ela Pl$
+^millaista,millainen Pron A Par Sg$
+^millaisten,millainen Pron A Gen Pl$
+^mille,mik‰ Pron Interr All Sg
+^mille,mik‰ Pron Rel All Sg$
+^mill‰,mik‰ Pron Interr Ade Sg
+^mill‰,mik‰ Pron Rel Ade Sg$
+^milt‰,mik‰ Pron Interr Abl Sg
+^milt‰,mik‰ Pron Rel Abl Sg$
+^mimmoinen,mimmoinen Pron A Nom Sg$
+^mimmoiseen,mimmoinen Pron A Ill Sg$
+^mimmoiseksi,mimmoinen Pron A Tra Sg$
+^mimmoisella,mimmoinen Pron A Ade Sg$
+^mimmoiselta,mimmoinen Pron A Abl Sg$
+^mimmoisen,mimmoinen Pron A Gen Sg$
+^mimmoisena,mimmoinen Pron A Ess Sg$
+^mimmoisessa,mimmoinen Pron A Ine Sg$
+^mimmoisesta,mimmoinen Pron A Ela Sg$
+^mimmoiset,mimmoinen Pron A Nom Pl$
+^mimmoisia,mimmoinen Pron A Par Pl$
+^mimmoisiin,mimmoinen Pron A Ill Pl$
+^mimmoisiksi,mimmoinen Pron A Tra Pl$
+^mimmoisilla,mimmoinen Pron A Ade Pl$
+^mimmoisille,mimmoinen Pron A All Pl$
+^mimmoisilta,mimmoinen Pron A Abl Pl$
+^mimmoisin,mimmoinen Pron A Ins Pl$
+^mimmoisina,mimmoinen Pron A Ess Pl$
+^mimmoisissa,mimmoinen Pron A Ine Pl$
+^mimmoisista,mimmoinen Pron A Ela Pl$
+^mimmoista,mimmoinen Pron A Par Sg$
+^mimmoisten,mimmoinen Pron A Gen Pl$
+^minkinlainen,minkin#lainen Pron Nom Sg
+^minkinlaiseen,minkin#lainen Pron Ill Sg
+^minkinlaiseksi,minkin#lainen Pron Tra Sg
+^minkinlaisella,minkin#lainen Pron Ade Sg
+^minkinlaiselle,minkin#lainen Pron All Sg
+^minkinlaisen,minkin#lainen Pron Gen Sg
+^minkinlaisena,minkin#lainen Pron Ess Sg
+^minkinlaisessa,minkin#lainen Pron Ine Sg
+^minkinlaisesta,minkin#lainen Pron Ela Sg
+^minkinlaiset,minkin#lainen Pron Nom Pl
+^minkinlaisia,minkin#lainen Pron Par Pl
+^minkinlaisiin,minkin#lainen Pron Ill Pl
+^minkinlaisiksi,minkin#lainen Pron Tra Pl
+^minkinlaisilla,minkin#lainen Pron Ade Pl
+^minkinlaisille,minkin#lainen Pron All Pl
+^minkinlaisilta,minkin#lainen Pron Abl Pl
+^minkinlaisin,minkin#lainen Pron Ins Pl
+^minkinlaisina,minkin#lainen Pron Ess Pl
+^minkinlaisissa,minkin#lainen Pron Ine Pl
+^minkinlaisista,minkin#lainen Pron Ela Pl
+^minkinlaista,minkin#lainen Pron Par Sg
+^minkinlaisten,minkin#lainen Pron Gen Pl
+^mink‰,mik‰ Pron Interr Gen Sg
+^mink‰,mik‰ Pron Rel Gen Sg$
+^mink‰lainen,mink‰lainen Pron A Nom Sg$
+^mink‰laiseen,mink‰lainen Pron A Ill Sg$
+^mink‰laiseksi,mink‰lainen Pron A Tra Sg$
+^mink‰laisella,mink‰lainen Pron A Ade Sg$
+^mink‰laiselle,mink‰lainen Pron A All Sg$
+^mink‰laiselta,mink‰lainen Pron A Abl Sg$
+^mink‰laisen,mink‰lainen Pron A Gen Sg$
+^mink‰laisena,mink‰lainen Pron A Ess Sg$
+^mink‰laisessa,mink‰lainen Pron A Ine Sg$
+^mink‰laisesta,mink‰lainen Pron A Ela Sg$
+^mink‰laiset,mink‰lainen Pron A Nom Pl$
+^mink‰laisia,mink‰lainen Pron A Par Pl$
+^mink‰laisien,mink‰lainen Pron A Gen Pl$
+^mink‰laisiin,mink‰lainen Pron A Ill Pl$
+^mink‰laisiksi,mink‰lainen Pron A Tra Pl$
+^mink‰laisilla,mink‰lainen Pron A Ade Pl$
+^mink‰laisille,mink‰lainen Pron A All Pl$
+^mink‰laisilta,mink‰lainen Pron A Abl Pl$
+^mink‰laisin,mink‰lainen Pron A Ins Pl$
+^mink‰laisina,mink‰lainen Pron A Ess Pl$
+^mink‰laisissa,mink‰lainen Pron A Ine Pl$
+^mink‰laisista,mink‰lainen Pron A Ela Pl$
+^mink‰laista,mink‰lainen Pron A Par Sg$
+^mink‰laisten,mink‰lainen Pron A Gen Pl$
+^mink‰‰n,mik‰‰n Pron Qnt Gen Sg
+^mink‰‰nlainen,mink‰‰nlainen Pron Nom Sg$
+^mink‰‰nlaiseen,mink‰‰nlainen Pron Ill Sg$
+^mink‰‰nlaiseksi,mink‰‰nlainen Pron Tra Sg$
+^mink‰‰nlaisella,mink‰‰nlainen Pron Ade Sg$
+^mink‰‰nlaiselle,mink‰‰nlainen Pron All Sg$
+^mink‰‰nlaiselta,mink‰‰nlainen Pron Abl Sg$
+^mink‰‰nlaisen,mink‰‰nlainen Pron Gen Sg$
+^mink‰‰nlaisena,mink‰‰nlainen Pron Ess Sg$
+^mink‰‰nlaisessa,mink‰‰nlainen Pron Ine Sg$
+^mink‰‰nlaisesta,mink‰‰nlainen Pron Ela Sg$
+^mink‰‰nlaiset,mink‰‰nlainen Pron Nom Pl$
+^mink‰‰nlaisetta,mink‰‰nlainen Pron Abe Sg$
+^mink‰‰nlaisia,mink‰‰nlainen Pron Par Pl$
+^mink‰‰nlaisien,mink‰‰nlainen Pron Gen Pl$
+^mink‰‰nlaisiin,mink‰‰nlainen Pron Ill Pl$
+^mink‰‰nlaisiksi,mink‰‰nlainen Pron Tra Pl$
+^mink‰‰nlaisilla,mink‰‰nlainen Pron Ade Pl$
+^mink‰‰nlaisille,mink‰‰nlainen Pron All Pl$
+^mink‰‰nlaisilta,mink‰‰nlainen Pron Abl Pl$
+^mink‰‰nlaisin,mink‰‰nlainen Pron Ins Pl$
+^mink‰‰nlaisina,mink‰‰nlainen Pron Ess Pl$
+^mink‰‰nlaisissa,mink‰‰nlainen Pron Ine Pl$
+^mink‰‰nlaisista,mink‰‰nlainen Pron Ela Pl$
+^mink‰‰nlaisitta,mink‰‰nlainen Pron Abe Pl$
+^mink‰‰nlaista,mink‰‰nlainen Pron Par Sg$
+^mink‰‰nlaisten,mink‰‰nlainen Pron Gen Pl$
+^minne,mik‰ Pron Interr Ill Sg
+^minne,mik‰ Pron Rel Ill Sg
+^minua,min‰ Pron Pers Par Sg$
+^minuksi,min‰ Pron Pers Tra Sg$
+^minulla,min‰ Pron Pers Ade Sg$
+^minulle,min‰ Pron Pers All Sg$
+^minulta,min‰ Pron Pers Abl Sg$
+^minun,min‰ Pron Pers Gen Sg$
+^minuna,min‰ Pron Pers Ess Sg$
+^minussa,min‰ Pron Pers Ine Sg$
+^minusta,min‰ Pron Pers Ela Sg$
+^minut,min‰ Pron Pers Acc Sg
+^minut,min‰ Pron Pers Nom Pl$
+^minutta,min‰ Pron Pers Abe Sg$
+^min‰,mik‰ Pron Interr Ess Sg
+^min‰,mik‰ Pron Rel Ess Sg
+^min‰,min‰ Pron Pers Nom Sg$
+^miss‰,mik‰ Pron Interr Ine Sg
+^miss‰,mik‰ Pron Rel Ine Sg$
+^miss‰kin,miss‰kin Pron$
+^mist‰,mik‰ Pron Interr Ela Sg
+^mist‰,mik‰ Pron Rel Ela Sg
+^mit,mik‰ Pron Interr Nom Pl
+^mit,mik‰ Pron Rel Nom Pl$
+^mitk‰,mik‰ Pron Interr Nom Sg
+^mitk‰,mik‰ Pron Rel Nom Sg$
+^mitk‰‰n,mik‰‰n Pron Qnt Nom Pl$
+^mitt‰,mik‰ Pron Interr Abe Sg
+^mitt‰,mik‰ Pron Rel Abe Sg$
+^mit‰,mik‰ Pron Interr Par Sg
+^mit‰,mik‰ Pron Rel Par Sg
+^mit‰‰n,mik‰‰n Pron Qnt Par Sg$
+^molemma,molemmat Pron$
+^molemmiksi,molemmat Pron Tra Pl
+^molemmilla,molemmat Pron Ade Pl
+^molemmille,molemmat Pron All Pl
+^molemmilta,molemmat Pron Abl Pl
+^molemmin,molemmat Pron Ins Pl
+^molemmissa,molemmat Pron Ine Pl
+^molemmista,molemmat Pron Ela Pl
+^molemmitta,molemmat Pron Abe Pl
+^molempia,molemmat Pron Par Pl
+^molempien,molemmat Pron Gen Pl
+^molempiin,molemmat Pron Ill Pl
+^molempina,molemmat Pron Ess Pl
+^molempine,molemmat Pron Com
+^monea,moni Pron Qnt Par Sg$
+^moneen,moni Pron Qnt Ill Sg$
+^moneksi,moni Pron Qnt Tra Sg$
+^monella,moni Pron Qnt Ade Sg$
+^monelle,moni Pron Qnt All Sg$
+^monelta,moni Pron Qnt Abl Sg$
+^monena,moni Pron Qnt Ess Sg$
+^monenneksi,mones Pron Interr Tra Sg$
+^monennella,mones Pron Interr Ade Sg$
+^monennelle,mones Pron Interr All Sg$
+^monennelta,mones Pron Interr Abl Sg$
+^monennessa,mones Pron Interr Ine Sg$
+^monennesta,mones Pron Interr Ela Sg$
+^monennet,mones Pron Interr Nom Pl$
+^monennetta,mones Pron Interr Abe Sg$
+^mones,mones Pron Interr Nom Sg$
+^monessa,moni Pron Qnt Ine Sg$
+^monesta,moni Pron Qnt Ela Sg$
+^monet,moni Pron Qnt Nom Pl$
+^monetta,mones Pron Interr Par Sg
+^monetta,moni Pron Qnt Abe Sg$
+^moni,moni Pron Qnt Nom Sg$
+^monia,moni Pron Qnt Par Pl$
+^moniaaksi,monias Pron Tra Sg$
+^moniaalla,monias Pron Ade Sg$
+^moniaalle,monias Pron All Sg$
+^moniaalta,monias Pron Abl Sg$
+^moniaana,monias Pron Ess Sg$
+^moniaaseen,monias Pron Ill Sg$
+^moniaassa,monias Pron Ine Sg$
+^moniaasta,monias Pron Ela Sg$
+^moniaat,monias Pron Nom Pl$
+^moniaiden,monias Pron Gen Pl$
+^moniaihin,monias Pron Ill Pl$
+^moniaiksi,monias Pron Tra Pl$
+^moniailla,monias Pron Ade Pl$
+^moniaille,monias Pron All Pl$
+^moniailta,monias Pron Abl Pl$
+^moniain,monias Pron Ins Pl$
+^moniaina,monias Pron Ess Pl$
+^moniaisiin,monias Pron Ill Pl$
+^moniaissa,monias Pron Ine Pl$
+^moniaista,monias Pron Ela Pl$
+^moniaita,monias Pron Par Pl$
+^moniaitten,monias Pron Gen Pl$
+^monias,monias Pron Nom Sg$
+^moniasta,monias Pron Par Sg$
+^monien,moni Pron Qnt Gen Pl$
+^moniin,moni Pron Qnt Ill Pl$
+^moniksi,moni Pron Qnt Tra Pl$
+^monilla,moni Pron Qnt Ade Pl$
+^monille,moni Pron Qnt All Pl$
+^monilta,moni Pron Qnt Abl Pl$
+^monin,moni Pron Qnt Ins Pl$
+^monina,moni Pron Qnt Ess Pl$
+^monine,moni Pron Qnt Com$
+^monissa,moni Pron Qnt Ine Pl$
+^monista,moni Pron Qnt Ela Pl
+^monitta,moni Pron Qnt Abe Pl$
+^monituinen,monituinen Pron Nom Sg$
+^monituiseen,monituinen Pron Ill Sg$
+^monituiseksi,monituinen Pron Tra Sg$
+^monituisella,monituinen Pron Ade Sg$
+^monituiselle,monituinen Pron All Sg$
+^monituiselta,monituinen Pron Abl Sg$
+^monituisen,monituinen Pron Gen Sg$
+^monituisena,monituinen Pron Ess Sg$
+^monituisessa,monituinen Pron Ine Sg$
+^monituisesta,monituinen Pron Ela Sg$
+^monituiset,monituinen Pron Nom Pl$
+^monituisia,monituinen Pron Par Pl$
+^monituisien,monituinen Pron Gen Pl$
+^monituisiin,monituinen Pron Ill Pl$
+^monituisiksi,monituinen Pron Tra Pl$
+^monituisilla,monituinen Pron Ade Pl$
+^monituisille,monituinen Pron All Pl$
+^monituisilta,monituinen Pron Abl Pl$
+^monituisin,monituinen Pron Ins Pl$
+^monituisina,monituinen Pron Ess Pl$
+^monituisine,monituinen Pron Com$
+^monituisissa,monituinen Pron Ine Pl$
+^monituisista,monituinen Pron Ela Pl$
+^monituista,monituinen Pron Par Sg$
+^monituisten,monituinen Pron Gen Pl$
+^monta,monta Pron Qnt$
+^montaa,montaa Pron$
+^mua,m‰ Pron Pers Par Sg$
+^muhun,m‰ Pron Pers Ill Sg$
+^muiden,muu Pron Qnt Gen Pl$
+^muihin,muu Pron Qnt Ill Pl$
+^muiksi,muu Pron Qnt Tra Pl$
+^muilla,muu Pron Qnt Ade Pl$
+^muille,muu Pron Qnt All Pl$
+^muilta,muu Pron Qnt Abl Pl$
+^muin,muu Pron Qnt Ins Pl$
+^muina,muu Pron Qnt Ess Pl$
+^muine,muu Pron Qnt Com$
+^muissa,muu Pron Qnt Ine Pl$
+^muista,muu Pron Qnt Ela Pl$
+^muita,muu Pron Qnt Par Pl$
+^muitta,muu Pron Qnt Abe Pl$
+^muitten,muu Pron Qnt Gen Pl$
+^muksi,m‰ Pron Pers Tra Sg$
+^mulla,m‰ Pron Pers Ade Sg$
+^mulle,m‰ Pron Pers All Sg$
+^multa,m‰ Pron Pers Abl Sg$
+^muna,m‰ Pron Pers Ess Sg$
+^mussa,m‰ Pron Pers Ine Sg$
+^musta,m‰ Pron Pers Ela Sg$
+^mut,m‰ Pron Pers Nom Pl$
+^mutta,m‰ Pron Pers Abe Sg$
+^muu,muu Pron Qnt Nom Sg$
+^muuan,muuan Pron Qnt Indef Nom Sg$
+^muuatta,muuan Pron Qnt Indef Par Sg$
+^muuhun,muu Pron Qnt Ill Sg$
+^muuksi,muu Pron Qnt Tra Sg$
+^muulla,muu Pron Qnt Ade Sg$
+^muulle,muu Pron Qnt All Sg$
+^muulta,muu Pron Qnt Abl Sg$
+^muun,muu Pron Qnt Gen Sg$
+^muuna,muu Pron Qnt Ess Sg$
+^muussa,muu Pron Qnt Ine Sg$
+^muusta,muu Pron Qnt Ela Sg$
+^muut,muu Pron Qnt Nom Pl$
+^muuta,muu Pron Qnt Par Sg
+^muutama,muutama Pron Qnt Nom Sg$
+^muutamaa,muutama Pron Qnt Par Sg$
+^muutamaksi,muutama Pron Qnt Tra Sg$
+^muutamalla,muutama Pron Qnt Ade Sg$
+^muutamalle,muutama Pron Qnt All Sg$
+^muutamalta,muutama Pron Qnt Abl Sg$
+^muutamana,muutama Pron Qnt Ess Sg$
+^muutamassa,muutama Pron Qnt Ine Sg$
+^muutamasta,muutama Pron Qnt Ela Sg$
+^muutamat,muutama Pron Qnt Nom Pl$
+^muutamatta,muutama Pron Qnt Abe Sg$
+^muutamia,muutama Pron Qnt Par Pl$
+^muutamien,muutama Pron Qnt Gen Pl$
+^muutamiin,muutama Pron Qnt Ill Pl$
+^muutamiksi,muutama Pron Qnt Tra Pl$
+^muutamilla,muutama Pron Qnt Ade Pl$
+^muutamille,muutama Pron Qnt All Pl$
+^muutamilta,muutama Pron Qnt Abl Pl$
+^muutamin,muutama Pron Qnt Ins Pl$
+^muutamina,muutama Pron Qnt Ess Pl$
+^muutamine,muutama Pron Qnt Com$
+^muutamissa,muutama Pron Qnt Ine Pl$
+^muutamista,muutama Pron Qnt Ela Pl$
+^muutamitta,muutama Pron Qnt Abe Pl$
+^muutta,muu Pron Qnt Abe Sg$
+^niiden,ne Pron Dem Gen Pl
+^niihin,ne Pron Dem Ill Pl$
+^niiksi,ne Pron Dem Tra Pl$
+^niille,ne Pron Dem All Pl$
+^niill‰,ne Pron Dem Ade Pl$
+^niilt‰,ne Pron Dem Abl Pl$
+^niin,ne Pron Dem Ins Pl
+^niine,ne Pron Dem Com$
+^niin‰,ne Pron Dem Ess Pl$
+^niiss‰,ne Pron Dem Ine Pl$
+^niist‰,ne Pron Dem Ela Pl
+^niitten,ne Pron Dem Gen Pl
+^niitt‰,ne Pron Dem Abe Pl
+^niit‰,ne Pron Dem Par Pl
+^nit‰,ne Pron Dem Par Sg$
+^noiden,nuo Pron Dem Gen Pl$
+^noihin,nuo Pron Dem Ill Pl$
+^noiksi,nuo Pron Dem Tra Pl$
+^noilla,nuo Pron Dem Ade Pl$
+^noille,nuo Pron Dem All Pl$
+^noilta,nuo Pron Dem Abl Pl$
+^noin,nuo Pron Dem Ins Pl$
+^noina,nuo Pron Dem Ess Pl$
+^noine,nuo Pron Dem Com$
+^noissa,nuo Pron Dem Ine Pl$
+^noista,nuo Pron Dem Ela Pl$
+^noita,nuo Pron Dem Par Pl$
+^noitta,nuo Pron Dem Abe Pl$
+^noitten,nuo Pron Dem Gen Pl$
+^nuo,nuo Pron Dem Nom Pl$
+^nuot,nuo Pron Dem Acc Sg$
+^n‰iden,n‰m‰ Pron Dem Gen Pl$
+^n‰ihin,n‰m‰ Pron Dem Ill Pl$
+^n‰iksi,n‰m‰ Pron Dem Tra Pl$
+^n‰ille,n‰m‰ Pron Dem All Pl$
+^n‰ill‰,n‰m‰ Pron Dem Ade Pl$
+^n‰ilt‰,n‰m‰ Pron Dem Abl Pl$
+^n‰in,n‰m‰ Pron Dem Ins Pl$
+^n‰in‰,n‰m‰ Pron Dem Ess Pl$
+^n‰iss‰,n‰m‰ Pron Dem Ine Pl$
+^n‰ist‰,n‰m‰ Pron Dem Ela Pl$
+^n‰itten,n‰m‰ Pron Dem Gen Pl$
+^n‰itt‰,n‰m‰ Pron Dem Abe Pl$
+^n‰it‰,n‰m‰ Pron Dem Par Pl$
+^n‰m‰,n‰m‰ Pron Dem Nom Pl$
+^n‰m‰t,n‰m‰ Pron Dem Acc Sg$
+^sama,sama Pron Qnt Nom Sg$
+^samaa,sama Pron Qnt Par Sg$
+^samaksi,sama Pron Qnt Tra Sg$
+^samalla,sama Pron Qnt Ade Sg
+^samalle,sama Pron Qnt All Sg$
+^samalta,sama Pron Qnt Abl Sg$
+^samana,sama Pron Qnt Ess Sg$
+^samassa,sama Pron Qnt Ine Sg
+^samasta,sama Pron Qnt Ela Sg
+^samat,sama Pron Qnt Nom Pl$
+^samatta,sama Pron Qnt Abe Sg$
+^samoihin,sama Pron Qnt Ill Pl$
+^samoiksi,sama Pron Qnt Tra Pl$
+^samoilla,sama Pron Qnt Ade Pl
+^samoille,sama Pron Qnt All Pl
+^samoilta,sama Pron Qnt Abl Pl$
+^samoin,sama Pron Qnt Ins Pl
+^samoina,sama Pron Qnt Ess Pl$
+^samoine,sama Pron Qnt Com$
+^samoissa,sama Pron Qnt Ine Pl$
+^samoista,sama Pron Qnt Ela Pl$
+^samoitta,sama Pron Qnt Abe Pl$
+^samoja,sama Pron Qnt Par Pl$
+^samojen,sama Pron Qnt Gen Pl$
+^sellainen,sellainen Pron A Nom Sg$
+^sellaiseen,sellainen Pron A Ill Sg$
+^sellaiseksi,sellainen Pron A Tra Sg$
+^sellaisella,sellainen Pron A Ade Sg$
+^sellaiselle,sellainen Pron A All Sg$
+^sellaiselta,sellainen Pron A Abl Sg$
+^sellaisen,sellainen Pron A Gen Sg$
+^sellaisena,sellainen Pron A Ess Sg$
+^sellaisessa,sellainen Pron A Ine Sg$
+^sellaisesta,sellainen Pron A Ela Sg$
+^sellaiset,sellainen Pron A Nom Pl$
+^sellaisetta,sellainen Pron A Abe Sg$
+^sellaisia,sellainen Pron A Par Pl$
+^sellaisien,sellainen Pron A Gen Pl$
+^sellaisiin,sellainen Pron A Ill Pl$
+^sellaisiksi,sellainen Pron A Tra Pl$
+^sellaisilla,sellainen Pron A Ade Pl$
+^sellaisille,sellainen Pron A All Pl$
+^sellaisilta,sellainen Pron A Abl Pl$
+^sellaisin,sellainen Pron A Ins Pl$
+^sellaisina,sellainen Pron A Ess Pl$
+^sellaisine,sellainen Pron A Com$
+^sellaisissa,sellainen Pron A Ine Pl$
+^sellaisista,sellainen Pron A Ela Pl$
+^sellaisitta,sellainen Pron A Abe Pl$
+^sellaista,sellainen Pron A Par Sg$
+^sellaisten,sellainen Pron A Gen Pl$
+^sen,se Pron Dem Gen Sg
+^siihen,se Pron Dem Ill Sg
+^siin‰,se Pron Dem Ine Sg
+^siit‰,se Pron Dem Ela Sg
+^siksi,se Pron Dem Tra Sg
+^sille,se Pron Dem All Sg$
+^sill‰,se Pron Dem Ade Sg
+^silt‰,se Pron Dem Abl Sg$
+^sinua,sin‰ Pron Pers Par Sg$
+^sinuksi,sin‰ Pron Pers Tra Sg$
+^sinulla,sin‰ Pron Pers Ade Sg$
+^sinulle,sin‰ Pron Pers All Sg$
+^sinulta,sin‰ Pron Pers Abl Sg$
+^sinun,sin‰ Pron Pers Gen Sg$
+^sinuna,sin‰ Pron Pers Ess Sg$
+^sinussa,sin‰ Pron Pers Ine Sg$
+^sinusta,sin‰ Pron Pers Ela Sg$
+^sinut,sin‰ Pron Pers Acc Sg
+^sinut,sin‰ Pron Pers Nom Pl$
+^sinutta,sin‰ Pron Pers Abe Sg$
+^sin‰,se Pron Dem Ess Sg
+^sin‰,sin‰ Pron Pers Nom Sg$
+^siss‰,se Pron Dem Ine Sg$
+^sist‰,se Pron Dem Ela Sg$
+^sit,se Pron Dem Nom Pl
+^sitt‰,se Pron Dem Abe Sg$
+^sit‰,se Pron Dem Par Sg
+^sua,s‰ Pron Pers Par Sg$
+^suhun,s‰ Pron Pers Ill Sg$
+^suksi,s‰ Pron Pers Tra Sg$
+^sulla,s‰ Pron Pers Ade Sg$
+^sulle,s‰ Pron Pers All Sg$
+^sulta,s‰ Pron Pers Abl Sg$
+^suna,s‰ Pron Pers Ess Sg$
+^sussa,s‰ Pron Pers Ine Sg$
+^susta,s‰ Pron Pers Ela Sg$
+^sut,s‰ Pron Pers Nom Pl$
+^sutta,s‰ Pron Pers Abe Sg$
+^teid‰n,te Pron Pers Gen Pl$
+^teid‰t,te Pron Pers Acc Pl$
+^teihin,te Pron Pers Ill Pl
+^teiksi,te Pron Pers Tra Pl
+^teille,te Pron Pers All Pl
+^teill‰,te Pron Pers Ade Pl
+^teilt‰,te Pron Pers Abl Pl
+^tein,te Pron Pers Ins Pl
+^teine,te Pron Pers Com
+^tein‰,te Pron Pers Ess Pl
+^teiss‰,te Pron Pers Ine Pl
+^teist‰,te Pron Pers Ela Pl
+^teitt‰,te Pron Pers Abe Pl
+^teit‰,te Pron Pers Par Pl
+^tksi,tuo Pron Dem Tra Sg$
+^tlla,tuo Pron Dem Ade Sg$
+^tlle,tuo Pron Dem All Sg$
+^tlta,tuo Pron Dem Abl Sg$
+^tna,tuo Pron Dem Ess Sg$
+^tohon,toi Pron Dem Ill Sg$
+^toi,toi Pron Dem Nom Sg
+^toinen,toinen Pron Nom Sg$
+^toiseen,toinen Pron Ill Sg$
+^toiseksi,toinen Pron Tra Sg
+^toisella,toinen Pron Ade Sg$
+^toiselle,toinen Pron All Sg$
+^toiselta,toinen Pron Abl Sg$
+^toisen,toinen Pron Gen Sg$
+^toisena,toinen Pron Ess Sg$
+^toisessa,toinen Pron Ine Sg$
+^toisesta,toinen Pron Ela Sg$
+^toiset,toinen Pron Nom Pl$
+^toisetta,toinen Pron Abe Sg$
+^toisia,toinen Pron Par Pl$
+^toisien,toinen Pron Gen Pl
+^toisiin,toinen Pron Ill Pl$
+^toisiksi,toinen Pron Tra Pl$
+^toisilla,toinen Pron Ade Pl$
+^toisille,toinen Pron All Pl$
+^toisilta,toinen Pron Abl Pl
+^toisin,toinen Pron Ins Pl
+^toisina,toinen Pron Ess Pl$
+^toisine,toinen Pron Com$
+^toisissa,toinen Pron Ine Pl$
+^toisista,toinen Pron Ela Pl$
+^toisitta,toinen Pron Abe Pl$
+^toista,toinen Pron Par Sg
+^toisten,toinen Pron Gen Pl$
+^toksi,toi Pron Dem Tra Sg$
+^tolla,toi Pron Dem Ade Sg$
+^tolle,toi Pron Dem All Sg$
+^tolta,toi Pron Dem Abl Sg$
+^tona,toi Pron Dem Ess Sg$
+^tossa,toi Pron Dem Ine Sg$
+^tosta,toi Pron Dem Ela Sg$
+^tot,toi Pron Dem Nom Pl$
+^tota,toi Pron Dem Par Sg
+^totta,toi Pron Dem Abe Sg
+^tta,tuo Pron Dem Par Sg$
+^ttta,tuo Pron Dem Abe Sg$
+^tuollainen,tuollainen Pron A Nom Sg$
+^tuollaiseen,tuollainen Pron A Ill Sg$
+^tuollaiseksi,tuollainen Pron A Tra Sg$
+^tuollaisella,tuollainen Pron A Ade Sg$
+^tuollaiselle,tuollainen Pron A All Sg$
+^tuollaiselta,tuollainen Pron A Abl Sg$
+^tuollaisen,tuollainen Pron A Gen Sg$
+^tuollaisena,tuollainen Pron A Ess Sg$
+^tuollaisessa,tuollainen Pron A Ine Sg$
+^tuollaisesta,tuollainen Pron A Ela Sg$
+^tuollaiset,tuollainen Pron A Nom Pl$
+^tuollaisia,tuollainen Pron A Par Pl$
+^tuollaisien,tuollainen Pron A Gen Pl$
+^tuollaisiin,tuollainen Pron A Ill Pl$
+^tuollaisiksi,tuollainen Pron A Tra Pl$
+^tuollaisilla,tuollainen Pron A Ade Pl$
+^tuollaisille,tuollainen Pron A All Pl$
+^tuollaisilta,tuollainen Pron A Abl Pl$
+^tuollaisin,tuollainen Pron A Ins Pl$
+^tuollaisina,tuollainen Pron A Ess Pl$
+^tuollaisissa,tuollainen Pron A Ine Pl$
+^tuollaisista,tuollainen Pron A Ela Pl$
+^tuollaista,tuollainen Pron A Par Sg$
+^tuollaisten,tuollainen Pron A Gen Pl$
+^t‰h‰n,t‰m‰ Pron Dem Ill Sg$
+^t‰ksi,t‰m‰ Pron Dem Tra Sg$
+^t‰llainen,t‰llainen Pron A Nom Sg$
+^t‰llaiseen,t‰llainen Pron A Ill Sg$
+^t‰llaiseksi,t‰llainen Pron A Tra Sg$
+^t‰llaisella,t‰llainen Pron A Ade Sg$
+^t‰llaiselle,t‰llainen Pron A All Sg$
+^t‰llaiselta,t‰llainen Pron A Abl Sg$
+^t‰llaisen,t‰llainen Pron A Gen Sg$
+^t‰llaisena,t‰llainen Pron A Ess Sg$
+^t‰llaisessa,t‰llainen Pron A Ine Sg$
+^t‰llaisesta,t‰llainen Pron A Ela Sg$
+^t‰llaiset,t‰llainen Pron A Nom Pl$
+^t‰llaisetta,t‰llainen Pron A Abe Sg$
+^t‰llaisia,t‰llainen Pron A Par Pl$
+^t‰llaisien,t‰llainen Pron A Gen Pl$
+^t‰llaisiin,t‰llainen Pron A Ill Pl$
+^t‰llaisiksi,t‰llainen Pron A Tra Pl$
+^t‰llaisilla,t‰llainen Pron A Ade Pl$
+^t‰llaisille,t‰llainen Pron A All Pl$
+^t‰llaisilta,t‰llainen Pron A Abl Pl$
+^t‰llaisin,t‰llainen Pron A Ins Pl$
+^t‰llaisina,t‰llainen Pron A Ess Pl$
+^t‰llaisine,t‰llainen Pron A Com$
+^t‰llaisissa,t‰llainen Pron A Ine Pl$
+^t‰llaisista,t‰llainen Pron A Ela Pl$
+^t‰llaisitta,t‰llainen Pron A Abe Pl$
+^t‰llaista,t‰llainen Pron A Par Sg$
+^t‰llaisten,t‰llainen Pron A Gen Pl$
+^t‰lle,t‰m‰ Pron Dem All Sg$
+^t‰ll‰,t‰m‰ Pron Dem Ade Sg$
+^t‰lt‰,t‰m‰ Pron Dem Abl Sg$
+^t‰m‰,t‰m‰ Pron Dem Nom Sg$
+^t‰m‰n,t‰m‰ Pron Dem Gen Sg$
+^t‰n‰,t‰m‰ Pron Dem Ess Sg$
+^t‰ss‰,t‰m‰ Pron Dem Ine Sg
+^t‰st‰,t‰m‰ Pron Dem Ela Sg
+^t‰t,t‰m‰ Pron Dem Nom Pl$
+^t‰tt‰,t‰m‰ Pron Dem Abe Sg$
+^t‰t‰,t‰m‰ Pron Dem Par Sg$
+^t‰‰,t‰‰ Pron Dem$
+^usea,usea Pron Qnt Nom Sg$
+^useaa,usea Pron Qnt Par Sg$
+^useaan,usea Pron Qnt Ill Sg$
+^useain,usea Pron Qnt Gen Pl$
+^useaksi,usea Pron Qnt Tra Sg$
+^usealla,usea Pron Qnt Ade Sg$
+^usealle,usea Pron Qnt All Sg$
+^usealta,usea Pron Qnt Abl Sg$
+^useammaksi,useampi Pron Tra Sg$
+^useammalla,useampi Pron Ade Sg$
+^useammalle,useampi Pron All Sg$
+^useammalta,useampi Pron Abl Sg$
+^useammassa,useampi Pron Ine Sg$
+^useammasta,useampi Pron Ela Sg$
+^useammat,useampi Pron Nom Pl$
+^useammatta,useampi Pron Abe Sg$
+^useammiksi,useampi Pron Tra Pl$
+^useammilla,useampi Pron Ade Pl$
+^useammille,useampi Pron All Pl$
+^useammilta,useampi Pron Abl Pl$
+^useammin,useampi Pron Ins Pl$
+^useammissa,useampi Pron Ine Pl$
+^useammista,useampi Pron Ela Pl$
+^useammitta,useampi Pron Abe Pl$
+^useampaa,useampi Pron Par Sg$
+^useampaan,useampi Pron Ill Sg$
+^useampain,useampi Pron Gen Pl$
+^useampana,useampi Pron Ess Sg$
+^useampi,useampi Pron Nom Sg$
+^useampia,useampi Pron Par Pl$
+^useampien,useampi Pron Gen Pl$
+^useampiin,useampi Pron Ill Pl$
+^useampina,useampi Pron Ess Pl$
+^useampine,useampi Pron Com$
+^useana,usea Pron Qnt Ess Sg$
+^useassa,usea Pron Qnt Ine Sg$
+^useasta,usea Pron Qnt Ela Sg$
+^useat,usea Pron Qnt Nom Pl$
+^useatta,usea Pron Qnt Abe Sg$
+^useiden,usea Pron Qnt Gen Pl$
+^useihin,usea Pron Qnt Ill Pl$
+^useiksi,usea Pron Qnt Tra Pl$
+^useilla,usea Pron Qnt Ade Pl$
+^useille,usea Pron Qnt All Pl$
+^useilta,usea Pron Qnt Abl Pl$
+^useimma,usein Pron$
+^useimmaksi,usein Pron Tra Sg$
+^useimmalla,usein Pron Ade Sg$
+^useimmalle,usein Pron All Sg$
+^useimmalta,usein Pron Abl Sg$
+^useimmassa,usein Pron Ine Sg$
+^useimmasta,usein Pron Ela Sg$
+^useimmat,usein Pron Nom Pl$
+^useimmiksi,usein Pron Tra Pl$
+^useimmilla,usein Pron Ade Pl$
+^useimmille,usein Pron All Pl$
+^useimmilta,usein Pron Abl Pl$
+^useimmin,usein Pron Ins Pl$
+^useimmissa,usein Pron Ine Pl$
+^useimmista,usein Pron Ela Pl$
+^useimmitta,usein Pron Abe Pl$
+^useimpaan,usein Pron Ill Sg$
+^useimpain,usein Pron Gen Pl$
+^useimpana,usein Pron Ess Sg$
+^useimpia,usein Pron Par Pl$
+^useimpien,usein Pron Gen Pl$
+^useimpiin,usein Pron Ill Pl$
+^useimpina,usein Pron Ess Pl$
+^useimpine,usein Pron Com$
+^usein,usea Pron Qnt Ins Pl
+^usein,usein Pron Nom Sg$
+^useina,usea Pron Qnt Ess Pl$
+^useine,usea Pron Qnt Com$
+^useinta,usein Pron Par Sg$
+^useinten,usein Pron Gen Pl$
+^useisiin,usea Pron Qnt Ill Pl$
+^useissa,usea Pron Qnt Ine Pl$
+^useista,usea Pron Qnt Ela Pl$
+^useita,usea Pron Qnt Par Pl$
+^useitta,usea Pron Qnt Abe Pl$
+^useitten,usea Pron Qnt Gen Pl$
+^yks,yks Pron Qnt$
+^yksik‰‰n,yksik‰‰n Pron Qnt$

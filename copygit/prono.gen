@@ -1,0 +1,51 @@
+Checking whether the transducer accepts a single blank as a word...
+Transducer successfully loaded
+
+^minä/mikä Pron Interr Ess Sg/mikä Pron Rel Ess Sg/minä Pron Pers Nom Sg$
+^me/me Pron Pers Nom Pl$
+^sinä/se Pron Dem Ess Sg/sinä Pron Pers Nom Sg$
+^te/te Pron Pers Nom Pl$
+^hän/hän Pron Pers Nom Sg$
+^he/he Interj/he Pron Pers Nom Pl$
+
+^tämä/tämä Pron Dem Nom Sg$
+^nämä/nämä Pron Dem Nom Pl$
+^tuo/tuoda V Impv Act Sg2/tuoda V Prs Act ConNeg/tuoda V Prs Act Sg3$
+^nuo/nuo Pron Dem Nom Pl$
+^se/se Pron Dem Nom Sg$
+^ne/ne Pron Dem Nom Pl$
+
+^itse/itse/itse Pron Refl Nom Sg$
+
+^muu/muu A Pos Nom Sg/muu Interj/muu Pron Qnt Nom Sg$
+^jompikumpi/*jompikumpi$
+^kaikki/kaikki Pron Qnt Nom Sg$
+^kumpikin/kumpi Pron Interr Nom Sg Foc_kin$
+^kumpikaan/kumpi Pron Interr Nom Sg Foc_kAAn$
+^kumpainenkaan/kumpainen Pron A Nom Sg Foc_kAAn$
+^kukin/kuki N Gen Sg/kukin Pron Qnt Nom Sg/kukka N Ins Pl/kukkia V Prs Act Sg1/kukkia V Pst Act Sg1$
+^kukaan/kukaan Pron Qnt Nom Sg$
+^mikin/mikki N Gen Sg$
+^mikään/mikään Pron Qnt Nom Sg$
+^eräs/eräs Pron Qnt Indef Nom Sg$
+^joku/joku Pron Qnt Indef Nom Sg$
+^jokin/jokin Pron Qnt Indef Nom Sg$
+^moni/moni Pron Qnt Nom Sg$
+^mones/mones Pron Interr Nom Sg$
+^molemmat/molempi N Nom Pl$
+^usea/usea A Pos Nom Sg/usea Pron Qnt Nom Sg$
+^jokainen/jokainen Pron Qnt Nom Sg$
+^toinen/toinen N Nom Sg/toinen Num Ord Nom Sg/toinen Ord#/toinen Pron Nom Sg$
+^muutama/muutama Pron Qnt Nom Sg$
+^sama/sama Pron Qnt Nom Sg$
+^yksi/yksi Num Nom Sg/yksi#$
+
+^kuka/kuka Pron Interr Nom Sg$
+^kumpainen/kumpainen Pron A Nom Sg$
+^kumpi/kumpi Pron Interr Nom Sg$
+^mikä/mikä Pron Interr Nom Sg/mikä Pron Rel Nom Sg$
+
+^joka/joka/joka Pron Qnt Indef Nom Sg/joka Pron Rel Nom Sg$
+^mikä/mikä Pron Interr Nom Sg/mikä Pron Rel Nom Sg$
+
+Got None/EOF symbol; done.

@@ -6,7 +6,7 @@ procedure tsanasto.luekaikki;
     //vloput:=lueverbiloput('vmids.csv');
     lueverbisijat('vsijat.csv');
     protolist:=lueverbiprotot('vmids.csv');
-    for i:=1 to 80 do begin lks[i].kot:=i;lks[i].vahva:=i in [1..30,52..65];end;
+    for i:=1 to 80 do begin lks[i].kot:=i;lks[i].vahva:=i in [1..30,52..65,76];end;
     for i:=1 to 27 do    //verbiluokat
     begin
      lk:=lks[i+51];
@@ -39,6 +39,9 @@ procedure tsanasto.luekaikki;
 
      end;
     end;
+    luepronsijat('prono.csv');
+    writeln('lueprono valmis');
+  //  exit;
     luesanat('uuskaavas.lst');
     // for i:=1 to 48 do begin writeln(nluokkasijat[i,1].lisuke,@lks[i]=(nluokkasijat[i,1].luokka),' ');end;
     writeln('luesanat valmis');
@@ -54,6 +57,50 @@ procedure tsanasto.luekaikki;
     }
 end;
 
+
+procedure tsanasto.luepronsijat(fn:string);  //hanskaa samalla sijojen luonti luettavat sisuskalut on 1/1 sijoihin (todin kuin verbeillä, joilla on "protot")
+var i,j,num:integer;
+ slist,mlist:tstringlist; sps:word;
+ akon,runk:string; eiet,eitak:boolean;
+ begin
+  slist:=tstringlist.create;
+  slist.loadfromfile(fn);//'nmids.csv');
+  writeln('<li>luepronomitin',slist.Count);
+  mlist:=tstringlist.create;
+  mlist.delimiter:=' ';
+  for i:=0 to slist.count-1 do
+  begin
+    try
+    mlist.delimitedtext:=slist[i];
+    runk:=mlist[1];
+    akon:='';
+    //writeln('<li>',mlist.CommaText);
+    while (runk<>'') and (pos(runk[1],konsonantit)>0) do begin akon:=runk[1]+akon;delete(runk,1,1);end;
+    runk:=voktakarev(runk,eiet,eitak);
+    pronot[i].etuv:=not(eiet);
+    pronot[i].lemma:=mlist[0];
+    for j:=2 to mlist.count-1 do  pronot[i].lisukkeet[j-2]:=ifs(mlist[j]='.','',reversestring(taka(mlist[j])));
+    //for j:=2 to mlist.count-1 do  pronot[i].lisukkeet[j-2]:=reversestring(taka(mlist[j]));
+    except writeln('<li>failpron:',i,'#',j);end;
+    pronot[i].runko:=runk;
+    pronot[i].alkon:=akon;
+    //writeln('<li>',mlist[0],'/',pronot[i].runko,'.',pronot[i].alkon,' ::');
+    //for j:=0 to 33 do writeln(pronot[i].lisukkeet[j]);
+   end;
+  writeln('<li>pronominitluettu:<ul>');
+  exit;
+  for i:=0 to slist.count-1 do
+  begin
+    writeln('<li>','[',pronot[i].runko,']',pronot[i].alkon,':<b>',reversestring(ifs(pronot[i].etuv,etu(pronot[i].runko),pronot[i].runko)+pronot[i].ALKON),'</b>:::') ;
+    for j:=0 to 33 do
+    begin
+      if pronot[i].lisukkeet[j]<>'!' then
+      write('('+reversestring(nsijat[j].ending+''+pronot[i].lisukkeet[j]+''+pronot[i].runko+pronot[i].alkon),') ');
+    end;
+
+  end;
+end;
+
 procedure tsanasto.lueverbisijat(fn:string);
 var i,j:integer;
  vheikot,hheikot,vvahvat,hvahvat:string;
@@ -65,6 +112,7 @@ begin
  slist:=tstringlist.create;
  tl:=tstringlist.create;
  slist.loadfromfile(fn);//'vsijat.csv');
+ slist.loadfromfile('vsijat.csv');
  for i:=0 to slist.count-1 do     // 0..65
  begin
    tl.commatext:=slist[i];
@@ -78,11 +126,12 @@ begin
    vsijat[i].onverbi:=true;
    vsijat[i].name:=vsijanimet[num];
    vsijat[i].esim:=vsijaesim[num];
-   //writeln('<li>',i,':<b>',vsijat[i].vparad,'</b> ',slist[i],' /// ',vsijanimet[i],' ;',vsijaesim[i]);
+   //writeln('<li>',i,':<b>',vsijat[i].ending,'</b> ',slist[i],' /// ',vsijanimet[i],' ;',vsijaesim[i]);
  end;
  slist.free;
  tl.free;
  writeln('VERBItLUEttu,',fn);
+
 end;
 
 constructor tluokkasija.create(var lka:tlka;var sij:tsija;tpl:string);
@@ -164,18 +213,21 @@ var i,j,num:integer;
    end;
   writeln('nominitluettu');
   result:=slist;
+
   for i:=0 to 33 do
   begin
    nsijat[i].num:=i;
+   //writeln('<li>',i,')',vsijat[0].ending,'!');
    nsijat[i].ending:=reversestring(nendings[i]);
+   //writeln('<li>',i,')',vsijat[0].ending,'!');
    nsijat[i].esim:=nsijesims[i];
    nsijat[i].name:=nsijnams[i];
    nsijat[i].onverbi:=false;
    nsijat[i].vv:= (i in nvahvanvahvat);
    nsijat[i].hv:=not (i in nheikonheikot);
   end;
+  //for i:=0 to 66 do   writeln('<li>',i,')',vsijat[i].ending,'!');
 end;
-
 FUNCTION tsanasto.GETLUOKKASIJA(LK,SIJ:WORD):tluokkasija;
 begin
      try

@@ -5,7 +5,7 @@
 52  ;sanoa           ,               ,                ,                ,*               ,t               ,n               ,                ,t               ,                ,                ,                
 53  ;sulaa           ,a              ,a               ,a               ,aa              ,et              ,an              ,                ,et              ,a               ,a               ,a               
 54  ;huutaa          ,a              ,a               ,a               ,aa              ,et              ,an              ,s_              ,et              ,a               ,a               ,a               
-55  ;soutaa          ,a              ,a               ,a               ,aa              ,et              ,an              ,/s_              ,et              ,a               ,a               ,a               
+55  ;soutaa          ,a              ,a               ,a               ,aa              ,et              ,an              ,s_/              ,et              ,a               ,a               ,a               
 56  ;jauhaa          ,a              ,a               ,a               ,aa              ,et              ,an              ,o               ,et              ,a               ,a               ,a               
 57  ;kaataa          ,a              ,a               ,a               ,aa              ,et              ,an              ,o/s_               ,et              ,a               ,a               ,a               
 58  ;laskea          ,e              ,e               ,e               ,ee              ,et              ,en              ,                ,et              ,i               ,                ,e               
@@ -23,9 +23,9 @@
 70  ;juosta          ,st             ,kse             ,kse             ,ksee            ,st              ,ss              ,ks              ,s               ,st             ,ks              ,kse             
 71  ;nähdä           ,hd             ,e               ,e               ,kee             ,hd              ,hn              ,               ,h               ,hd             ,k               ,ke               
 72  ;vanheta         ,t              ,ne              ,ne              ,nee             ,t               ,nn              ,n               ,t               ,t              ,n               ,ne              
-73  ;niiata          ,t              ,a               ,a               ,a               ,t               ,nn              ,s               ,t               ,t              ,                ,a               
+73  ;niiata          ,t              ,a               ,a               ,a               ,t               ,nn              ,s               ,t               ,t              ,                ,t               
 74  ;katketa         ,t              ,a               ,a               ,aa              ,t               ,nn              ,s               ,t               ,t              ,a               ,a               
 75  ;nimetä          ,t              ,a               ,a               ,aa              ,t               ,nn              ,s               ,t               ,t              ,a               ,a               
-76  ;taitaa          ,a              ,a               ,a               ,aa              ,et              ,an              ,s_              ,et              ,a              ,a               ,a               
+76  ;taitaa          ,a              ,a               ,a               ,aa              ,et             ,an/nn_           ,s_              ,et              ,a              ,a               ,a               
 77  ;kumajaa         ,aja            ,!               ,!               ,ajaa            ,!               ,!               ,aj              ,!               ,!              ,aja            ,aja               
 78  ;kaikaa          ,a              ,!               ,!               ,!               ,!               ,!                ,!              ,!               ,!              ,               ,!               
