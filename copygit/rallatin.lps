@@ -7,18 +7,18 @@
       <Unit0>
         <Filename Value="rallatin.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="40"/>
-        <CursorPos X="106" Y="64"/>
+        <TopLine Value="37"/>
+        <CursorPos X="31" Y="57"/>
         <UsageCount Value="212"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="ralla.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="894"/>
-        <CursorPos X="159" Y="922"/>
+        <TopLine Value="803"/>
+        <CursorPos X="32" Y="818"/>
+        <FoldState Value=" T0@D3{^1L"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
@@ -33,32 +33,33 @@
         <Filename Value="rallautils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
-        <CursorPos X="18" Y="9"/>
+        <CursorPos Y="54"/>
         <UsageCount Value="212"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="sanasto.inc"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="99"/>
-        <CursorPos X="33" Y="164"/>
+        <TopLine Value="16"/>
+        <CursorPos X="35" Y="34"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="vanhapas/vanhariimiutils.pas"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="269"/>
-        <CursorPos X="12" Y="314"/>
+        <TopLine Value="513"/>
+        <CursorPos Y="546"/>
         <UsageCount Value="113"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="vanhapas/vanhariimiuus.pas"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="1248"/>
-        <CursorPos Y="1197"/>
+        <TopLine Value="509"/>
+        <CursorPos Y="532"/>
         <UsageCount Value="110"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -67,141 +68,141 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="296"/>
         <CursorPos Y="329"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="38"/>
       </Unit6>
       <Unit7>
         <Filename Value="vanhapas/nominit.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos Y="68"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="38"/>
       </Unit7>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="ralla.pas"/>
-        <Caret Line="849" Column="27" TopLine="834"/>
+        <Caret Line="718" Column="37" TopLine="694"/>
       </Position1>
       <Position2>
         <Filename Value="ralla.pas"/>
-        <Caret Line="848" Column="34" TopLine="843"/>
+        <Caret Line="784" Column="4" TopLine="745"/>
       </Position2>
       <Position3>
         <Filename Value="ralla.pas"/>
-        <Caret Line="853" Column="28" TopLine="843"/>
+        <Caret Line="780" Column="22" TopLine="759"/>
       </Position3>
       <Position4>
         <Filename Value="ralla.pas"/>
-        <Caret Line="877" Column="64" TopLine="843"/>
+        <Caret Line="783" Column="11" TopLine="759"/>
       </Position4>
       <Position5>
         <Filename Value="ralla.pas"/>
-        <Caret Line="895" Column="49" TopLine="861"/>
+        <Caret Line="777" TopLine="740"/>
       </Position5>
       <Position6>
         <Filename Value="ralla.pas"/>
-        <Caret Line="909" Column="49" TopLine="875"/>
+        <Caret Line="784" Column="38" TopLine="763"/>
       </Position6>
       <Position7>
         <Filename Value="ralla.pas"/>
-        <Caret Line="776" Column="56" TopLine="755"/>
+        <Caret Line="68" Column="21" TopLine="47"/>
       </Position7>
       <Position8>
         <Filename Value="ralla.pas"/>
-        <Caret Line="822" Column="51" TopLine="789"/>
+        <Caret Line="784" Column="38" TopLine="763"/>
       </Position8>
       <Position9>
         <Filename Value="ralla.pas"/>
-        <Caret Line="662" TopLine="651"/>
+        <Caret TopLine="7"/>
       </Position9>
       <Position10>
         <Filename Value="ralla.pas"/>
-        <Caret Line="768" Column="70" TopLine="733"/>
+        <Caret Line="784" Column="42" TopLine="763"/>
       </Position10>
       <Position11>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="882" Column="57" TopLine="861"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="70" Column="25"/>
       </Position11>
       <Position12>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="920" Column="113" TopLine="894"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="63" Column="14" TopLine="42"/>
       </Position12>
       <Position13>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="838" Column="43" TopLine="830"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="65" Column="34" TopLine="43"/>
       </Position13>
       <Position14>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="879" Column="43" TopLine="901"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="253" Column="25" TopLine="251"/>
       </Position14>
       <Position15>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="865" Column="20" TopLine="850"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="53" TopLine="35"/>
       </Position15>
       <Position16>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="914" Column="16" TopLine="873"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="3" Column="28"/>
       </Position16>
       <Position17>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="584" TopLine="560"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="50" Column="4" TopLine="38"/>
       </Position17>
       <Position18>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="770" Column="21" TopLine="735"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="52" Column="30" TopLine="38"/>
       </Position18>
       <Position19>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="777" Column="33" TopLine="742"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="269" Column="22" TopLine="211"/>
       </Position19>
       <Position20>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="858" Column="17" TopLine="858"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="50" Column="4" TopLine="29"/>
       </Position20>
       <Position21>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="882" Column="57" TopLine="861"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="268" TopLine="238"/>
       </Position21>
       <Position22>
         <Filename Value="ralla.pas"/>
-        <Caret Line="919" Column="144" TopLine="887"/>
+        <Caret Line="781" Column="39" TopLine="763"/>
       </Position22>
       <Position23>
         <Filename Value="ralla.pas"/>
-        <Caret Line="815" Column="64" TopLine="792"/>
+        <Caret Line="695" Column="27" TopLine="673"/>
       </Position23>
       <Position24>
         <Filename Value="ralla.pas"/>
-        <Caret Line="860" Column="101" TopLine="843"/>
+        <Caret Line="951" Column="26" TopLine="939"/>
       </Position24>
       <Position25>
         <Filename Value="ralla.pas"/>
-        <Caret Line="872" TopLine="861"/>
+        <Caret Line="770" Column="20" TopLine="759"/>
       </Position25>
       <Position26>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="922" Column="32" TopLine="899"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="61" Column="37" TopLine="40"/>
       </Position26>
       <Position27>
         <Filename Value="ralla.pas"/>
-        <Caret Line="850" Column="40" TopLine="842"/>
+        <Caret Line="817" Column="78" TopLine="805"/>
       </Position27>
       <Position28>
         <Filename Value="ralla.pas"/>
-        <Caret Line="878" TopLine="849"/>
+        <Caret Line="811" Column="10" TopLine="793"/>
       </Position28>
       <Position29>
         <Filename Value="ralla.pas"/>
-        <Caret Line="815" Column="57" TopLine="756"/>
+        <Caret Line="818" Column="66" TopLine="797"/>
       </Position29>
       <Position30>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="920" Column="139" TopLine="894"/>
+        <Filename Value="sanasto.inc"/>
+        <Caret Line="37" Column="36" TopLine="91"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <Watches Count="3">
+    <Watches Count="4">
       <Item1>
         <Expression Value="ienta"/>
       </Item1>
@@ -211,6 +212,9 @@
       <Item3>
         <Expression Value="if"/>
       </Item3>
+      <Item4>
+        <Expression Value="'/x:'"/>
+      </Item4>
     </Watches>
   </Debugging>
 </CONFIG>

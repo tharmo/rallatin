@@ -48,7 +48,10 @@ begin
    begin
      writeln('hauhau:</pre>');
      sanasto:=tsanasto.create;
+     writeln('VITUNKAAVAT');
+     //sanasto.luokaavat;
      //sanasto.haelista;
+     writeln('LISTAAV');
      sanaSTO.listaa;
      sanasto.free;
    end;
@@ -61,7 +64,7 @@ begin
   end;
   { add your program here }
   // stop program loop
-   except writeln('!!!vitunpronominit');end;
+   except writeln('!!!failkaikki');end;
   Terminate;
 end;
 
