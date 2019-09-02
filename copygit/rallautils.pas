@@ -71,10 +71,12 @@ function takax(st:string;var x:word):string;
      if s='y' then result:='u'  else result:=s;
   end;
  begin
+    write(st);
   x:=1;
   result:='';
   for i:=1 to length(st) do st[i]:=c(st[i]);
   result:=st;
+  writeln(x);
  end;
 
 

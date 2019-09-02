@@ -29,7 +29,7 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <Units Count="4">
+    <Units Count="5">
       <Unit0>
         <Filename Value="rallatin.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -46,6 +46,11 @@
         <Filename Value="sanasto.inc"/>
         <IsPartOfProject Value="True"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="vanhapas/varalla.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="vanhapas"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

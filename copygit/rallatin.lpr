@@ -49,7 +49,8 @@ begin
      writeln('hauhau:</pre>');
      sanasto:=tsanasto.create;
      writeln('VITUNKAAVAT');
-     //sanasto.luokaavat;
+     sanasto.luokaavat;
+
      //sanasto.haelista;
      writeln('LISTAAV');
      sanaSTO.listaa;

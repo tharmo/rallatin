@@ -52,7 +52,7 @@ procedure tsanasto.luekaikki;
    WRITELN('NOMINIT LUIETTU',nomsijat.count);
     for i:=1 to 49 do    //nominiluokat
     begin
-     writeln('<li>nom:',i,': ');
+     //writeln('<li>nom:',i,': ');
      lk:=lks[i];
       for j:=0 to 33 do
       begin
@@ -69,7 +69,7 @@ procedure tsanasto.luekaikki;
 //!    luepronsijat('prono.csv');
 //!    writeln('lueprono valmis');
   // luokaavat;
-    luesanat('uuskaavas2.lst');
+    luesanat('uuskaavas3.lst');
     // for i:=1 to 48 do begin writeln(nluokkasijat[i,1].lisuke,@lks[i]=(nluokkasijat[i,1].luokka),' ');end;
     writeln('luesanat valmis. VALMIS');
 
