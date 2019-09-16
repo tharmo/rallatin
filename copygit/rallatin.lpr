@@ -48,13 +48,15 @@ begin
    begin
      writeln('hauhau:</pre>');
      sanasto:=tsanasto.create;
-     writeln('VITUNKAAVAT');
-     sanasto.luokaavat;
-
-     //sanasto.haelista;
+     //sanasto.luokaavat;
+     //terminate;exit;
+     //sanasto.pikakelaa;
+     writeln('<li>luotu.');
+     sanasto.haelista;
      writeln('LISTAAV');
-     sanaSTO.listaa;
+     //sanaSTO.listaa;
      sanasto.free;
+     terminate;exit;
    end;
   if paramstr(1)='pronominit' then
   begin

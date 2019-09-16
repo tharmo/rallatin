@@ -1,5 +1,23 @@
 
-procedure tsanasto.luekaikki;
+procedure tsanasto.lueADVERBIT;
+var ads:tstringlist;i:word;oord:integer;
+begin
+ adverbit:=tstringlist.create;
+ ads:=tstringlist.create;
+ writeln('adverbit.lst');
+ ads.loadfromfile('adv.nn');
+  adverbit.sorted:=true;
+ for i:=0 to ads.count-1 do
+  adverbit.add(reversestring(copy(ads[i],1,pos(' ',ads[i])-1)));
+ writeln('adverbit.lst');
+ for i:=8880 to ads.count-1 do
+ begin
+  oord:=adverbit.indexof(reversestring(ads[i]));
+  writeln(adverbit[i]);
+  //writeln(reversestring(adverbit[oord]),oord);
+ end;
+end;
+  procedure tsanasto.luekaikki;
  var i,j:integer;protolist,nomsijat,rlist:tstringlist;tpl,line:string; proto:byte;lk:tlka;testlk,t2:^tlka;si:tsija;
   function p12(st:string):string;
   begin
@@ -8,6 +26,7 @@ procedure tsanasto.luekaikki;
  begin
     //nloput:=luenominiloput('nommuodot.csv');
     //vloput:=lueverbiloput('vmids.csv');
+     luEADVERBIT;
    protolist:=lueverbiprotot('vmids.csv');
     lueverbisijat('vsijat.csv',protolist);
     writeln('LUEKAKKI');
@@ -60,19 +79,18 @@ procedure tsanasto.luekaikki;
         si:=nsijat[j];
        //if lk.vahva then proto:=si.vparad else proto:=si.hparad;
        tpl:=tstringlist(nomsijat.objects[i])[j];
-       if j in [0,1,2,11,12,13,15,20..33] then writeln(j,tpl);
+       //if j in [0,1,2,11,12,13,15,20..33] then writeln(j,tpl);
        except tpl:='?'+inttostr(i)+'\\\\'+inttostr(j);end;
        nluokkasijat[i,j]:=tluokkasija.create(lks[i],nsijat[j],reversestring(tpl));
        //if j=0 then writeln('!!!',i,' ',nluokkasijat[i,j].lisuke,' ');
      end;
     end;
-//!    luepronsijat('prono.csv');
-//!    writeln('lueprono valmis');
+    luepronsijat('prono.csv');
+    writeln('lueprono valmis');
   // luokaavat;
-    luesanat('uuskaavas3.lst');
+    luesanat('uuskaavas4.lst');
     // for i:=1 to 48 do begin writeln(nluokkasijat[i,1].lisuke,@lks[i]=(nluokkasijat[i,1].luokka),' ');end;
-    writeln('luesanat valmis. VALMIS');
-
+    writeln('luesanat valmis. VALMIS... pikakelaus');
     //readbin;
     {writeln('<h1>testaaa</h1>');
     nluokkasijat[1,1].luokka:=@lks[1];
@@ -83,7 +101,53 @@ procedure tsanasto.luekaikki;
      //writeln('<li>',lks[1].esim,' /',testlk^.esim,'!');
     }
 end;
+procedure tsanasto.pikakelaa;  //luettele sanat  .. t‰st‰ tehd‰‰n uus haku
+var lk,vo,ko,sa,lkn,von,kon:word;//lks,vos,kos,sas:string;
+  lksi:tluokkasija;vahva,nomore:boolean;thisko,prevko:string;
+  procedure uuslka;
+  begin
+     lkn:=siss[von].lklka;
+     vahva:= lks[lkn].vahva;
+     lksi:=getluokkasija(lkn,0);
+     writeln('<li>',lkn,' (',lksi.lisuke,'(::');
 
+  end;
+  procedure uusvok;
+  begin
+    von:=kons[kon].voklka;
+    if siss[von].lklka<>lkn then uuslka ;
+    writeln('<b style="color:red">[',siss[von].sis,']','</b>');
+  end;
+  procedure uuskon;
+  begin
+    kon:=rungot[sa].konlka;
+    if kons[kon].v=kons[kon].h then thisko:='xx' else
+    thisko:=kons[kon].v+kons[kon].h;
+    if kons[kon].voklka<>von then uusvok;// else nomore:=true;
+    if kons[kon].v<>kons[kon].h then writeln('<b>[',kons[kon].v,kons[kon].h,']</b>') else writeln('');
+    nomore:=false;
+
+    //if sa<kons[kon].ekasana+1 then conti
+  end;
+ {  lks:array[0..80] of tlka;
+ siss:array[0..2047] of tloppuvoks;
+ kons:array[0..2047] of tkonso;
+ rungot:array[0..65535] of trunko;}
+
+begin
+ //for kon:=0 to 100 do writeln(kon,kons[kon].v,kons[kon].h,kons[kon].voklka);
+
+  lkn:=0;von:=0;kon:=0;nomore:=false;
+for sa:=1 to scount do
+   begin
+     if rungot[sa].konlka<>kon then uuskon ;
+     //f sa<kons[kon].ekasana+1 then
+     if not nomore then
+     writeln( rungot[sa].akon,reversestring(lksi.lisuke+siss[von].sis+ifs(vahva,kons[kon].v,kons[kon].h)+''+rungot[sa].san));//,rungot[sa].konlka);
+     if thisko=prevko then nomore:=true;
+     prevko:=thisko;
+   end;
+end;
 
 procedure tsanasto.luepronsijat(fn:string);  //hanskaa samalla sijojen luonti luettavat sisuskalut on 1/1 sijoihin (todin kuin verbeill‰, joilla on "protot")
 var i,j,num:integer;

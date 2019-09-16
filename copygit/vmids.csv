@@ -2,7 +2,7 @@
             , kehua       ,kehu        ,kehuu       ,kehuta      ,kehunee     ,kehui       ,kehuttu     ,kehuen      ,kehuisi     ,
             ,V Inf1 Lat  ,V Impv Act S,V Prs Act Sg,V Prs Pass C,V Pot Act Sg,V Pst Act Sg,V Pst Pass C,V Inf2 Act I,V Cond Act S,AgPrc Pos No,
             ,a           ,            ,t           ,a           ,ee          ,i           ,tu          ,en          ,isi         ,ma          ,ma
-52  ;sanoa  ,            ,            ,            ,t           ,n           ,            ,t           ,            ,            ,            ,
+52  ;sanoa  ,            ,            ,*            ,t           ,n           ,            ,t           ,            ,            ,            ,
 53  ;sulaa  ,a           ,a           ,a           ,et          ,an          ,            ,et          ,a           ,a           ,a           ,a
 54  ;huutaa ,a           ,a           ,a           ,et          ,an          ,s_          ,et          ,a           ,a           ,a           ,a
 55  ;soutaa ,a           ,a           ,a           ,et          ,an          ,s_/         ,et          ,a           ,a           ,a           ,a

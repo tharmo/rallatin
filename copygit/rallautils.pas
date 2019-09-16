@@ -10,10 +10,10 @@ const vahvatluokat=[1..31,52..63,76];
 const rimis=64;
 type string31=string[31];
 type tlka=record esim:string;kot,ekasis,vikasis:word;vahva:boolean;vikasana:word;xtav:byte;end;
-type tloppuvoks=record ekaav,vikaav:word;sis:string[8];vikasana,lk:word;end;
+type tloppuvoks=record ekaav,vikaav:word;sis:string[8];vikasana,lklka:word;end;
+type tkonso=record ekasana,vikasana,voklka:word;h,v,av:string[1];end;  //lisää viekä .takia - se josta etuvokaalit alkavat     .. ehkä, nyt ei sortattu
 type trunko=record san:string[15];akon:string[4];takavok:boolean;konlka:word;koko:string;tavus:byte;end;
 //type tsan=record san:string[15];akon:string[4];takavok:boolean;av:word;end;
-type tkonso=record ekasana,takia,vikasana,sis:word;h,v,av:string[1];end;  //lisää viekä .takia - se josta etuvokaalit alkavat
 const konsonantit ='bcdfghjklmnpqrstvwxz'''; vokaalit='aeiouyäö';
 const pronexamples:array[1..18] of string=('minä','me','sinä','te','hän','he',    'tämä','nämä','tuo','nuo','se','ne',  'itse','jompikumpi','joku','kuka','mikä','joka');
 const prontypes:array[1..18] of string=('Pers','Pers','Pers','Pers','Pers','Pers','Dem', 'Den', 'Dem','Dem','Dem','Dem','Refl',       'Qnt','','Inter','Inter','Rel');
@@ -31,8 +31,8 @@ const
 //vvahvanheikot =[5,6,7,8,9,10,13,14,15,24,25,26,27,29,30,31,32,33,34,35,36];
 //vheikonheikot=[0,1,2,3,4,13,14,15,16,17,18,19,20,21,22,29,30,31,32,33,34,35,36,37,38,62,63,64,65];
 vsijanimet:array[0..66] of ansistring =
-  ('V Inf1 Lat ','V Inf1 Act Tra Sg PxPl1 ','V Inf1 Act Tra Sg PxSg1 ','V Inf1 Act Tra Sg PxPl2 ','V Inf1 Act Tra Sg PxSg2 ','V Impv Act Sg2 ','V Prs Act ConNeg ','V Prs Act Pl1 ','V Prs Act Sg1 ','V Prs Act Sg2 ','V Prs Act Pl2 ','V Prs Act Pl3 ','V Prs Act Sg3 ','V Prs Pass ConNeg ','V Prs Pass Pe4 ','PrfPrc Pass Pos Nom Pl ','V Pot Act Sg3 ','V Pot Act Pl1 ','V Pot Act Sg1 ','V Pot Act Sg2 ','V Pot Act Pl2 ','V Pot Act Pl3 ','PrfPrc Act Pos Nom Sg ','V Pst Act Sg3 ','V Pst Act Pl1 ','V Pst Act Sg1 ','V Pst Act Sg2 ','V Pst Act Pl2 ','V Pst Act Pl3 ','V Inf2 Pass Ine ','V Cond Pass Pe4 ','V Impv Pass Pe4 ','V Inf3 Pass Ins ','V Pot Pass Pe4 ','PrsPrc Pass Pos Nom Sg ','V Pst Pass Pe4 ','V Pst Pass ConNeg ','V Inf2 Act Ins ','V Inf2 Act Ine Sg ','V Cond Act Sg3 ','V Cond Act Pl1 ','V Cond Act Sg1 ','V Cond Act Sg2 ','V Cond Act Pl2 ','V Cond Act Pl3 ','AgPrc Pos Nom Sg ','AgPrc Pos Ill Sg ','V Act Inf5 Px3 ','V Act Inf5 PxPl1 ','V Act Inf5 PxSg1 ','V Act Inf5 PxPl2 ','V Act Inf5 PxSg2 ','V Inf3 Ade ','V Inf3 Man ','V Inf3 Ine ','V Inf3 Ela ','V Inf3 Abe ','V N Nom Sg ','V N Par Sg ','V N Par Sg ','PrsPrc Act Pos Nom Sg ','PrsPrc Act Pos Nom Pl ','V Impv Act Pl2 ','V Impv Act Pl1 ','V Impv Act Sg3','V Impv Act Pl3','V Act Inf5 Px3 ');
-vsijaesim:array[0..66] of ansistring = ('kehua','kehuaksemme','kehuakseni','kehuaksenne','kehuaksesi','kehu',{'VIRHE',}'kehu','kehumme','kehun','kehut','kehutte','kehuvat','kehuu','kehuta','kehutaan','kehutut','kehunee','kehunemme','kehunen','kehunet','kehunette','kehunevat','kehunut','kehui','kehuimme','kehuin','kehuit','kehuitte','kehuivat','kehuttaessa','kehuttaisiin','kehuttakoon','kehuttaman','kehuttaneen','kehuttava','kehuttiin','kehuttu','kehuen','kehuessa','kehuisi','kehuisimme','kehuisin','kehuisit','kehuisitte','kehuisivat','kehuma','kehumaan','kehumaisillaan','kehumaisillamme','kehumaisillani','kehumaisillanne','kehumaisillasi','kehumalla','kehuman','kehumassa','kehumasta','kehumatta','kehuminen','kehumista','kehumista','kehuva','kehuvat','kehukaa','kehukaamme','koon','koot','kehumaisillansa');
+  ('V Inf1 Lat ','V Inf1 Act Tra Sg PxPl1 ','V Inf1 Act Tra Sg PxSg1 ','V Inf1 Act Tra Sg PxPl2 ','V Inf1 Act Tra Sg PxSg2 ','V Impv Act Sg2xx ',{'V Prs Act ConNeg ',}'V Prs Act Pl1x ','V Prs Act Sg1 ','V Prs Act Sg2 ','V Prs Act Pl2 ','V Prs Act Pl3 ','V Prs Act Sg3 ','V Prs Pass ConNeg ','V Prs Pass Pe4 ','PrfPrc Pass Pos Nom Pl ','V Pot Act Sg3 ','V Pot Act Pl1 ','V Pot Act Sg1 ','V Pot Act Sg2 ','V Pot Act Pl2 ','V Pot Act Pl3 ','PrfPrc Act Pos Nom Sg ','V Pst Act Sg3 ','V Pst Act Pl1 ','V Pst Act Sg1 ','V Pst Act Sg2 ','V Pst Act Pl2 ','V Pst Act Pl3 ','V Inf2 Pass Ine ','V Cond Pass Pe4 ','V Impv Pass Pe4 ','V Inf3 Pass Ins ','V Pot Pass Pe4 ','PrsPrc Pass Pos Nom Sg ','V Pst Pass Pe4 ','V Pst Pass ConNeg ','V Inf2 Act Ins ','V Inf2 Act Ine Sg ','V Cond Act Sg3 ','V Cond Act Pl1 ','V Cond Act Sg1 ','V Cond Act Sg2 ','V Cond Act Pl2 ','V Cond Act Pl3 ','AgPrc Pos Nom Sg ','AgPrc Pos Ill Sg ','V Act Inf5 Px3 ','V Act Inf5 PxPl1 ','V Act Inf5 PxSg1 ','V Act Inf5 PxPl2 ','V Act Inf5 PxSg2 ','V Inf3 Ade ','V Inf3 Man ','V Inf3 Ine ','V Inf3 Ela ','V Inf3 Abe ','V N Nom Sg ','V N Par Sg ','V N Par Sg ','PrsPrc Act Pos Nom Sg ','PrsPrc Act Pos Nom Pl ','V Impv Act Pl2 ','V Impv Act Pl1 ','V Impv Act Sg3','V Impv Act Pl3','V Act Inf5 Px3 ','turha');
+vsijaesim:array[0..66] of ansistring = ('kehua','kehuaksemme','kehuakseni','kehuaksenne','kehuaksesi','kehu',{'VIRHE','kehu',}'kehumme','kehun','kehut','kehutte','kehuvat','kehuu','kehuta','kehutaan','kehutut','kehunee','kehunemme','kehunen','kehunet','kehunette','kehunevat','kehunut','kehui','kehuimme','kehuin','kehuit','kehuitte','kehuivat','kehuttaessa','kehuttaisiin','kehuttakoon','kehuttaman','kehuttaneen','kehuttava','kehuttiin','kehuttu','kehuen','kehuessa','kehuisi','kehuisimme','kehuisin','kehuisit','kehuisitte','kehuisivat','kehuma','kehumaan','kehumaisillaan','kehumaisillamme','kehumaisillani','kehumaisillanne','kehumaisillasi','kehumalla','kehuman','kehumassa','kehumasta','kehumatta','kehuminen','kehumista','kehumista','kehuva','kehuvat','kehukaa','kehukaamme','koon','koot','kehumaisillansa','sekokseko');
 vesims: array[1..27] of ansistring =('sanoa', 'sulaa', 'pieksää', 'soutaa', 'jauhaa', 'kaataa', 'laskea', 'tuntea', 'lähteä', 'kolhia', 'naida', 'saada', 'viedä', 'käydä', 'päästä', 'puhella', 'aterioida', 'suudita', 'piestä', 'nähdä', 'parata', 'niiata', 'kasketa', 'nimetä', 'taitaa', 'kumajaa', 'kaikaa');
 var
  lks:array[0..80] of tlka;
@@ -48,8 +48,11 @@ function ontaka(sana:string):boolean;
 function taka(sana:string):string;
 function etu(sana:string):string;
 function hyphenfi(w:ansistring;tavus:tstringlist):word;
-function isdifto(c1,c2:ansichar):boolean;
+function hyphenfirev(w:ansistring;tavus:tstringlist;var alkkon:string):word;
+function tuplavok(c1,c2:ansichar):boolean;
+function diftongi(c1,c2:ansichar):boolean;
 function isvokraja(c1,c2:ansichar):boolean;
+//function istavuraja(c1,c2:ansichar):boolean;
 function takax(st:string;var x:word):string;
 
 implementation
@@ -84,10 +87,23 @@ function IFs(cond:boolean;st1,st2:ansistring):ansistring;
      begin
       if cond then result:=st1 else result:=st2;
      end;
-function isdifto(c1,c2:ansichar):boolean;
+function tuplavok(c1,c2:ansichar):boolean;
  begin
   result:=false;
   if c1=c2 then result:=true else                       //arv  i o i da                ae ao ea eo ia io oa oe ua ue
+  case c1 of
+   'a': if pos(c2,'iu')>0 then result:=true;
+   'e','i': if pos(c2,'ieuy')>0 then result:=true;
+   'o','u': if pos(c2,'iuo')>0 then result:=true;
+   'y','ö': if pos(c2,'iyö')>0 then result:=true;
+   'ä': if pos(c2,'iy')>0 then result:=true;
+  end;
+ // if not result then write('*');
+ end;
+function diftongi(c1,c2:ansichar):boolean;
+ begin
+  result:=false;
+  if c1=c2 then result:=false else                       //arv  i o i da                ae ao ea eo ia io oa oe ua ue
   case c1 of
    'a': if pos(c2,'iu')>0 then result:=true;
    'e','i': if pos(c2,'ieuy')>0 then result:=true;
@@ -144,7 +160,7 @@ begin
              hy:=ch;
           end
           else  //ed vokaali, nyt vokaali
-          if (not isdifto(ch,chprev)) then //tavurajavokaali
+          if (not tuplavok(ch,chprev)) then //tavurajavokaali
           begin
             inc(result);
             if tavus<>nil then tavus.insert(0,hy);
@@ -168,6 +184,77 @@ begin
  end;
  //HUOM: NÄÄ ON JOSKUS HALUTTU / YLIM ALKUKONONANTIT ERI TAVUNA, ei kuitenkaan lasketa resulttiin
  if alkkon<>'' then if tavus<>nil then tavus.insert(0,alkkon+'');
+ //else tavus.insert(0,'');
+ //result:=alkkon+'_'+result;
+ // result:=tavus.commatext;
+ //if w='eaksemme' then write('***',result);
+end;
+function hyphenfirev(w:ansistring;tavus:tstringlist;var alkkon:string):word;
+  var i,k,len,vpos:integer;hy:ansistring;ch,chprev:ansichar;lasttag:ansistring;
+   voks:word;
+begin
+ {
+ konsonantti vokaalin edellä - tavuraja ennen kons
+ yhteensopimattomat vokaalit - tavuraja väliin
+ kolme vokaalia - tr ennen kolmatta
+
+ }
+  if tavus<>nil then tavus.clear;
+  len:=length(w);
+  result:=0;//w[len];   duuoon  noouu
+ if len=0 then exit;
+ chprev:='R';//w[len];   //o
+ alkkon:='';
+ for i:=len downto 1 do if (pos(w[i],konsonantit)>0) then len:=len-1 else break;
+ alkkon:=copy(w,len+1);
+ if len<length(W) Then w:=copy(w,1,len);
+ voks:=0;
+ for i:=1 to len do
+ begin
+    ch:=w[i];
+    if voks>0 then
+    begin        //a ie  prev:e nyt:i  ie on dift
+      if (pos(ch,konsonantit)>0)  then
+      begin
+         inc(result);
+         voks:=0;
+         if tavus<>nil then tavus.insert(0,ch+hy);hy:='';ch:=' ';
+      end
+      else
+      begin //vokaali
+         if voks>1 then   //tripla
+          begin
+             inc(result);
+             if tavus<>nil then tavus.insert(0,hy);
+             voks:=1;
+             hy:=ch;
+          end
+          else  //ed vokaali, nyt vokaali
+          if (not tuplavok(ch,chprev)) then //tavurajavokaali
+          begin
+            inc(result);
+            if tavus<>nil then tavus.insert(0,hy);
+            hy:=ch; //chprev:='y';//                     //  as-il a a is | os
+            voks:=1;
+          end else //diftonki, ei tavurajaa
+          begin
+               hy:=ch+hy; inc(voks);
+          end; //ignoroi kolmoiskons - mukana vain ei-yhd.sanojen perusmuodot,
+     end;
+   end else // edellinen aloitti tavun tai oli sen loppukons
+   begin
+    if pos(ch,vokaalit)>0 then inc(voks);
+    hy:=ch+hy;
+   end;
+   if i=len then
+   begin
+      if hy<>'' then begin inc(result);if tavus<>nil then tavus.insert(0,hy);end;
+   end else
+   chprev:=ch;
+ end;
+ //HUOM: NÄÄ ON JOSKUS HALUTTU / YLIM ALKUKONONANTIT ERI TAVUNA, ei kuitenkaan lasketa resulttiin
+ //if alkkon<>'' then if tavus<>nil then tavus[0]:=alkkon+tavus[0];//
+ //tavus.insert(0,alkkon+'');
  //else tavus.insert(0,'');
  //result:=alkkon+'_'+result;
  // result:=tavus.commatext;
