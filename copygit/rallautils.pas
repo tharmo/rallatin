@@ -54,8 +54,159 @@ function diftongi(c1,c2:ansichar):boolean;
 function isvokraja(c1,c2:ansichar):boolean;
 //function istavuraja(c1,c2:ansichar):boolean;
 function takax(st:string;var x:word):string;
-
+procedure etsiyhdys;
+procedure coocs;
+function big64(bigs,bigvals:pword;bwrd,wrd,freq:word):word;
 implementation
+
+procedure coocs;
+var f,outf:text;kaverit,sanat:tstringlist; i:longword;j:word;line:string;
+     vars,vals,nvars,nvals:array of word;nvars2,nvals2:array of word;
+     w1num,w2num,w1freq,wwfreq,w1tot,prev:integer;
+
+begin
+assign(f,'skumppanit.lst');
+reset(f);
+assign(outf,'skumpkarsi.lst');
+rewrite(outf);
+  kaverit:=tstringlist.create;
+  //kaverit.sorted:=true;
+  kaverit.delimiter:=',';
+  kaverit.StrictDelimiter:=true;
+  //kaverit.quotechar:='';
+  sanat:=tstringlist.create;
+  sanat.sorted:=true;
+  sanat.loadfromfile('kaavoitetut');
+  writeln(eof(f),'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz:::::::::::',sanat.count);
+  setlength(vars,40001*64);
+setlength(vals,40001*64);
+setlength(nvars,40001*64);
+setlength(nvals,40001*64);
+
+  i:=0;
+  while not eof(f) do
+  begin
+    try
+    inc(i);//if i>100 then break;
+    readln(f,line);
+    kaverit.commatext:=line;
+    readln(f,line);
+    //if pos('===',line)<1 then begin writeln('eieieieiie');readln;continue;end; //do smthg with this later
+    w1tot:=strtointdef(copy(line,4),0);
+    //writeln(^j^j^j,kaverit.count,':',kaverit.commatext);
+    //if pos('_',kaverit[0])<1 then
+    w1num:=sanat.indexof(kaverit[0]);
+    //if w1num<>prev+1 then writeln(w1num,kaverit[0]);    prev:=w1num;
+    if w1num<0 then continue;
+    nvals[w1num*64]:=w1tot;
+    write(outf,^j,kaverit[0]);
+    for j:=1 to (kaverit.count-1) div 2 do
+    begin
+      w2num:=sanat.indexof(kaverit[j*2-1]);
+      if w2num<=0 then continue;
+      wwfreq:=strtointdef(kaverit[j*2],0);
+      if (w2num>=0) // or (pos('_',kaverit[j*2-1])>0)   //then  write(outf,',',kaverit[j*2-1],',',kaverit[j*2])
+      then write(outf,',',kaverit[j*2-1],',',kaverit[j*2]);
+      if w2num>40000 then writeln('toobig:',kaverit[j],w2num,'/',j,'/',j*2-1);
+      big64(@nvars[w1num*64],@nvals[w1num*64],w1num,w2num,wwfreq);
+    end;
+    //write(^j^j,sanat[w1num],'(',w1tot,'): ' );
+    //for j:=1 to min(8,kaverit.count-1) do try write(' ',sanat[nvars[w1num*64+j]],nvals[w1num*64+j]);except writeln('nonono',nvars[w1num*64+j],' ');end;
+    except writeln('vitut',line);end;
+  end;
+
+  close(outf);
+  close(f);
+  for i:=1 to 37095 do
+  begin
+     write(^j^j,sanat[i],nvals[i*64]);
+     for j:=1 to 20 do if nvals[i*64+j]<5 then break else
+     begin try w2num:=nvars[i*64+j];write(' ',sanat[w2num],
+      round((100*nvals[i*64+j]) / ((sqrt(nvals[w2num*64])))));except write('!!')end;
+     end;
+  end;
+end;
+
+function big64(bigs,bigvals:pword;bwrd,wrd,freq:word):word;
+var i,j,posi,fils:word;d:boolean;slots:word;
+begin
+   slots:=64;//fils:=0;
+   posi:=64;
+   try
+   if wrd>40000 then writeln('<li>TOOBIG',wrd);
+   begin
+   for j:=1 to slots-1 do
+    begin
+     if freq>=(bigvals+j)^ then
+     begin //if d then writeln(j,'.',(bigs+j)^);
+       //write('+ ',j);
+       posi:=j;break;end;
+    end;
+   end;
+
+   //if posi=0 then
+   //write(sl[wrd],freq,'=',posi,'?/??');
+   if posi<slots then
+   begin
+    move((bigs+posi)^,   (bigs   +posi+1)^,  2*(slots-posi-1));
+    move((bigvals+posi)^,(bigvals+posi+1)^,2*(slots-posi-1));
+    (bigs+posi)^:=wrd;
+    (bigvals+posi)^:=freq;
+    //write(' ',posi);
+   end;
+   result:=posi;
+   //if wrd=7305 then writeln('<li>',sl[wrd],freq,'@',posi,'|||');
+   except writeln('*******************nopiso',wrd,'/',freq);end;
+end;
+
+procedure etsiyhdys;//(sanat:tstringlist);
+var i,j,k:word; alut:array[0..31] of string;res:tstringlist;slen:byte;sana,s2:string;sanat,vertsanat,palat:tstringlist;
+ f:text;
+begin
+ sanat:=tstringlist.create;
+ palat:=tstringlist.create;
+ palat.delimiter:=' ';
+ sanat.loadfromfile('uussanat.all');
+ //sanat.loadfromfile('uussanat.all');
+ vertsanat:=tstringlist.create;
+ vertsanat.loadfromfile('yhdys.uus');
+ vertsanat.sort;
+ res:=tstringlist.create;
+ res.sorted:=true;
+ writeln('<xmp>');
+ for i:=0 to sanat.count-1 do
+ begin
+   palat.DelimitedText:=sanat[i];
+
+   if vertsanat.indexof(palat[2])>=0 then continue else if length(palat[2])>15 then writeln(palat[2]) else res.add(sanat[i]);
+
+ end;
+ res.savetofile('uussanat2.all');
+  exit;
+  sanat:=tstringlist.create;
+  //sanat.loadfromfile('kotussanat.lst');
+  assign(f,'kotussanat.lst');
+  reset(f);
+  vertsanat:=tstringlist.create;
+  vertsanat.loadfromfile('kaikki.kok');
+  i:=0;
+  while not eof(f) do
+  begin
+     inc(i);if i mod 1000=1 then writeln(i);
+     readln(f,sana);
+     slen:=length(sana);
+     if slen>23 then continue;
+     for j:=3 to min(15,slen) do
+     if  alut[j]<>'' then
+       if pos(alut[j],sana)=1 then
+       begin
+        if slen>j+1 then if vertsanat.indexof(copy(sana,j+1))>0 then res.add(copy(sana,j+1)+' '+alut[j]);
+       end else alut[j]:='';
+       alut[slen]:=sana;
+  end;
+   res.savetofile('yhdys.kot');
+end;
+
 function ontaka(sana:string):boolean;
 var i:word;
 begin

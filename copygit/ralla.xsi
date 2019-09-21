@@ -1,4 +1,34 @@
 class name=riimit
+ sema
+  # gawk -F, '{print $2,$8,$6}' klk.kokoko >../rallatin/sanaparit.lst
+  # xse:shellexec: LC_ALL=C;sort sanaparit.lst >sanaparit.srt
+  xmp
+     xse:gawk in=sanaparit.srt: '''
+     
+       BEGIN { ORS=","}
+       /\-/ { next}
+       { if ($1!=prev1 ) {  print  prev2 "," np "\n===" tot "\n" $1  >"skumppanit.lst";prev1=$1;prev2=$2;np=0;tot=0 }
+       else if ($2!=prev2 ) { print prev2 "," np>"skumppanit.lst"; prev2=$2;np=0}  
+       np=np+$3
+       tot=tot+$3
+       #if (i>62000) exit;
+       i++
+       }
+     '''
+
+ adj
+   # cat uuskaavas4.lst |gawk 'BEGIN {FS="," }{print $7 }' |./utfiin |./fiana|./ansiin |grep -a " A Pos Nom" >adj.ana
+   pre
+   xse:gawk in=adj.ana :  ''' BEGIN { FS="/"}
+      /A Pos Nom Sg/ { s=substr($1,2);a=0;for (i=2;i<=NR;i++) if (index($i,"A Pos Nom Sg")>0 && index($i,s)>0) print s > "adj.all"}
+      #/A Pos Nom Sg/ { a=0;for (i=2;i<=NR;i++) if (index($i,"A Pos Nom Sg")>0 && index($1) print substr($i,2) > "adj.all"}
+      '''
+   xse:shellexec: LC_ALL=C;sort adj.all >adj.srt
+   xse:gawk in=uuskaavas4.lst :  ''' 
+     BEGIN { while (getline s<"adj.srt")  adj[s]="A";      FS=",";print "*********************"       }
+    {  print $0 "," adj[$7]>"uuskaavas5.lst"}
+    ''' 
+   xse:shellexec: LC_ALL=C;cat uuskaavas5.lst | gawk -F, '{ print $7 "," NR }' |sort >aakkos.lst
  promanual
    xse:from file="pron.html"
     ul

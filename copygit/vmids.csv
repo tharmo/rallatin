@@ -9,9 +9,9 @@
 56  ;jauhaa ,a           ,a           ,a           ,et          ,an          ,o           ,et          ,a           ,a           ,a           ,a
 57  ;kaataa ,a           ,a           ,a           ,et          ,an          ,o/s_        ,et          ,a           ,a           ,a           ,a
 58  ;laskea ,e           ,e           ,e           ,et          ,en          ,            ,et          ,i           ,            ,e           ,e
-59  ;tuntea ,e           ,e           ,e           ,et          ,en          ,s_          ,et          ,i           ,            ,e           ,e
-60  ;lähte  ,hte         ,hde         ,hde         ,hdet        ,hten        ,hd/ks       ,hdet        ,hti         ,ht          ,hte         ,hte
-61  ;kolhia ,i           ,i           ,i           ,it          ,in          ,            ,it          ,i           ,            ,i           ,i
+59  ;tuntea ,e           ,e           ,ee          ,et          ,en          ,s_          ,et          ,i           ,            ,e           ,e
+60  ;lähte  ,hte         ,hde         ,htee        ,hdet        ,hten        ,hd/ks       ,hdet        ,hti         ,ht          ,hte         ,hte
+61  ;kolhia ,i           ,i           ,ii          ,it          ,in          ,            ,it          ,i           ,            ,i           ,i
 62  ;naida  ,id          ,i           ,i           ,id          ,in          ,            ,i           ,id          ,            ,i           ,i
 63  ;saada  ,d           ,            ,            ,d           ,n           ,-           ,            ,d           ,-           ,            ,
 64  ;viedä  ,d           ,            ,            ,d           ,n           ,#           ,            ,d           ,#           ,            ,

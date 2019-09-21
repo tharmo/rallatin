@@ -47,8 +47,9 @@ begin
    if paramstr(1)='hae' then
    begin
      writeln('hauhau:</pre>');
+     //etsiyhdys;terminate;exit;
      sanasto:=tsanasto.create;
-     //sanasto.luokaavat;
+     //sanasto.luokaavat;exit;
      //terminate;exit;
      //sanasto.pikakelaa;
      writeln('<li>luotu.');
@@ -58,13 +59,19 @@ begin
      sanasto.free;
      terminate;exit;
    end;
-  if paramstr(1)='pronominit' then
-  begin
-    sanasto:=tsanasto.create;
-    writeln('HANSKAAPRONOMIT');
-    //sanasto.pronominit;
-   // sanasto.free;
-  end;
+   if paramstr(1)='pronominit' then
+   begin
+     sanasto:=tsanasto.create;
+     writeln('HANSKAAPRONOMIT');
+     //sanasto.pronominit;
+    // sanasto.free;
+   end;
+   if paramstr(1)='sema' then
+   begin
+     writeln('2grammeista kaivettua');
+     coocs;
+    // sanasto.free;
+   end;
   { add your program here }
   // stop program loop
    except writeln('!!!failkaikki');end;

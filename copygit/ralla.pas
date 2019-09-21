@@ -640,7 +640,7 @@ begin
   hakust:=hakust+',minusta,minun,t‰h‰n,sihen,siihen,tuota,tota';
   hakust:=hakust+',kansi,korren,kantta,puhella,leikell‰,leikkeli,pelkoon,mutustelkoon';
     hakust:=hakust+',sousi,susi,limatauti,tuskattomasti,huonommin,';
-  //hakust:='pellee';
+  hakust:='poutii,tuntee,tiet‰‰,sontii,l‰htee,';
   haku.commatext:=hakust;
   //haku.loadfromfile('haku.txt');
   //writeln('<li>HAU:',haku.commatext);
@@ -659,6 +659,7 @@ constructor tsanasto.create;
 var i,j:word;
 begin
 writeln('LUEKAIKKI');
+ //etsiyhdys;exit;
  luekaikki;
  //pikakelaa;
  for i:=9991 to 78 do
@@ -714,27 +715,6 @@ blockread(datafile,lks[0],datasize);
 except on e:exception do writeln('<li>eiEionnaa:',e.Message,' ',datasize);;end;
 //fstream.free;
 close(datafile);
-end;
-procedure etsiyhdys(sanat:tstringlist);
-var i,j,k:word; alut:array[0..31] of string;res:tstringlist;slen:byte;s2:string;
-begin
-   res:=tstringlist.create;
-   res.sorted:=true;
-   for i:=0 to sanat.count-1 do
-   begin
-     if sanat[i]='kuukausittainen' then for j:=0 to 16 do writeln('<li>',j,alut[j]);
-      slen:=length(sanat[i]);
-      for j:=3 to min(15,slen) do
-      if  alut[j]<>'' then
-       if pos(alut[j],sanat[i])=1 then
-       begin
-       if sanat[i]='kuukausittainen' then writeln('<li>###',j,alut[j],slen,'/',sanat.indexof(copy(sanat[i],j+1)),copy(sanat[i],j+1));
-        if slen>j+1 then if sanat.indexof(copy(sanat[i],j+1))>0 then res.add(copy(sanat[i],j+1)+' '+alut[j]);
-       end;// else alut[j]:='';
-       alut[slen]:=sanat[i];
-       if sanat[i]='kuukausittainen' then for j:=0 to 16 do writeln('<li>',j,alut[j]);
-   end;
-   res.savetofile('yhdys2.test');
 end;
  procedure tsanasto.luesanat(fn:string);
 var csan,cvok,ckon,clka:word;
@@ -887,7 +867,7 @@ begin
    FOR I:=0 to vokcount-1 do    writeln(' ',siss[i].ekaav);
    //tilap‰inen viritys yhdyssanohen etsimseen
  kaikkikokot.savetofile('kaikki.kok');
-  etsiyhdys(kaikkikokot);
+ // etsiyhdys(kaikkikokot);
   //lks[1].ekasis:=0;
   //for clka:=52 to 78 do
   //for clka:=1 to 49 do
@@ -1062,7 +1042,7 @@ procedure tsanasto.luokaavat;
 //////////test;
 //assign(f,'nomsall.lst');
 ordo:=0;
-assign(f,'uussanat.all');
+assign(f,'uussanat2.all');
  reset(f);
  while not eof(f) do
  begin
@@ -1202,7 +1182,7 @@ assign(f,'uussanat.all');
 
    //continue;
   // if osat[0]+<>prevlka then
- sanakaavat.SaveToFile('uuskaavas3.lst');
+ sanakaavat.SaveToFile('uuskaavas4.lst');
  prevlka:='';
 end;
 end.

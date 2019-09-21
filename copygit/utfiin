@@ -1,0 +1,1 @@
+iconv -f ISO-8859-1//TRANSLIT -t UTF-8 
