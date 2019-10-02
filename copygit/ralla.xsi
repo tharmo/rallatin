@@ -1,4 +1,141 @@
 class name=riimit
+ finnwn
+   #cat ../finnwn/lists/fiwn-semrels-extra.tsv |gawk -F'\t' '{print $3}' |sort |uniq -c
+   xse:gawk in="../finnwn/lists/fiwn-semrels-extra.tsv" : '''
+    BEGIN { FS="\t";print "<ul>"}
+     function list(st)    {    res=""; split(st,ss,"|"); 
+      for (s in ss) {  
+      gsub(/^[[:space:]]+|[[:space:]]+$/,"",ss[s]);
+      if (match(ss[s],/[ -_><]/)<1)
+       res=res "," ss[s];
+            }
+           return res
+      }
+     function short(st)    { 
+        res=""; 
+       split(st,ss," "); 
+       return substr(ss[1],1,3) substr(ss[2],1,3) 
+              }
+    { res1=list($2);
+     res2=list($5);  
+     if (short($3)!="ATT") 
+     print res1  res2 >"finwn.semrel"
+     #if (NR>10) exit
+      }
+   ''' 
+ synoall
+   xse:gawk env="LC_ALL=C" in="finwn.syno" : '''
+        BEGIN { FS="|"}
+      { res=","
+        hit=0
+        for (i=2;i<=NF;i++) { 
+          gsub(/^[[:space:]]+|[[:space:]]+$/,"",$i);
+          if (NR<999) print $i i
+          if ($i!="") 
+            if (match($i,/[ -_><]/)<1) {  
+             res=res $i ","
+             hit++ 
+           }
+      }
+          if (hit>1)   print res >"finwn.syno2"
+      }
+    '''
+   #xse:shellexec: ./rallatin syno
+ mis
+  xmp
+   xse:gawk in=wg2.cmd  out=wg3.cmd : '''
+    #BEGIN { while (getline < "mis2.lst") { i++;s=substr($9,2,length($9)-6);mis[i]=s;};for (i in mis) print i,mis[i]; FS=" ";nmis=mis[i];i=1;} 
+    BEGIN { while (getline < "mis2.lst") { i++;s=substr($9,2,length($9)-6);mis[i]=s;}; FS=" ";nmis=mis[1];i=1;print "XXX:",nmis} 
+    {  if (NR==nmis) { print 
+    i++; nmis=mis[i]   }
+     }
+   '''
+   
+ stypes
+  xmp
+   xse:gawk in=synsyn.htmi BEGIN="FS=',';ORS=''; OFS=','": '''
+     /Synonyymit.fi::/ { 
+       print "\n",sana ","> "synt_all.lst" 
+       for (x in sanat) print "#"x,gensub("\r"," ","G",sanat[x])  >"synt_all.lst" #>"synt_" x ".lst";
+       split($0,s," ");sana=tolower(s[3]);print sana "!!!!"
+       delete(sanat)
+       next
+        }
+     /Suomi Sanakirja/ { next} 
+       // { 
+       if (index($1,"  : !")==1) { typ=substr($1,6); $1=""} else $1=substr($1,6)
+       sanat[typ]=sanat[typ]  $0
+       
+        }
+       #print "*****[" $1"]***",$2;
+       #/!first/ { o="first";$1=""; first=first $0}
+       #/!sec/ { o="first";$1=""; sec=sec $0}
+       #/!rel/ { o="rel";$1=""; rel=rel $0}
+       #/!ant/ { o="ant";$1=""; ant=ant $0}
+    #{  if (NR>100)  exit }
+     
+   '''
+   
+ ttt
+   xse:from file="syno2/s55.html" xse:to=/test
+     xse:copy
+   xse:debug  
+   # gawk ' NR>820 { print "wget --wait=1 https://www.synonyymit.fi/"$1" -O syno2/s" NR".html;sleep 1s"}' kaavoitetut.utf
+ syno 
+   xse:to file="synsyn.htmi"   
+    li
+     xse:apply xtimes=80 times=37090 counter=c
+       xse:from file="syno2/s{$c}.html"
+            xse:line: {$c} {head/title}::
+            xse:debugtext xse:if="?eq(?mod($c,100),1)": {$c} 
+            xse:apply select="#maindict/ul"
+                  xse:line: !{@class},
+                  xse:apply select=li 
+                    xse:text: {@alltext()},
+       :        
+ aa   
+     ###xmp
+      xse:from file=turha.html xse:to=/turha
+        xse:copy
+     #xse:debug      
+     ###xse:shellexec: cat kaavoitetut | iconv -f ISO-8859-1//TRANSLIT -t UTF-8 >kaavoitetut.utf
+     #xse:gawk in=kaavoitetut.utf out=sanat.xml: ''' BEGIN { print "<ul>"} { print "<li>" $1 "</li>" }    END { print "<ul>"} '''
+     ###xmp
+       xse:from file="sanat.xml"
+       ### #xse:to file="syno.cmd"
+        ul 
+         xse:apply maxtimes=2 select=li
+           li: {?urlencode(.)} {.}
+          #xse:line: wget --post-data=$(printf "url="; urlencode $u) https://www.synonyymit.fi/{$1}
+ 
+     xse:from file="sanat.xml" 
+      xse:apply select=li xmaxtimes=10
+       xse:set sana={.}
+       xse:to file="syno/{$sana}.xsi"
+         xse:sleep time="{?random(2000,20000)}"         
+        xse:from url="https://www.synonyymit.fi/{$sana}" 
+          xse:copy         
+ z        # xse:httpget url="https://www.synonyymit.fi/{$sana}" 
+          #xse:to file="syno/{$sana}.xsi"
+              ###d
+               xse:apply select="//span"   
+                  s: {@alltext()},{@class}
+               xse:apply select="//ul"
+                xse:element name={@class}
+                 xse:apply select="li"
+                  li: {@alltext()}  
+     #xse:debug         https://www.synonyymit.fi/%C3%B6t%C3%B6kk%C3%A4
+             
+ x          li: {@.}_
+ x    
+    xse:apply select=".//ul"
+     xse:copy 
+  v   li: {@id}
+      ul:  &nbsp: {@class}
+        xse:apply select="li"
+         li: xse:{@alltext()}
+    
+
  sema
   # gawk -F, '{print $2,$8,$6}' klk.kokoko >../rallatin/sanaparit.lst
   # xse:shellexec: LC_ALL=C;sort sanaparit.lst >sanaparit.srt
