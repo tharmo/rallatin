@@ -122,24 +122,41 @@ end;
 
 procedure listgutmat;
 var i,j,k:word;
-   ylemarg:array of longword;
+   margins:array of longword;
    ole,oli,tot,ac:qword;
    ylemat:file;
-   ylet:tstringlist; ylecount,sanacount:integer;
-   ycoc:array of word;wn1,wn2:word;
+   yleind:array of word;
+   ylet,sanat:tstringlist; ylecount,sanacount:integer;
+   cocrivi:array of byte;
+    ycoc:array of word;wn1,wn2,y1,y2:word;
      nvars,nvals:array of word;
    rel:extended;
+   ylepos,ylemarg:longword;
 begin
+ writeln('gutgutgut');
 ylet:=tstringlist.create;
 ylet.CaseSensitive:=true;
 ylet.sorted:=true;
 ylet.loadfromfile('ylesanat.lst');
+sanat:=tstringlist.create;
+sanat.CaseSensitive:=true;
+sanat.sorted:=true;
+sanat.loadfromfile('kaavoitetut');
+sanacount:=sanat.count+1;
+writeln('gutgut');
 ylecount:=ylet.count;
-writeln('ylet:',ylecount);
-setlength(nvars,ylecount*64);
-setlength(nvals,ylecount*64);
+setlength(yleind,ylecount);
+setlength(nvars,sanacount*64);
+setlength(nvals,sanacount*64);
 setlength(ycoc,ylecount*ylecount);
-setlength(ylemarg,ylecount);
+writeln('gutgutgut');
+setlength(cocrivi,sanacount);
+writeln('gut');
+setlength(margins,sanacount);
+writeln('sanat:',sanacount);
+writeln('ylet:',ylecount);
+
+
 assign(ylemat,'gutyle.bin');
 reset(ylemat,length(ycoc)*2);
 writeln('fileet ylemat????',length(ycoc));
@@ -150,34 +167,60 @@ writeln('fileet ylemat!');
 close(ylemat);
 except on e:exception do writeln('<li>eiEionnaa:',e.Message,' ');;end;
 writeln('fileet ylemarg?');
+
+
+
 assign(ylemat,'gutmarg.bin');
-reset(ylemat,length(ylemarg)*4);
-writeln('fileet ylemarg?');
-try
- blockread(ylemat,ylemarg[0],1);
-except on e:exception do writeln('<li>eiEionnaa:',e.Message,' ',length(ylemarg)*2);;end;
+reset(ylemat,length(margins)*4);
+ try
+ blockread(ylemat,margins[0],1);
+except on e:exception do writeln('<li>eiEionnaa:',e.Message,' ',length(margins)*2);;end;
 //fstream.free;
 close(ylemat);
-   for wn1:=0 to ylecount-1 do tot:=tot+ylemarg[wn1];
+   for wn1:=0 to ylecount-1 do tot:=tot+margins[wn1];
+   //for i:=0 to sanacount-1 do write(' .',margins[i]);
+   for i:=0 to ylecount-1 do begin try yleind[i]:=sanat.indexof(ylet[i]);
+   // writeln(i,'/',yleind[i],ylet[i],' ',sanat[yleind[i]],' ',margins[yleind[i]]);
+   except writeln('###',i,'=',ylet[i],yleind[i]);end;
+   end;
+   writeln('gogo');
+   assign(ylemat,'gutall.bin');
+   reset(ylemat,sanacount);
+   writeln('fileet ylemarg?');
+   writeln('fileet allmat????',length(cocrivi));
+   try
+    //blockread(ylemat,ycoc[0],1);
+   //fstream.free;
+   //writeln('fileet ylemat!');
+   //close(ylemat);
+   except on e:exception do writeln('<li>eiEionnaa:',e.Message,' ');;end;
+   //for i:=1 to sanacount-1 do
+     //begin blockread(ylemat,ycoc[0],1);        if i mod 1000=0 then write(i,' ');     end;
+   //exit;
    //tot:=tot div 2;
    writeln(^j^j,'*************************',tot);
-   for wn1:=0 to ylecount-1 do
+   for wn1:=0 to sanacount-1 do
     begin
-      writeln(^j^j,wn1,ylet[wn1],' ',ylemarg[wn1]);
-      if ylemarg[wn1]<1 then continue;
-      for wn2:=0 to ylecount-1 do
+      blockread(ylemat,cocrivi[0],1);
+      //y1:=yleind[wn1];
+        if margins[wn1]<10 then continue;
+      write(^j^j,wn1,' ',margins[wn1],' ',sanat[wn1],': ');
+      //for wn2:=0 to ylecount-1 do
+      for wn2:=0 to sanacount-1 do
       begin
-        oli:=(ycoc[ylecount*wn1+wn2]);
+        //y2:=yleind[wn2];
+        oli:=(cocrivi[wn2]);
+        if oli<2 then continue;
+        //oli:=5*(ycoc[ylecount*wn1+wn2]);
         try
-        //ole:=ylemarg[wn1] * round(sqrt(ylemarg[wn2]));          //qword=8 B int >0
-        ole:=ylemarg[wn1] * ylemarg[wn2];          //qword=8 B int >0
-        except ole:=ylemarg[wn1];writeln('nosqrt:',ylemarg[wn2],ylet[wn2]);end;
+        ole:=1000+margins[wn1] * margins[wn2];          //hiukka rabngaistaan harvinaisia
+        except writeln('nomargins:',ylet[wn2],y2,' ',sanat[y2]);end;
         try
         //ac:=min(255,round(log2(100*oli+1) / (ole / 100+1)));
         //ac:=round(100000*oli) div (1+ole div 10000);
         if ole>0 then rel:=tot*(oli / (ole)) else continue;
-        if rel<1 then continue;
-        ac:=round(rel);
+        ac:=min(255,round(10*rel));
+        if ac<2 then continue;// then  write(' ',sanat[wn2],'=',oli);continue;
         //ac:=min(round(log2(ac));
         //write(^j,wn1,':',ylemarg[wn1],'/',wn2,':',ylemarg[wn2],'=',oli,'/',ole,'>',ac);
         //if ac>5000 then begin writeln(cors,ac,' ',ylet[wn1],ylemarg[wn1],' ',ylet[wn2],ylemarg[wn2],'=',oli,'/',(ole));end;
@@ -186,16 +229,19 @@ close(ylemat);
         big64(@nvars[wn1*64],@nvals[wn1*64],wn1,wn2,ac);   //sqrt?
         except writeln('fail ex:',ole,' ob:',oli);end;
       end;
-      for i:=1 to 63 do
+      for i:=  1 to 63 do
        if (nvars[wn1*64+i]<0) or (nvals[wn1*64+i]<=0) then begin write(':::',i);break;end
-        else BEGIN write(' ',ylet[nvars[wn1*64+i]],':',(nvals[wn1*64+i]));END;
+        else BEGIN try write(' ',sanat[nvars[wn1*64+i]],':',(nvals[wn1*64+i]));
+        except write('failx',wn1*64+i,'/',length(nvars),'?');end;;END;
     end;
   end;
 
 
 PROCEDURE gutcoocs;
 var sanat:tstringlist;f:text; arivi,resrivi:string;fpos:integer;i,j,wn1,wn2,y1,y2,maxi,ss:integer;
-               coc:array of byte; asent,asentyle:array [0..31] of integer;aco,ayle:word;
+               coc:array of byte;
+               asent,asentyle:array [0..63] of integer;
+               aco,ayle:word;
                nvars,nvals:array of word;
 
                //e1,e2:extended;t1,t2,d1:qword;
@@ -203,12 +249,12 @@ var sanat:tstringlist;f:text; arivi,resrivi:string;fpos:integer;i,j,wn1,wn2,y1,y
                ac:longword;
                //ccs:tstringlist;
                cors:text;
-               ylemarg:array of longword; ole,oli,tot:qword;
+               margins:array of longword;
+               ole,oli,tot:qword;
                ylemat:file;
                ylet:tstringlist; ylecount,sanacount:integer;
                 ycoc:array of word;
 begin
- listgutmat;exit;
    //ccs:=tstringlist.create;
   {for i:=0 to 500 do
   begin
@@ -233,24 +279,25 @@ begin
   sanat.loadfromfile('kaavoitetut');
   sanacount:=sanat.count+1;
   writeln('sanat:',sanacount);
-  //setlength(coc,sanacount*sanacount);
+  setlength(coc,sanacount*sanacount);
+
   ylet:=tstringlist.create;
   ylet.CaseSensitive:=true;
   ylet.sorted:=true;
   ylet.loadfromfile('ylesanat.lst');
   ylecount:=ylet.count;
-  writeln('ylet:',ylecount);
+  writeln('ylet:',ylecount,'S:',length(coc));
   setlength(ycoc,ylecount*ylecount);
-  setlength(ylemarg,ylecount);
+  setlength(margins,sanacount);
   setlength(nvars,ylecount*64);
   setlength(nvals,ylecount*64);
-
+  writeln(^j,'sanasana:',length(coc),'ylesanat:',length(ycoc),'/marg:',length(margins));
   assign(cors,'cors.lst');rewrite(cors);
   assign(f,'gutsents.iso');reset(f);
   writeln('ylet:',ylecount);
    fpos:=0;
    maxi:=0;      ss:=0;tot:=0;
-   writeln('gutaa:');
+   writeln('gutaaaaaaaa:');
    while not eof(f) do
    begin
     try;
@@ -258,15 +305,16 @@ begin
      if arivi='olla' then continue;
      //writeln(arivi);
      inc(fpos);
+     //if fpos mod 10000=1 then     //write(fpos,' ');
      //if length(arivi)<1 then if ss>1 then begin writeln(resrivi);resrivi:='';ss:=0;continue;end;
      if length(arivi)<1 then if ss>1 then
      begin
-       //if fpos mod 10000=1 then write(fpos,' ');
        try
        for i:=0 to  ss-1 do
+       if asent[i]>0 then
        begin
          y1:=asentyle[i];
-         if y1>0 then
+         if asent[i]>0 then
          for j:=0 to ss do  //to i
          begin
            try
@@ -274,53 +322,77 @@ begin
            if i<>j then
            if (asentyle[j]>0) and (y1>0) then
            begin
+             try
              inc(ycoc[ylecount*(y1-1)+asentyle[j]-1]);
              //inc(ycoc[ylecount*(asentyle[j]-1)+y1-1]);
-             inc(ylemarg[y1-1]);
+            // inc(margins[y1-1]);
+             inc(margins[asent[j]-1]);   //write(asent[i],'+ ');
+             //coc[sanacount*(asent[i]-1)+(asent[j]-1)]:=255;
              //inc(ylemarg[asentyle[j]-1]);
              inc(tot);
+             except write(^j,'failyle:',asent[i],':',asent[j],' yle:',asentyle[i],':',asentyle[j],'!');end;
              //write(ylet[asentyle[i]],y1,'/',ylet[asentyle[j]-1],asentyle[j]-1,'+ ');
            end else
+           if asent[j]>0 then
            begin
-             continue; //nyt vain yleisille
+             //continue; //nyt vain yleisille
+             inc(margins[asent[j]-1]);
+             try
              aco:=coc[sanacount*(asent[i]-1)+asent[j]-1];
+             except write(^j,'failharva:',asent[i],':',asent[j],' ',sanat[asent[i]-1]
+              ,'::',sanat[asent[j]-1],'\\',sanacount*(asent[i]-1)+(asent[j]-1),'#',length(coc),'!');end;
              //if aco=254 then write(sanat[asent[i]],' ',sanat[asent[j]]);
              if aco<255 then inc(coc[sanacount*(asent[i]-1)+(asent[j]-1)])
-             else write('--',sanat[asent[i]-1],' ',sanat[asent[j]-1]);
+             ;//else write(' --',sanat[asent[i]-1],' ',sanat[asent[j]-1]);
            end;
-           except write('failJII:',asent[i],':',asent[j],' yle:',asentyle[i],':',asentyle[j]);end;
+           except write(^j,'failJII:',asent[i],':',asent[j],' yle:',asentyle[i],':',asentyle[j],'!');end;
          end;
         end;
-       except write(^j,'**********fail:',asent[i],':',asent[j],' yle:',asentyle[i],':',asentyle[j]);end;
+       except write(^j,'**********failjotain:',i,'/',asent[i],':',j,'/',asent[j],' yle:',asentyle[i],':',asentyle[j]);end;
        ss:=0;fillchar(asent[0],64,0); fillchar(asentyle[0],128,0);
+     end
+     ;//else
+     begin //ei ollut tyhjä rivi (lauseen päätös)
+       wn1:=sanAT.INDEXof(arivi)+1;
+       y1:=ylet.INDEXof(arivi)+1;
+      //if y1<1 then continue;//NYT ei VAIN YLEISILLE
+      if wn1<1 then continue;//NYT ei VAIN YLEISILLE
+       //if wn1<1 then continue;//begin //resrivi:=resrivi+',';continue;end;
+      // inc(fpos);if fpos>100000 then break; //testing speed
+       //resrivi:=resrivi+','+arivi;
+       //write('(',arivi,length(arivi),')');
+       try   asent[ss]:=wn1; except writeln('toolong',ss);end;
+       try asentyle[ss]:=y1; except writeln('yfailyleset:',y1);end;
+       inc(ss);  //0-base
      end;
-     wn1:=sanAT.INDEXof(arivi)+1;
-     y1:=ylet.INDEXof(arivi)+1;
-    if y1<1 then continue;//NYT ei VAIN YLEISILLE
-    if wn1<1 then continue;//NYT ei VAIN YLEISILLE
-     //if wn1<1 then continue;//begin //resrivi:=resrivi+',';continue;end;
-    // inc(fpos);if fpos>100000 then break; //testing speed
-     //resrivi:=resrivi+','+arivi;
-     //write('(',arivi,length(arivi),')');
-     try   asent[ss]:=wn1; except writeln('toolong',ss);end;
-     try asentyle[ss]:=y1; except writeln('yfailyleset:',y1);end;
-     inc(ss);  //0-base
      except writeln('fail****************');end;
     end;
    //for wn1:=0 to ylecount-1 do   writeln(wn1,ylet[wn1],' ',ylemarg[wn1]);
    //data:=@lks[0];
+      for i:=0 to sanacount-1 do //if margins[i]>1000 then //<>0 then write(' --',sanat[i],margins[i]);
+      begin write(^j^j,i,sanat[i],margins[i],': ');
+        for j:=0 to sanacount-1 do if coc[i*sanacount+j]>50 then write(' ',sanat[j]);
+      end;
+    exit;
    assign(ylemat,'gutyle.bin');
    rewrite(ylemat,length(ycoc)*2);
    try
     blockwrite(ylemat,ycoc[0],1);
-   except on e:exception do writeln('<li>eiEionnaa:',e.Message,' ',length(ycoc)*2);;end;
+   except on e:exception do writeln('<li>eiEionnaa: gutyle',e.Message,' ',length(ycoc)*2);;end;
+//fstream.free;
+   close(ylemat);
+   assign(ylemat,'gutall.bin');
+   rewrite(ylemat,length(coc));
+   try
+    blockwrite(ylemat,coc[0],1);
+   except on e:exception do writeln('<li>eiEionnaa gutall:',e.Message,' ',length(ycoc)*2);;end;
 //fstream.free;
    close(ylemat);
    assign(ylemat,'gutmarg.bin');
-   rewrite(ylemat,length(ylemarg)*4);
+   rewrite(ylemat,length(margins)*4);
    try
-    blockwrite(ylemat,ylemarg[0],1);
-   except on e:exception do writeln('<li>eiEionnaa2:',e.Message,' ',length(ylemarg)*4);;end;
+    blockwrite(ylemat,margins[0],1);
+   except on e:exception do writeln('<li>eiEionnaa2:',e.Message,' ',length(margins)*4);;end;
 //fstream.free;
    close(ylemat);
 end;
@@ -374,7 +446,7 @@ setlength(asyns,40000);
          hit[ss]:=wn2;
          inc(ss);
      end;
-     for i:=0 to ss do for j:=0 to ss do  issyn[hit[i],hit[j]]:=true;
+     for i:=0 to ss do for j:=0 to ss do  issyn[hit[i],hit[j]]:=true; //aika turha...
     // if ss>1 then write(^j,resrivi);
      //if ss>63 then begin writeln(^j,ss,w1);maxi:=ss;readln;end;
      except writeln('failaarivi');end;
@@ -382,7 +454,7 @@ setlength(asyns,40000);
    for wn1:=1 to 30000 do
    begin
     try
-     write(^j^j,sanat[wn1],wn1,':');
+     write(^j^j,sanat[wn1],wn1,': ');
      for wn2:=0 to 30000 do begin if issyn[wn1][wn2] then if issyn[wn2][wn1] then write(sanat[wn2],' ')else write(' *****',wn1,sanat[wn2],wn2,' ');;end;//else issyn[
     except write('!!!failsana ',wn1,' ',wn2);   end;
    end;
@@ -449,8 +521,11 @@ var f,outf:text;kaverit,sanat:tstringlist; i:longword;j:word;line:string;
 
 begin
     writeln('coocs');
-    gutcoocs;exit;
-    finwnsyno;exit;
+    //gutcoocs;
+     listgutmat;exit;
+
+    exit;
+    finwnsyno;writeln('did');
     synosana;exit;
 assign(f,'skumppanit.lst');
 reset(f);

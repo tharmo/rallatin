@@ -99,7 +99,6 @@ var
   Application: Trallatin;
 begin
   Application:=Trallatin.Create(nil);
-  Application.Title:='rallatin';
   Application.Run;
   Application.Free;
 end.
