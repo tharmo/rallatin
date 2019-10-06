@@ -1,4 +1,135 @@
 class name=riimit
+ gutspar
+  pre
+    xse:gawk in="guts.rel" : '''
+    BEGIN {    PROCINFO["sorted_in"] = "@val_num_desc";tot=49399104 }
+     { #if (NR>30000) exit; 
+       if ($1!=p1) { 
+          #n = asort(kumps,kumpa)
+          res=p1 ":"
+          x=0;
+          #for (i in kumps) { res=res i "," kumps[i] ",";x++;if (x>5) break}
+          for (i in kumps) { res=res i ",";x++;if (x>31) break}
+          print res >"gut.spar"
+          
+          p1=$1
+          delete(kumps)
+         }
+         kumps[$2]=$4 
+         #print kumps[$2],$2
+       }
+    '''
+ gutnorm 
+     xse:gawk in="gutpairs.lst" : '''
+     BEGIN {  while (getline<"guts.cnt") { counts[$1]=$2; tot=49399104} }
+     { #if (NR>10000) exit; 
+        toto=toto+$3
+        expe=(counts[$1] * counts[$2]) /tot
+        #Ff=($3*1482560)/(counts[$1]+1)
+        #if ($1=="tulla") print $0, "," int(f) "," int((10*f)/counts[$2]) >"tulla.tst"
+        #f=(10*f)/(counts[$2]+1) 
+        f=($3) / (expe+1)
+        if (f>1) print $0,  int(f*10) >"guts.rel"
+        #print int(expe) "=" tot "/ (" counts 
+     }
+     END { print tot,toto} #49399104
+    '''
+ gutcount #jäi laskemata
+   xse:gawk in="gutpairs.lst": '''
+         { if ($1!=p) { print p,n >"guts.cnt";n=0;p=$1} 
+          n=n+$3 } 
+          
+   '''
+
+ sanaparitnorm
+    ### xse:gawk in="sanaparit2.all" : '''
+     BEGIN {  while (getline<"kaavoitetut") { i++;sanat[$1]=1; }}
+     { #if (NR>30000) exit; 
+      s1=(sanat[$2]) 
+      s2=(sanat[$1]) 
+      if (s1!=1 || s2!=1) next
+      print  >"gramkarsi.lst"
+      luvut[$1]=luvut[$1]+$3 
+     }
+     #END { for (i in luvut) print i,luvut[i]>"grams.cnt"}
+    '''
+   pre 
+    xse:gawk in="gramkarsi.lst" : '''
+     BEGIN {  while (getline<"grams.cnt") { counts[$1]=$2; } }
+     { #if (NR>10000) exit; 
+        tot=tot+$3
+        f=($3*1482560)/(counts[$1])
+        if ($1=="tulla") print $0, "," int(f) "," int((10*f)/counts[$2]) >"tulla.tst"
+        f=(10*f)/counts[$2] 
+        if (f>1) print $0, int(f) >"grams.rel"
+     }
+     END { print tot}
+    '''
+    # cat guts.srt  |uniq -c |gawk '{print $2,$3,$1}' >gutpairs.lst
+ gutjoin    
+    xse:gawk in="gutsents.iso" env="LC_ALL=C": '''
+     BEGIN {  while (getline<"kaavoitetut") { i++;sanat[$1]=1; }}
+     { 
+      #if (NR>30000) exit; 
+      if (length($0)<2)  {
+        for (i in sent) {
+          luvut[sent[i]]++ 
+          for (j in sent)
+            if (i!=j)        print  i,j  >"gutskarsi.sents"
+        }  
+        delete(sent);len=0
+       }    
+      if (sanat[$1]==1) { sent[$1]=1;len++; }
+     }
+     END { for (i in luvut) print i,luvut[i]>"guts.cnt"}
+    '''
+ zz  
+    xse:gawk in="sanaparit2.all" : '''
+     BEGIN {  while (getline<"kaavoitetut") { i++;sanat[$1]=1; }}
+     { #if (NR>30000) exit; 
+      s1=(sanat[$2]) 
+      s2=(sanat[$1]) 
+      if (s1!=1 || s2!=1) next
+      print  >"gramkarsi.lst"
+      luvut[$1]=luvut[$1]+$3 
+     }
+     END { for (i in luvut) print i,luvut[i]>"grams.cnt"}
+    '''
+ sanaparitjoin
+    #xse:gawk in="sanaparit.all" : '''
+    xse:gawk in="turha": '''
+  
+      {  gsub("_","",$0)
+      if (p1!=$1) { print p1, nn> "sanaparit.cnt";nn=0}
+       if (p1==$1 && p2==$2) np=np+$3  
+      else { print p1,p2,np>"sanaparit2.all";np=0;}
+      p1=$1;p2=$2;np=np+$3;nn=nn+$3
+      }
+    ''' 
+ skumprev
+   xse:gawk in="sanaparit.srt": '''
+    /-/ { next}
+    { if ($1==p1 && $2==p2) {  y=y+$3}
+      else { 
+      print p1,p2,y>"sanaparit12.lst";
+      print p2,p1,y >"sanaparit21.lst"; 
+      p1=$1;p2=$2;y=$3
+      }
+    }  
+   '''
+ skumpfreqs
+  pre
+   xse:gawk in="skumpkarsi.lst" : '''
+    BEGIN { FS=",";}
+    { n=0;
+     for (i=3;i<NF;i=i+2) {
+       n=n+$(i+1);ns[$i]=ns[$i]+$(i+1) 
+     }
+     print $1,$2,n, NF >"skumpfreq.lst";
+     #if (NR>1000) exit
+      }
+    END { for (i in ns) print i,ns[i]>"skumpfreq2.lst"}  
+   ''' 
  finnwn
    #cat ../finnwn/lists/fiwn-semrels-extra.tsv |gawk -F'\t' '{print $3}' |sort |uniq -c
    xse:gawk in="../finnwn/lists/fiwn-semrels-extra.tsv" : '''
