@@ -7,42 +7,40 @@
       <Unit0>
         <Filename Value="rallatin.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="31"/>
-        <CursorPos X="6" Y="72"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="19"/>
+        <CursorPos X="5" Y="10"/>
         <UsageCount Value="212"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="ralla.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <WindowIndex Value="1"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <TopLine Value="147"/>
         <CursorPos Y="163"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="1"/>
-          <CursorPos X="12" Y="14"/>
+          <EditorIndex Value="-1"/>
+          <CursorPos X="35" Y="7"/>
         </ExtraEditor1>
         <UsageCount Value="212"/>
-        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="rallautils.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="265"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="269"/>
         <CursorPos X="95" Y="300"/>
         <UsageCount Value="212"/>
-        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="sanasto.inc"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="50" Y="16"/>
         <UsageCount Value="209"/>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="vanhapas/varalla.pas"/>
@@ -54,159 +52,39 @@
         <UsageCount Value="208"/>
       </Unit4>
       <Unit5>
+        <Filename Value="coocs.inc"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="1"/>
+        <CursorPos X="25" Y="13"/>
+        <UsageCount Value="96"/>
+      </Unit5>
+      <Unit6>
         <Filename Value="vanhapas/vanhariimiutils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="276"/>
         <CursorPos X="10" Y="309"/>
-        <UsageCount Value="109"/>
-      </Unit5>
-      <Unit6>
+        <UsageCount Value="105"/>
+      </Unit6>
+      <Unit7>
         <Filename Value="vanhapas/syno.pas"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="1316"/>
-        <CursorPos Y="1336"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="1314"/>
+        <CursorPos X="59" Y="1322"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
-          <EditorIndex Value="1"/>
+          <EditorIndex Value="-1"/>
           <WindowIndex Value="1"/>
           <CursorPos X="134" Y="17"/>
         </ExtraEditor1>
-        <UsageCount Value="100"/>
-        <Loaded Value="True"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="coocs.inc"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="1"/>
-        <CursorPos X="25" Y="13"/>
-        <UsageCount Value="58"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="96"/>
       </Unit7>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="135" Column="18" TopLine="116"/>
-      </Position1>
-      <Position2>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="197" Column="5" TopLine="161"/>
-      </Position2>
-      <Position3>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="125" TopLine="120"/>
-      </Position3>
-      <Position4>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="260" Column="39" TopLine="243"/>
-      </Position4>
-      <Position5>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="265" Column="67" TopLine="246"/>
-      </Position5>
-      <Position6>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="267" Column="136" TopLine="248"/>
-      </Position6>
-      <Position7>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="270" Column="43" TopLine="251"/>
-      </Position7>
-      <Position8>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="122" Column="73" TopLine="112"/>
-      </Position8>
-      <Position9>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="131" Column="56" TopLine="111"/>
-      </Position9>
-      <Position10>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="265" Column="19" TopLine="234"/>
-      </Position10>
-      <Position11>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="236" Column="19" TopLine="217"/>
-      </Position11>
-      <Position12>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="131" Column="30" TopLine="110"/>
-      </Position12>
-      <Position13>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="137" Column="43" TopLine="112"/>
-      </Position13>
-      <Position14>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="135" Column="42" TopLine="118"/>
-      </Position14>
-      <Position15>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="138" Column="28" TopLine="122"/>
-      </Position15>
-      <Position16>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="125" Column="31" TopLine="110"/>
-      </Position16>
-      <Position17>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="129" Column="13" TopLine="110"/>
-      </Position17>
-      <Position18>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="138" Column="40" TopLine="119"/>
-      </Position18>
-      <Position19>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="276" Column="23" TopLine="257"/>
-      </Position19>
-      <Position20>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="278" Column="105" TopLine="257"/>
-      </Position20>
-      <Position21>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="274" Column="71" TopLine="255"/>
-      </Position21>
-      <Position22>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="125" Column="2" TopLine="349"/>
-      </Position22>
-      <Position23>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="567" Column="35" TopLine="564"/>
-      </Position23>
-      <Position24>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="575" Column="14" TopLine="570"/>
-      </Position24>
-      <Position25>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="144" Column="23" TopLine="119"/>
-      </Position25>
-      <Position26>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="1049" Column="4" TopLine="4"/>
-      </Position26>
-      <Position27>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="98" Column="11" TopLine="81"/>
-      </Position27>
-      <Position28>
-        <Filename Value="coocs.inc"/>
-        <Caret Column="21" TopLine="67"/>
-      </Position28>
-      <Position29>
-        <Filename Value="ralla.pas"/>
-        <Caret Line="98" Column="13" TopLine="82"/>
-      </Position29>
-      <Position30>
-        <Filename Value="vanhapas/syno.pas"/>
-        <Caret Line="124" Column="60" TopLine="7"/>
-      </Position30>
-    </JumpHistory>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
+    <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
   <Debugging>
     <Watches Count="6">
