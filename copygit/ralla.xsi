@@ -1,4 +1,57 @@
 class name=riimit
+  uusiks  //finwn.parit on viimeisin tiedetty kelvollinen. parit sanoina,sorttaamatta
+     xse:gawk in=finwn.parit: '''
+          BEGIN { while (getline<"kaavoitetut") { i++;nums[$1]=i; } }
+          {
+           print nums[$1],nums[$2] >"u_fwn.nums"
+          }
+      '''    
+      #  cp wikisetit.nums u_wik.nums .. wiki oli valmiiksi numeropareina
+ 
+      xse:shellexec: cat u_fwn.nums u_wik.nums |sort -k1,1g -k2,2g | uniq -c |gawk '{ print $2,$3,$1}>u_all.setit
+
+
+ joinwnwi
+     #pre
+     xse:gawk in=u_all.setit: '''
+          BEGIN { while (getline<"kaavoitetut") { i++;sanat[i]=$1; } ;PROCINFO["sorted_in"]="@val_num_desc"}
+         {  #if (NR>100) exit
+               #print $0,"<b>",cc "</b>",sanat[$2] 
+               if ($1!=p1) { 
+                  s=sanat[p1]; n=p1 
+                  coocs[p2]=cc
+                  for (i in coocs)  if (sanat[i]=="") print i,"!!!";else { 
+                    s=s " "  sanat[i] " " coocs[i]; n=n " "  i " " coocs[i];
+                   }
+                  if (maksi<length(coocs)) {  maksi=length(coocs);print "<li>\n<li> " maksi,s}  
+                  print n >"rela.nums" ;
+                  print s "\n">"rela.sans" ;p1=$1;delete(coocs);p2=$2;cc=$3
+               } 
+               
+               if ($2!=p2) {   
+               coocs[p2]=cc; 
+               #print "      uusi:" sanat[p2] " " $1  
+               p2=$2;cc=0
+               } 
+               cc=$3+cc
+               #print "            +" length(coocs)  sanat[$2]
+          }     
+         #END { for (i in sanat) print i,sanat[i] }
+     '''
+  #xse:shellexec: cat wikisetit.nums |sort -k1,1g -k2,2g | uniq -c|gawk '$1>1 {print $2,$3,$1}' |sort -V >ww.nums>wiki.nums
+ # xse:shellexec: cat finwn.nums |sort -k1,1g -k2,2g >finwn2.nums
+
+  #xse:shellexec: cat wikisetit.nums finwn.nums |sort - -k1,1g -k2,2g >wiwn.nums
+  #xse:shellexec: cat finwn.nums wikisetit.sans |sort -c| uniq -c|gawk '$1>1 {print $2,1000-$1,$3}' |sort -V >fwn.nums
+  #xse:shellexec: cat finwn.nums wikisetit.sans |sort -c| uniq -c|gawk '$1>1 {print $2,1000-$1,$3}' |sort -V >fwn.nums
+   
+ czz
+  #cat finwn.parit wikisetit.sans |sort -V| uniq -c|gawk '$1>1 {print $2,1000-$1,$3}' |sort -V >wfall.lst
+ # wikiparit kumpaankin suuntaan, sorttaamatta, laskematta  wikisetit.sans -sanoina,  wikisetit.nums - numeroina
+ #finwn.lst wordnet sanaparit laskettuina(1000-n), sortattuina, kumpaankin suuntaan sanoina
+ #wfall.lst ja  finwn.lst joutavat yhteen
+ 
+ # finwn.nums, wiki.nums, parit numrtoins,  laskettu ja sortattu oikein (?)
  wikilist
       # cat wikisetit.nums  |sort -V| uniq -c|gawk '$1>1 {print $2,1000-$1,$3}' |sort -V >wikisyn.lst
     pre  

@@ -68,6 +68,132 @@ type
 implementation
 type binriv=bitpacked array[0..40000] of  boolean;
 
+type TCO=record w,f:word;end;
+type TCOline=array[0..64] of tco;
+
+
+  function obcompare(List: TStringList; Index1, Index2: Integer): Integer;
+  begin
+   result:=integer(pointer(list.objects[index2]))-integer(pointer(list.objects[index1]));
+end;
+procedure relas;
+var f:text;//aco:tco;
+  scos,i1cos,i2cos,j1cos,j2cos:tcoline;
+  acoi1,acoi2,acoj1,acoj2:tco;
+  i1val,i2val,j1val,j2val:longword;
+  cospars:array of tcoline;
+  line:string;cost,sanat:tstringlist; base:word;
+  i1,i2,j1,j2,ii,s:word;scount:word;
+  kerrotut:tstringlist;  asana:string; AVAL:WORD;
+  apos,jcount:integer;
+  procedure reg;//(asna:string;w,c1,c2,c3,c4:word);
+               begin//write(' ',sanat[acok.w]) else write('.');
+                apos:=kerrotut.indexof(asana);
+                aval:=min(acoi1.f,min(acoi2.f,min(acoj1.f,acoj2.f)));
+                //if aval>0 then write(sanat[acoj1.w],'.');
+                if apos<0 then  kerrotut.addobject(asana,tobject(pointer(aval))) // KERr0?
+                else
+                BEGIN
+                   AVAL:=aval+INTEGER(POINTER(kerrotut.objects[apos]));
+                  kerrotut.objects[apos]:=tobject(pointer(AVAL));
+                  //write('-',asana);
+                END;
+                //if aval>1 then write('-',kerrotut.count);
+              end;
+
+begin
+  kerrotut:=tstringlist.create;
+   assign(f,'rela.nums');
+   reset(f);
+   cost:=tstringlist.create;
+   sanat:=tstringlist.create;
+   sanat.loadfromfile('kaavoitetut');
+   scount:=sanat.count;
+   sanat.insert(0,'eka');
+   cost.Delimiter:=' ';
+   cost.StrictDelimiter:=true;
+   setlength(cospars,sanat.count);
+   while not eof(f) do
+   begin
+    try
+     readln(f,line);
+     cost.delimitedtext:=line;
+     base:=strtointdef(cost[0],base);
+     //coline:=cospars[base];
+     //write(^j^j,sanat[base],':');
+     for i1:=1 to (cost.Count-1) div 2 do  //3->1 5->2
+     begin
+
+      ii:=i1*2-1;
+      if ii>63 then continue;
+      //write(' ',ii,sanat[strtointdef(cost[ii],0)],cost[ii+1]);    continue;
+     cospars[base][i1].w:=strtointdef(cost[ii],0);
+     cospars[base][i1].f:=strtointdef(cost[ii+1],0);
+     //write(' ',ii,sanat[cospars[base][ii].w],'.',cospars[base][ii].f);
+     end;
+     except write(' failline:',line);end;
+   end;
+   for s:=1 to scount do//kaikkii sanojen lista
+   begin
+      scos:=cospars[s];  //s-sanan coco-lista
+      for i1:=1 to 12 do  //yksi s:n cooc
+      begin
+        begin
+         acoi1:=scos[i1]; //i-sanan muut coocit
+         if acoi1.w =0 then begin break;end;
+         jcount:=i1-1;  //pannaan muistiin debuggausta varten
+         //if acoj.w =i then continue;
+         //write('_',sanat[acoi1.w]);
+        //  write( ^j^j,'   ',sanat[acoi1.w]);
+         i1cos:=cospars[acoi1.w];  //ptr
+         for i2:=1 to 12 do  //toinen s-sanan cooc
+         begin
+          //continue;
+          acoi2:=scos[i2];  // yksii toisista cooceista
+          //write('   [',sanat[acoi2.w],']:');
+          if acoi2.w=acoi1.w then continue;
+          if acoi2.w=0 then break;
+          i2cos:=cospars[acoi2.w];;
+          //for i:=1 to 5 do write('-',
+          if acoi2.w=0 then break;
+          //write('-',sanat[acoi2.w]);
+          for j1:=1 to 12 do  //
+          begin  //i-sanan ekan coocin eka coocci
+            acoj1:=i1cos[j1];  //
+            if acoj1.w=0 then break;
+            asana:=sanat[acoj1.w];
+            for j2:=1 to 12 do  //
+            begin  //i-sanan ekan coocin eka coocci
+              acoj2:=i2cos[j2];  //
+              if acoj2.w=0 then break;
+              //write(',');
+              if ACOj1.W=ACOj2.W THEN reg;
+            end;
+          end;
+         //aco:=coscar
+         //write(' ',sanat[coline[ii].w]);
+       end;  //i2
+      end; //i1
+     end;  //yksi sana
+     try
+      if kerrotut.count>1 then
+      begin
+            write(^j^j,sanat[s],': ');
+
+        kerrotut.customsort(@obcompare);
+        //if abs(jcount-kerrotut.count)>3 then
+        begin
+        WRITE(jcount,'>',kerrotut.count,'::');
+        for ii:=0 to kerrotut.count-1 do //if integer(pointer(kerrotut.objects[ii]))<1 then break else
+        write(' ',kerrotut[ii],integer(pointer(kerrotut.objects[ii])));
+        end;
+      end;
+     except writeln('failsort'); end;
+      KERROTUT.CLEAR;
+   end;
+   close(f);
+end;
+
 procedure synosana;
 var sanat,rivi:tstringlist;f:text; issyn:array of binriv;arivi:string;fpos:integer;i,j,wn1,wn2,maxi,ss:integer;
  hit:array[0..63] of word;hits:word;w1,w2:string;rel:boolean;
@@ -115,7 +241,7 @@ begin
      issyn[hit[i],hit[j]]:=true;
      //write(' ',ss);
      //if ss>63 then begin writeln(^j,ss,w1);maxi:=ss;readln;end;
-     except writeln('failaarivi');end;
+     except writeln('xfailaarivi');end;
   end;
 end;
 type tacoc=packed record w:word;f:byte;end;
@@ -567,6 +693,7 @@ var f,outf:text;kaverit,sanat:tstringlist; i:longword;j:word;line:string;
 begin
     writeln('coocs');
     //gutcoocs;
+    relas;exit;
     finwnsyno;writeln('did');exit;
      listgutmat;exit;
 
