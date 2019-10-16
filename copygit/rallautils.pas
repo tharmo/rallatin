@@ -178,9 +178,8 @@ begin
      try
       if kerrotut.count>1 then
       begin
-            write(^j^j,sanat[s],': ');
-
-        kerrotut.customsort(@obcompare);
+         write(^j^j,sanat[s],': ');
+         kerrotut.customsort(@obcompare);
         //if abs(jcount-kerrotut.count)>3 then
         begin
         WRITE(jcount,'>',kerrotut.count,'::');
