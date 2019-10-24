@@ -66,6 +66,7 @@ type
 // for {$mode delphi}
 //  TIntegerList = TFPGList<Integer>;
 implementation
+uses otus;
 type binriv=bitpacked array[0..40000] of  boolean;
 
 type TCO=record w,f:word;end;
@@ -76,119 +77,239 @@ type TCOline=array[0..64] of tco;
   begin
    result:=integer(pointer(list.objects[index2]))-integer(pointer(list.objects[index1]));
 end;
+
+
+procedure gutrelas;
+  var f:text;//aco:tco;
+    scos,i1cos,i2cos,j1cos,j2cos:tcoline;
+    acoi1,acoi2,acoj1,acoj2:tco;
+    i1val,i2val,j1val,j2val:longword;
+    vvmat:tvvmat;
+    //cos:array of tvvarray;
+     maxmutv,maxmutn:word;
+    line:string;cost,sanat:tstringlist; base:word;
+    i1,i2,j1,j2,ii,s:word;scount:word;
+    mutut:tstringlist;  asana,rst:string; AVAL:WORD;lim:word;
+    apos,jcount:integer;
+    //mutuals:array 0..32 of word;
+  begin
+  lim:=16;
+  mutut:=tstringlist.create;
+   assign(f,'both2.spar');
+   reset(f);
+   cost:=tstringlist.create;
+   sanat:=tstringlist.create;
+   sanat.loadfromfile('kaavoitetut');
+   scount:=sanat.count;
+   vvmat:=tvvmat.create(scount+1,63);
+
+   sanat.insert(0,'eka');
+   vvmat.sanat:=sanat;
+   cost.Delimiter:=',';
+   cost.StrictDelimiter:=true;
+   //setlength(cos,sanat.count);
+   while not eof(f) do
+   begin
+    try
+     readln(f,line);
+     if line='' then continue;
+     cost.delimitedtext:=line;
+     //if cost.Count<3 then continue;
+     base:=strtointdef(cost[0],0);
+     //write(' ',sanat[base]);
+     //coline:=cospars[base];
+     for i1:=1 to (cost.Count-2) div 2 do  //3->1 5->2
+     begin
+      ii:=i1*2;
+      if ii>63 then continue;
+      try
+       //writeln(base,strtointdef(cost[ii],0),strtointdef(cost[ii+1],0))
+        vvmat.add(base,strtointdef(cost[ii],0),strtointdef(cost[ii+1],0));
+      except  writeln(^j,' #',sanat[base],ii,'@',strtointdef(cost[ii],0),'#',cost.count);end;
+     end;
+     except write(^j,' failline:',base,'.');end;
+   end;
+   writeln('didsofar',scount);
+   vvmat.mply;
+  end;
+
 procedure relas;
 var f:text;//aco:tco;
   scos,i1cos,i2cos,j1cos,j2cos:tcoline;
   acoi1,acoi2,acoj1,acoj2:tco;
   i1val,i2val,j1val,j2val:longword;
-  cospars:array of tcoline;
+  cospars,mutuals:array of tcoline;
+   maxmutv,maxmutn:word;
+  vvmat:tvvmat;
   line:string;cost,sanat:tstringlist; base:word;
   i1,i2,j1,j2,ii,s:word;scount:word;
-  kerrotut:tstringlist;  asana:string; AVAL:WORD;
+  kerrotut,mutut:tstringlist;  asana,rst:string; AVAL:WORD;lim:word;
   apos,jcount:integer;
+  //mutuals:array 0..32 of word;
   procedure reg;//(asna:string;w,c1,c2,c3,c4:word);
                begin//write(' ',sanat[acok.w]) else write('.');
-                apos:=kerrotut.indexof(asana);
+                apos:=kerrotut.indexof(inttostr(acoj2.w));
                 aval:=min(acoi1.f,min(acoi2.f,min(acoj1.f,acoj2.f)));
                 //if aval>0 then write(sanat[acoj1.w],'.');
-                if apos<0 then  kerrotut.addobject(asana,tobject(pointer(aval))) // KERr0?
+                //if apos<0 then  kerrotut.addobject(asana,tobject(pointer(aval))) // KERr0?
+                mutuals[i1,i2].f:=mutuals[i1,i2].f+1;
+                if apos<0 then  kerrotut.addobject(inttostr(acoj1.w),tobject(pointer(1))) // KERr0?
                 else
                 BEGIN
-                   AVAL:=aval+INTEGER(POINTER(kerrotut.objects[apos]));
+                  AVAL:=aval+INTEGER(POINTER(kerrotut.objects[apos]));
+//                  AVAL:=1+INTEGER(POINTER(kerrotut.objects[apos]));
                   kerrotut.objects[apos]:=tobject(pointer(AVAL));
+                  //apos:=kerrotut.count-1;
                   //write('-',asana);
                 END;
+               // writeln(apos,asana,kerrotut.indexof(inttostr(acoj1.w)),sanat[acoj1.w],acoj1.w,': [',kerrotut.commatext,']');
+
+
                 //if aval>1 then write('-',kerrotut.count);
               end;
+vAR Ab:ARRAY[0..7] of trec;oioi:string;
+const aset=[1,9,3,4,5,6,7,2,8];
 
+   //a:array[0..7] of word;
 begin
+ // setlength(vvs,8);
+ oioi:='193456728';
+  lim:=16;
   kerrotut:=tstringlist.create;
+  mutut:=tstringlist.create;
    assign(f,'rela.nums');
    reset(f);
    cost:=tstringlist.create;
    sanat:=tstringlist.create;
    sanat.loadfromfile('kaavoitetut');
    scount:=sanat.count;
+   vvmat:=tvvmat.create(scount+1,63);
    sanat.insert(0,'eka');
    cost.Delimiter:=' ';
    cost.StrictDelimiter:=true;
    setlength(cospars,sanat.count);
+   setlength(mutuals,64*64);
    while not eof(f) do
    begin
     try
      readln(f,line);
+     if line='' then continue;
      cost.delimitedtext:=line;
      base:=strtointdef(cost[0],base);
+     //write(^j,' ',sanat[base]);
      //coline:=cospars[base];
-     //write(^j^j,sanat[base],':');
      for i1:=1 to (cost.Count-1) div 2 do  //3->1 5->2
      begin
-
       ii:=i1*2-1;
-      if ii>63 then continue;
-      //write(' ',ii,sanat[strtointdef(cost[ii],0)],cost[ii+1]);    continue;
+      if ii>31 then continue;
      cospars[base][i1].w:=strtointdef(cost[ii],0);
      cospars[base][i1].f:=strtointdef(cost[ii+1],0);
-     //write(' ',ii,sanat[cospars[base][ii].w],'.',cospars[base][ii].f);
      end;
-     except write(' failline:',line);end;
+     except write(' failline:',line,'.');end;
    end;
+   writeln('didsofar',scount);
+
    for s:=1 to scount do//kaikkii sanojen lista
    begin
+      //fillchar(mutuals[0],64*4,0);
+      rst:=(^j+sanat[s]+':;');
+      //write(^j,s,sanat[s]+':;');
+      //continue;
       scos:=cospars[s];  //s-sanan coco-lista
-      for i1:=1 to 12 do  //yksi s:n cooc
+      for i1:=1 to lim do  //yksi s:n cooc
       begin
         begin
          acoi1:=scos[i1]; //i-sanan muut coocit
+         if acoi1.w=s then continue;
          if acoi1.w =0 then begin break;end;
+//         vvs.add(acoi1.w,acoi1.f);
+         mutuals[i1,0].w:=acoi1.w;
+         rst:=rst+('_'+sanat[acoi1.w]);
          jcount:=i1-1;  //pannaan muistiin debuggausta varten
          //if acoj.w =i then continue;
-         //write('_',sanat[acoi1.w]);
-        //  write( ^j^j,'   ',sanat[acoi1.w]);
          i1cos:=cospars[acoi1.w];  //ptr
-         for i2:=1 to 12 do  //toinen s-sanan cooc
+         for i2:=1 to lim do  //toinen s-sanan cooc
          begin
           //continue;
           acoi2:=scos[i2];  // yksii toisista cooceista
-          //write('   [',sanat[acoi2.w],']:');
-          if acoi2.w=acoi1.w then continue;
           if acoi2.w=0 then break;
+          mutuals[i2,0].w:=acoi2.w;
+          //TRY
+          if (acoi2.w=0) OR  (acoi1.w=ACOI2.W) then continue;
           i2cos:=cospars[acoi2.w];;
-          //for i:=1 to 5 do write('-',
           if acoi2.w=0 then break;
-          //write('-',sanat[acoi2.w]);
-          for j1:=1 to 12 do  //
+          for j1:=1 to lim do  //
           begin  //i-sanan ekan coocin eka coocci
             acoj1:=i1cos[j1];  //
             if acoj1.w=0 then break;
             asana:=sanat[acoj1.w];
-            for j2:=1 to 12 do  //
+            for j2:=1 to lim do  //
             begin  //i-sanan ekan coocin eka coocci
               acoj2:=i2cos[j2];  //
               if acoj2.w=0 then break;
-              //write(',');
-              if ACOj1.W=ACOj2.W THEN reg;
+              if ACOj1.W=ACOj2.W THEN
+              begin
+                //write(',',sanat[acoj1.w],asana);
+                reg;
+              end;
             end;
           end;
-         //aco:=coscar
-         //write(' ',sanat[coline[ii].w]);
        end;  //i2
       end; //i1
+
      end;  //yksi sana
+ //exit;
+ write(^j^j,sanat[s],'::',kerrotut.count);
+ try
+     //if kerrotut.count>0 then for i1:=1 to kerrotut.count-1 do       write('   ',i1-1,':',strtointdef(kerrotut[i1],0)   ,'_'    ,integer(pointer(kerrotut.objects[i1])));
+     if kerrotut.count<1 then continue;
+      if kerrotut.count>0 then for i1:=1 to kerrotut.count-1 do
+        vvmat.add(s,strtointdef(kerrotut[i1],0),integer(pointer(kerrotut.objects[i1])));
+ try vvmat.sortrow(s);except writeln('^^FAILSORT');end;
+ for i1:=1 to kerrotut.count-1  do write('/ ',sanat[vvmat[s,i1].v],'/',vvmat[s,i1].v);
+ //vvmat.clearrow(;
      try
-      if kerrotut.count>1 then
+      if kerrotut.count>9991 then
       begin
-         write(^j^j,sanat[s],': ');
-         kerrotut.customsort(@obcompare);
-        //if abs(jcount-kerrotut.count)>3 then
+        kerrotut.customsort(@obcompare);
+{        for i1:=0 to min(20,kerrotut.count-1) do
+        //if kerrotut[i1]='0' then break else
         begin
-        WRITE(jcount,'>',kerrotut.count,'::');
+          acoi1.w:=strtointdef(kerrotut[i1],0);
+          write('?',kerrotut[i1]);
+          for i2:=0 to  min(20,kerrotut.count-1) do
+          if kerrotut[i2]='' then break else
+          begin
+            acoi2.w:=strtointdef(kerrotut[i2],0);
+            try
+           // mutuals[i1][i2].w:=cospars[acoi1.w,acoi2.w].w;
+            //mutuals[i1][i2].f:=cospars[acoi1.w,acoi2.w].f;
+            except write('failX',acoi1.w,'/',acoi2.w,'_');end;
+          end;
+        end;
+}        {maxmutv:=0;
+        for i1:=0 to kerrotut.count-1 do
+          for i2:=0 to kerrotut.count-1 do
+           if maxmutv<mutuals[i1,i2].f then begin maxmutv:=mutuals[i1,i2].f;write('+',sanat[mutuals[i1,i2].w]); end;
+         //write(^j^j,sanat[s],': ',rst);
+        write(rst,'!');
+        }
+        //if abs(jcount-kerrotut.count)>3 then
+        //if jcount>kerrotut.count+4 then
+        //if s<>strtointdef
+        base:=(integer(pointer(kerrotut.objects[1])));
+        begin
+        WRITE(^j,//jcount,'>',kerrotut.count,'::',
+        sanat[s]);
         for ii:=0 to kerrotut.count-1 do //if integer(pointer(kerrotut.objects[ii]))<1 then break else
-        write(' ',kerrotut[ii],integer(pointer(kerrotut.objects[ii])));
+        if 20*integer(pointer(kerrotut.objects[ii]))>base then
+        write(' ',sanat[strtointdef(kerrotut[ii],0)],integer(pointer(kerrotut.objects[ii])));
+        writeln;
         end;
       end;
      except writeln('failsort'); end;
-      KERROTUT.CLEAR;
+     finally  KERROTUT.CLEAR;end;
+      //write('+',kerrotut.count,'???');
    end;
    close(f);
 end;
@@ -401,7 +522,7 @@ begin
       else BEGIN try write(' ',sanat[acocs.bigs[i].w],acocs.bigs[i].f);// cocrivi[acocs.bigs[i].w],'/',margins[acocs.bigs[i].w] div 10);//,
        //else BEGIN try write(' ',sanat[nvars[wn1*64+i]],':', cocrivi[nvars[wn1*64+i]],'/',margins[nvars[wn1*64+i]] div 10);//,
         //(nvals[wn1*64+i]));
-        except write('failx',wn1*64+i,'/');end;;END;
+        except write('failxx',wn1*64+i,'/');end;;END;
     end;
   end;
 
@@ -594,30 +715,31 @@ setlength(asyns,40000);
    begin
     try;
      readln(f,arivi);
-     if eof(f) then if eka then begin eka:=false;close(f);assign(f,'finwn.syno2');reset(f); end;
+     //if eof(f) then if eka then begin eka:=false;close(f);assign(f,'finwn.syno2');reset(f); end;
      //write(^j,arivi);
      if arivi='' then continue;
      //inc(fpos);if fpos>4000 then break; //testing speed
      rivi.delimitedtext:=arivi;
      //w1:=trim(rivi[0]);
      //if pos(' ',w1)>0 then continue;
-     resrivi:='';
+     resrivi:=rivi[1]+': ';
      ss:=0;
      //wn1:=sanAT.INDEXof(w1);if wn1<1 then continue else
-     for j:=1 to rivi.count-1 do
+     for j:=2 to rivi.count-1 do
      begin         //rel:=false;
+        try
          w2:=trim(rivi[j]);
-         //write('(',w2,')');
          if pos(' ',w2)>0 then continue;
-         //write('+');
          wn2:=sanAT.INDEXof(w2);
          if wn2<0 then continue else
+         //write('(',w2,')');
          resrivi:=resrivi+','+w2;
-         hit[ss]:=wn2;
+         //hit[ss]:=wn2;
          inc(ss);
+         except writeln('failaasana');end;
      end;
-     for i:=0 to ss do for j:=0 to ss do  issyn[hit[i],hit[j]]:=true; //aika turha...
-    // if ss>1 then write(^j,resrivi);
+     //for i:=0 to ss do for j:=0 to ss do  issyn[hit[i],hit[j]]:=true; //aika turha...
+     if ss>1 then writeln(^j,resrivi);
      //if ss>63 then begin writeln(^j,ss,w1);maxi:=ss;readln;end;
      except writeln('failaarivi');end;
   end;
@@ -692,7 +814,7 @@ var f,outf:text;kaverit,sanat:tstringlist; i:longword;j:word;line:string;
 begin
     writeln('coocs');
     //gutcoocs;
-    relas;exit;
+    gutrelas;exit;
     finwnsyno;writeln('did');exit;
      listgutmat;exit;
 

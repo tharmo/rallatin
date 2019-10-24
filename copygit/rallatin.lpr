@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Classes, SysUtils, CustApp,
-  ralla, rallautils
+  ralla, rallautils, otus, sort
   { you can add units after this };
 
 type

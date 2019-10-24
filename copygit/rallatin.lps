@@ -3,43 +3,41 @@
   <ProjectSession>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="8">
+    <Units Count="10">
       <Unit0>
         <Filename Value="rallatin.lpr"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="44"/>
-        <CursorPos X="7" Y="72"/>
+        <TopLine Value="64"/>
+        <CursorPos X="43" Y="2"/>
         <UsageCount Value="212"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="ralla.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="77"/>
-        <CursorPos X="14" Y="97"/>
+        <CursorPos X="10" Y="97"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <EditorIndex Value="-1"/>
-          <TopLine Value="77"/>
-          <CursorPos X="10" Y="97"/>
+          <TopLine Value="1128"/>
+          <CursorPos X="23" Y="1145"/>
         </ExtraEditor1>
         <UsageCount Value="212"/>
-        <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="rallautils.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="148"/>
-        <CursorPos X="7" Y="186"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="93"/>
+        <CursorPos X="14" Y="133"/>
         <ExtraEditorCount Value="1"/>
         <ExtraEditor1>
           <IsVisibleTab Value="True"/>
           <WindowIndex Value="1"/>
-          <TopLine Value="75"/>
-          <CursorPos X="36" Y="83"/>
+          <TopLine Value="114"/>
+          <CursorPos X="17" Y="127"/>
         </ExtraEditor1>
         <UsageCount Value="212"/>
         <Loaded Value="True"/>
@@ -47,7 +45,8 @@
       <Unit3>
         <Filename Value="sanasto.inc"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="8"/>
         <CursorPos X="127" Y="8"/>
         <UsageCount Value="209"/>
         <Loaded Value="True"/>
@@ -70,13 +69,32 @@
         <UsageCount Value="203"/>
       </Unit5>
       <Unit6>
+        <Filename Value="otus.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="114"/>
+        <CursorPos Y="147"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="sort.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="52"/>
+        <CursorPos X="10" Y="67"/>
+        <UsageCount Value="230"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="vanhapas/vanhariimiutils.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="276"/>
         <CursorPos X="10" Y="309"/>
-        <UsageCount Value="85"/>
-      </Unit6>
-      <Unit7>
+        <UsageCount Value="47"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="vanhapas/syno.pas"/>
         <EditorIndex Value="-1"/>
         <WindowIndex Value="-1"/>
@@ -88,134 +106,134 @@
           <WindowIndex Value="1"/>
           <CursorPos X="134" Y="17"/>
         </ExtraEditor1>
-        <UsageCount Value="76"/>
-      </Unit7>
+        <UsageCount Value="38"/>
+      </Unit9>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="105" Column="25" TopLine="85"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="123" Column="24" TopLine="96"/>
       </Position1>
       <Position2>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="82" Column="25" TopLine="69"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="86" Column="22" TopLine="69"/>
       </Position2>
       <Position3>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="122" Column="12" TopLine="102"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="116" Column="16" TopLine="99"/>
       </Position3>
       <Position4>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="85" Column="17" TopLine="72"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="118" Column="27" TopLine="99"/>
       </Position4>
       <Position5>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="117" Column="22" TopLine="92"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="121" Column="18" TopLine="103"/>
       </Position5>
       <Position6>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="127" Column="13" TopLine="107"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="100" TopLine="46"/>
       </Position6>
       <Position7>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="85" Column="19" TopLine="78"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="43" Column="17" TopLine="25"/>
       </Position7>
       <Position8>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="81" Column="8" TopLine="68"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="125" Column="18" TopLine="95"/>
       </Position8>
       <Position9>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="127" Column="12" TopLine="107"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="110" Column="27" TopLine="92"/>
       </Position9>
       <Position10>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="131" Column="30" TopLine="109"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="133" Column="11" TopLine="101"/>
       </Position10>
       <Position11>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="126" Column="20" TopLine="111"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="134" Column="23" TopLine="99"/>
       </Position11>
       <Position12>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="132" Column="19" TopLine="107"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="133" TopLine="115"/>
       </Position12>
       <Position13>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="136" Column="25" TopLine="112"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="112" Column="37" TopLine="93"/>
       </Position13>
       <Position14>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="132" Column="12" TopLine="112"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="115" Column="63" TopLine="103"/>
       </Position14>
       <Position15>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="137" Column="19" TopLine="117"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="101" Column="70" TopLine="97"/>
       </Position15>
       <Position16>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="139" Column="18" TopLine="118"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="141" Column="44" TopLine="111"/>
       </Position16>
       <Position17>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="145" Column="30" TopLine="121"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="117" Column="57" TopLine="99"/>
       </Position17>
       <Position18>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="147" Column="31" TopLine="126"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="134" Column="36" TopLine="116"/>
       </Position18>
       <Position19>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="150" Column="31" TopLine="130"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="93" Column="16" TopLine="86"/>
       </Position19>
       <Position20>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="142" Column="31" TopLine="130"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="95" Column="15" TopLine="86"/>
       </Position20>
       <Position21>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="150" Column="79" TopLine="130"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="107" Column="18" TopLine="86"/>
       </Position21>
       <Position22>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="165" Column="9" TopLine="147"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="118" Column="28" TopLine="89"/>
       </Position22>
       <Position23>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="168" Column="98" TopLine="148"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="126" Column="30" TopLine="97"/>
       </Position23>
       <Position24>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="156" Column="122" TopLine="136"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="81" Column="31" TopLine="71"/>
       </Position24>
       <Position25>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="157" Column="22" TopLine="137"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="85" Column="7" TopLine="71"/>
       </Position25>
       <Position26>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="156" Column="70" TopLine="137"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="94" Column="13" TopLine="71"/>
       </Position26>
       <Position27>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="157" Column="78" TopLine="137"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="95" Column="19" TopLine="71"/>
       </Position27>
       <Position28>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="89" Column="6" TopLine="69"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="103" Column="21" TopLine="73"/>
       </Position28>
       <Position29>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="93" Column="80" TopLine="70"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="117" Column="21" TopLine="88"/>
       </Position29>
       <Position30>
-        <Filename Value="rallautils.pas"/>
-        <Caret Line="153" Column="39" TopLine="119"/>
+        <Filename Value="otus.pas"/>
+        <Caret Line="134" Column="30" TopLine="105"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <Watches Count="6">
+    <Watches Count="8">
       <Item1>
         <Expression Value="ienta"/>
       </Item1>
@@ -234,6 +252,12 @@
       <Item6>
         <Expression Value="'sousi,souti,yö,töillä,tekivät,puhella,surivat,surisi,surra,surisivat,pure,puri,purree,pierret,piereskelevät,lähdettu,lahdatut,pullauttanee,oli,aito,käsin,toisin,sousi'"/>
       </Item6>
+      <Item7>
+        <Expression Value="'???eivittu'"/>
+      </Item7>
+      <Item8>
+        <Expression Value="mx[mx[rivi,0].v].v"/>
+      </Item8>
     </Watches>
   </Debugging>
 </CONFIG>
