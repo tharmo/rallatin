@@ -4,7 +4,7 @@ unit rallautils;
 
 interface
 uses
-  Classes, SysUtils,math,  fgl;
+  Classes, SysUtils,math,  fgl,sort;
 
 const vahvatverbiluokat=[52..63,76];                         const vahvatnominiluokat=[1..31];
 const vahvatluokat=[1..31,52..63,76];
@@ -70,7 +70,7 @@ uses otus;
 type binriv=bitpacked array[0..40000] of  boolean;
 
 type TCO=record w,f:word;end;
-type TCOline=array[0..64] of tco;
+type TCOline=array[0..63] of tco;
 
 
   function obcompare(List: TStringList; Index1, Index2: Integer): Integer;
@@ -79,18 +79,20 @@ type TCOline=array[0..64] of tco;
 end;
 
 
-procedure gutrelas;
+function gutrelas:tvvmat;
   var f:text;//aco:tco;
-    scos,i1cos,i2cos,j1cos,j2cos:tcoline;
-    acoi1,acoi2,acoj1,acoj2:tco;
+    //scos,i1cos,i2cos,j1cos,j2cos:tcoline;
+    //acoi1,acoi2,acoj1,acoj2:tco;
     i1val,i2val,j1val,j2val:longword;
-    vvmat:tvvmat;
+    vvmat,dotmat,ddot:tvvmat;
     //cos:array of tvvarray;
      maxmutv,maxmutn:word;
     line:string;cost,sanat:tstringlist; base:word;
-    i1,i2,j1,j2,ii,s:word;scount:word;
+    i1,i2,j1,j2,ii:word;scount:word;
     mutut:tstringlist;  asana,rst:string; AVAL:WORD;lim:word;
     apos,jcount:integer;
+    outf,inf:file;
+    tot:longword;
     //mutuals:array 0..32 of word;
   begin
   lim:=16;
@@ -101,10 +103,12 @@ procedure gutrelas;
    sanat:=tstringlist.create;
    sanat.loadfromfile('kaavoitetut');
    scount:=sanat.count;
-   vvmat:=tvvmat.create(scount+1,63);
-
+   vvmat:=tvvmat.create(scount+1,63,sanat);
    sanat.insert(0,'eka');
    vvmat.sanat:=sanat;
+//   vvmat.readmat('dot1.mat');
+ //  vvmat.list(0);
+  // exit;
    cost.Delimiter:=',';
    cost.StrictDelimiter:=true;
    //setlength(cos,sanat.count);
@@ -114,24 +118,39 @@ procedure gutrelas;
      readln(f,line);
      if line='' then continue;
      cost.delimitedtext:=line;
+     if cost.count<3 then continue;
      //if cost.Count<3 then continue;
      base:=strtointdef(cost[0],0);
-     //write(' ',sanat[base]);
+     //write(^j,sanat[base]);
      //coline:=cospars[base];
-     for i1:=1 to (cost.Count-2) div 2 do  //3->1 5->2
+     vvmat.mx[base*vvmat.cols].w:=base;
+     //try      vvmat.mx[base*vvmat.cols].v:=strtointdef(cost[1],0) div 100;
+     //except write(^j'***',cost[0],' ',cost.commatext,'!');end;
+     for i1:=1 to min(63,(cost.Count-2) div 2) do  //3->1 5->2
      begin
       ii:=i1*2;
-      if ii>63 then continue;
+      //write('\',vvmat.mx[base*vvmat.cols].v);
+      //if cost[ii+1]='0' then break;      //if ii>vvmat.cols then break;
       try
+        if cost[ii]<>cost[0] then
        //writeln(base,strtointdef(cost[ii],0),strtointdef(cost[ii+1],0))
-        vvmat.add(base,strtointdef(cost[ii],0),strtointdef(cost[ii+1],0));
+        vvmat.cadd(base,strtointdef(cost[ii],0),strtointdef(cost[ii+1],0));
+        //write('\',vvmat.len(base));
       except  writeln(^j,' #',sanat[base],ii,'@',strtointdef(cost[ii],0),'#',cost.count);end;
      end;
+     //write(^j,sanat[base],vvmat.len(base),' ',(cost.count-2) div 2,':::');
+      //for i1:=1 to vvmat.len(base)-1 do  write(sanat[vvmat[base,i1].w],' ');
+       vvmat.mx[base*vvmat.cols].v:=vvmat.tot(base);
      except write(^j,' failline:',base,'.');end;
    end;
-   writeln('didsofar',scount);
-   vvmat.mply;
+   writeln('didsofar:::',scount);
+   result:=vvmat;
+   vvmat.savemat('dot0.mat');
+   vvmat.list(0);
   end;
+
+//for i1:=1 to vvmat.len(s)-1 do write(' ',sanat[vvmat[s,i1*2].w]);
+
 
 procedure relas;
 var f:text;//aco:tco;
@@ -145,7 +164,6 @@ var f:text;//aco:tco;
   i1,i2,j1,j2,ii,s:word;scount:word;
   kerrotut,mutut:tstringlist;  asana,rst:string; AVAL:WORD;lim:word;
   apos,jcount:integer;
-  //mutuals:array 0..32 of word;
   procedure reg;//(asna:string;w,c1,c2,c3,c4:word);
                begin//write(' ',sanat[acok.w]) else write('.');
                 apos:=kerrotut.indexof(inttostr(acoj2.w));
@@ -174,7 +192,7 @@ const aset=[1,9,3,4,5,6,7,2,8];
 begin
  // setlength(vvs,8);
  oioi:='193456728';
-  lim:=16;
+  lim:=32;
   kerrotut:=tstringlist.create;
   mutut:=tstringlist.create;
    assign(f,'rela.nums');
@@ -183,7 +201,7 @@ begin
    sanat:=tstringlist.create;
    sanat.loadfromfile('kaavoitetut');
    scount:=sanat.count;
-   vvmat:=tvvmat.create(scount+1,63);
+   vvmat:=tvvmat.create(scount+1,63,sanat);
    sanat.insert(0,'eka');
    cost.Delimiter:=' ';
    cost.StrictDelimiter:=true;
@@ -264,8 +282,8 @@ begin
      //if kerrotut.count>0 then for i1:=1 to kerrotut.count-1 do       write('   ',i1-1,':',strtointdef(kerrotut[i1],0)   ,'_'    ,integer(pointer(kerrotut.objects[i1])));
      if kerrotut.count<1 then continue;
       if kerrotut.count>0 then for i1:=1 to kerrotut.count-1 do
-        vvmat.add(s,strtointdef(kerrotut[i1],0),integer(pointer(kerrotut.objects[i1])));
- try vvmat.sortrow(s);except writeln('^^FAILSORT');end;
+        vvmat.cadd(s,strtointdef(kerrotut[i1],0),integer(pointer(kerrotut.objects[i1])));
+ try vvmat.sortrow(s,20);except writeln('^^FAILSORT');end;
  for i1:=1 to kerrotut.count-1  do write('/ ',sanat[vvmat[s,i1].v],'/',vvmat[s,i1].v);
  //vvmat.clearrow(;
      try
@@ -806,17 +824,63 @@ begin
    write('xxxxxxxxxxxxxxxxx ');
 end;
 
+function createmat:tvvmat;
+var sanat:tstringlist;vvmat:tvvmat;
+begin
+sanat:=tstringlist.create;
+sanat.loadfromfile('kaavoitetut');
+vvmat:=tvvmat.create(sanat.count+1,63,sanat);
+sanat.insert(0,'eka');
+vvmat.readmat('dot0.mat');
+//vvmat.readmat('dot4.mat');
+//vvmat.norm;
+vvmat.sanat:=sanat;
+//vvmat.counts;exit;
+//vvmat.list(0);exit;
+//vvmat.list(0);exit;
+//writeln('laske:',sanat.count, '/',vvmat.sanat.count,'.OK?');
+//vvmat.counts;
+//vvmat.veivaa;
+//vvmat.list(0);
+//exit;
+writeln('VEIVAA');
+vvmat.veivaa;
+
+exit;
+debug:=true;
+vvmat.mply;
+//vvmat.list(0);
+end;
 procedure coocs;
 var f,outf:text;kaverit,sanat:tstringlist; i:longword;j:word;line:string;
      vars,vals,nvars,nvals:array of word;nvars2,nvals2:array of word;
      w1num,w2num,w1freq,wwfreq,w1tot,prev,wcount:integer;
-
+       n:word;
 begin
+ line:='0915243146';
+// 0/9- 1/5- 2/4- 3/1- 4/6
+ // 0/0- 1/1- 2/5- 3/3- 4/0nvars
+
+   { n:=61;
+    setlength(nvars,n*2);
+    randomize;
+    //for i:=0 to n-1 do begin nvars[i*2]:=strtointdef(line[i*2+1],0);Nvars[i*2+1]:=strtointdef(line[i*2+2],0);end;//random(10);end;
+    for i:=0 to n-1 do begin nvars[i*2]:=i;Nvars[i*2+1]:=random(1000);end;//random(10);end;
+   // for i:=0 to n-1 do begin write('- ',nvars[i*2],'/',Nvars[i*2+1]);end;
+
+    //writeln('nvars');
+    testSort(nvars[0],n);
+    writeln(^j,'*************');
+    for i:=0 to n-1 do begin write('  ',nvars[i*2],'\',Nvars[i*2+1]);if prev<Nvars[i*2+1] then write(^j'WWWWWW');prev:=Nvars[i*2+1];end;
+    writeln(^j,'*************');
+    exit;
+    }
     writeln('coocs');
+    createmat;exit;
     //gutcoocs;
-    gutrelas;exit;
-    finwnsyno;writeln('did');exit;
-     listgutmat;exit;
+    //gutrelas;exit;
+   // finwnsyno;writeln('did');exit;
+     //listgutmat;exit;
 
     exit;
     finwnsyno;writeln('did');

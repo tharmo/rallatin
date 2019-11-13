@@ -1,7 +1,7 @@
 program rallatin;
 
 {$mode objfpc}{$H+}
-
+                    {$R+}{$Q+}
 uses
   {$IFDEF UNIX}{$IFDEF UseCThreads}
   cthreads,
@@ -70,6 +70,8 @@ begin
    begin
      writeln('2grammeista kaivettua');
      coocs;
+     write('didcoocs');
+     terminate;exit;
     // sanasto.free;
    end;
   { add your program here }

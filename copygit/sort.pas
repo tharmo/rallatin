@@ -6,67 +6,78 @@ interface
 
 uses
   Classes, SysUtils,otus;
-type  TCompareFunc = function (var elem1, elem2:pointer): Integer;
+type  TCompareFunc = function (elem1, elem2:pointer): Integer;
 procedure AnySort(var Arr:pointer; Count: Integer; Stride: Integer; CompareFunc: TCompareFunc);
 
 implementation
-procedure AnyQuickSort(var Arr:pointer; idxL, idxH: Integer; Stride: Integer; CompareFunc: TCompareFunc; var SwapBuf);
+uses math;
+procedure spart(var Arr:pointer; idxL, idxH: Integer; Stride: Integer; CompareFunc: TCompareFunc; var SwapBuf);
 var
-  ls,hs,i : Integer;
+  lss,hss,i : Integer;
   li,hi : Integer;
-  mi    : Integer;
-  ms    : Integer;
+  newlo,newhi : Integer;
+  ti    : Integer;
+  tss    : Integer;
   pb    : PByteArray;
-  lw,hw,mw:pointer;
+  //lw,hw,tw:pointer;
   pw:pword;
+  procedure swap(a,b:integer);
+  begin       //write('/',a,b,'\');
+  Move((arr+a*stride)^, SwapBuf, Stride);
+  Move((arr+b*stride)^, (arr+a*stride)^, Stride);
+  Move(SwapBuf, (arr+b*stride)^, Stride);
+ end;
 begin
   try
   //pb:=@Arr;
   li:=idxL;
   hi:=idxH;
-  mi:=(li+hi) div 2;
-  ls:=li*Stride;
-  hs:=hi*Stride;
-  ms:=mi*Stride;
-  mw:=arr+ms;//pb^[ls]);
-  lw:=(arr+ls);//pb^[ls]);
-  hw:=arr+hs;//pb^[ls]);
+  ti:=(li+hi) div 2;
+  lss:=li*Stride;
+  //hss:=hi*Stride;
+  //tss:=ti*Stride;
+  //tw:=arr+ti*stride;//pb^[ls]);
+  //lw:=(arr+li*stride);//pb^[ls]);
+  //hw:=arr+hi;//pb^[ls]);
+  //write(^j'  :#############################/hi:',hi,'/lo:',li,':::          ');
+  // for i:=li to hi do begin pw:=@(arr+4*i)^;write(pw^,':',(pw+1)^,' ');end;
   repeat
-    try
-    // try    write(^j^j' (',li+1,'/',mi+1,'/',hi+1,')');except writeln('NOGO');end;
-    //write(' ',idxl,'.',idxh ,';;  ',ls,':', aw^,'  /  ',ms,':',bw^);
-    while CompareFunc(lw, mw) > 0 do begin
-      inc(ls, Stride);
-      //write(' (+',li+1,')');
-      inc(li);
-      lw:=(arr+ls);//pb^[ls]);
-    end;
-    //write(' //low:',li);
-    while CompareFunc( mw,hw ) > 0 do begin
-      //write(' (-',hi+1,')');
-      dec(hs, Stride);
-      dec(hi);
-      hw:=arr+hs;//pb^[ls]);
+    newlo:=999;newhi:=-1;
+    //try
+ //    write(^j^j'    (',li,'/',ti,'/',hi,')');
 
-    end;
-    //write(' //hi:',hi);
-    except on e:exception do begin write(^j,e.message);raise;end;end;
-    if ls <= hs then begin
-      //write(' *',li+1,'/',hi+1,' ');
-      Move((arr+ls)^, SwapBuf, Stride);
-      Move((arr+hs)^, (arr+ls)^, Stride);
-      Move(SwapBuf, (arr+hs)^, Stride);
-      inc(ls, Stride); inc(li);
-      lw:=(arr+ls);//pb^[ls]);
-      dec(hs, Stride); dec(hi);
-      hw:=(arr+hs);//pb^[ls]);
-      //writeln;
-      //for i:=0 to 7 do begin pw:=@(arr+4*i)^;write(pw^,':',(pw+1)^,' ');end;
-    end;
-  until ls>hs;
+    //write(' ',idxl,'.',idxh ,';;  ',ls,':', aw^,'  /  ',ms,':',bw^);
+    for i:=li to ti-1 do if CompareFunc(arr+i*stride, arr+ti*stride)<=0 then begin newlo:=i;break;end;    //onko alapuolella pienempiä
+    //write('/L',newlo);
+    for i:=hi downto ti+1 do if CompareFunc(arr+i*stride, arr+ti*stride)>0 then begin newhi:=i;break;end; //yläällä isompia?
+    //write('/H',newhi);
+
+    if newhi>newlo then begin //write('<>',newlo,newhi);
+     swap(newlo,newhi);inc(li);dec(hi); end //vaihdetaan jonojen hänniltä, jatketaan
+
+    else if newhi>ti then  //alapää kunnossa,kohde vaihdetaan ja jatketaan yläosan kanssa
+       begin
+       //write('>',ti,newhi);
+         swap(ti,newhi);li:=ti;ti:=newhi;hi:=ti;
+     end
+    else if newlo<ti then  //yläpää kunnossa (koska ei jäänyt edellisiin testeihin)
+       begin swap(ti,newlo);
+        hi:=ti-1;
+        ti:=newlo; //tutkitaan alassiirrettyä kohdearvoa, onko sen yläpuolella isompia
+        li:=ti; //ei etsitä enää pienempiä mistään
+        //; write('<',newlo,ti)
+       end
+    else break;//begin li:=min(ti,li);hi:=max(ti,hi);break; end;//kummatkin kunnossa
+    //write(^j'     /hi:',hi,'/lo:',li,'::');
+      //for i:=0 to 4 do begin pw:=@(arr+4*i)^;write(pw^,':',(pw+1)^,' ');end;
+    //write('/hi:',hi,'/lo:',li);
+  until li>hi;
+  //write(^j,'   ### ');
+  //for i:=0 to 4 do begin pw:=@(arr+4*i)^;write(pw^,':',(pw+1)^,' ');end;
+  //write(' /hi:',hi,'/lo:',li,' @',ti,'!');
   //write('>>>>>>>>>');
-  if hi>idxL then AnyQuickSort(Arr, idxL, hi, Stride, CompareFunc, SwapBuf);
-  if li<idxH then AnyQuickSort(Arr, li, idxH, Stride, CompareFunc, SwapBuf);
+  if ti-1>idxL then begin spart(Arr, idxL, ti-1, Stride, CompareFunc, SwapBuf);end;
+  if ti+1<idxH then begin spart(Arr, ti+1, idxH, Stride, CompareFunc, SwapBuf);end;
   except writeln('---');end;
 end;
 
@@ -75,13 +86,41 @@ var
   buf: array of byte;i:integer;  p:pword;
 begin
   try
-  //writeln(^j'sort***',word((arr+2)^),'#',count,'***');
+  //writeln(^j'sort***',word((arr)^),word((arr+2)^),word((arr+4)^),'#',count,'***');
   //for i:=0 to count-1 do begin p:=@(arr+i*4)^;writeln(p^, ':',(p+1)^,' ');end;
   //for i:=0 to count do writeln(word((arr+i)^), ' ',word((arr+i+2)^));
   SetLength(buf, Stride);
-  AnyQuickSort(Arr, 0, Count-1, Stride, compareFunc, buf[0]);
+  spart(Arr, 0, Count-1, Stride, compareFunc, buf[0]);
   except on e:exception do begin write(^j,e.message);raise;end;end;
 end;
 
 end.
-
+while true do  begin
+   write(' (?',li,'/',mi,')');
+   if CompareFunc(lw, tw) <=0 then break;
+   inc(ls, Stride);
+  write(' (+',li,')');
+  inc(li);
+  lw:=(arr+ls);//pb^[ls]);
+end;
+write(' //low:',li);
+while true do  begin
+   write(' (?',mi,'/',hi,')');
+  if CompareFunc( mw,hw ) <= 0 then break;
+   dec(hs, Stride);
+   dec(hi);
+   hw:=arr+hs;//pb^[ls]);
+ end;
+write(' //high:',hi);
+except on e:exception do begin write(^j,e.message);raise;end;end;
+if ls <= hs then begin
+  if ls=ts then begin swap(hi,loend;
+// swapataan ja kasvatetaan hilow
+  write(' \LO:',li,'\HI:',hi,' ');
+  inc(ls, Stride); inc(li);
+  lw:=(arr+ls);//pb^[ls]);
+  dec(hs, Stride); dec(hi);
+  hw:=(arr+hs);//pb^[ls]);
+  write(' \LO:',li,'\HI',hi,' ');
+  //writeln;
+end;
