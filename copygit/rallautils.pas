@@ -827,12 +827,13 @@ end;
 function createmat:tvvmat;
 var sanat:tstringlist;vvmat:tvvmat;
 begin
+
 sanat:=tstringlist.create;
 sanat.loadfromfile('kaavoitetut');
 vvmat:=tvvmat.create(sanat.count+1,63,sanat);
 sanat.insert(0,'eka');
-vvmat.readmat('dot0.mat');
-//vvmat.readmat('dot4.mat');
+vvmat.readmat('dot.mat');
+//vvmat.readmat('dot0.mat');
 //vvmat.norm;
 vvmat.sanat:=sanat;
 //vvmat.counts;exit;
@@ -844,6 +845,7 @@ vvmat.sanat:=sanat;
 //vvmat.list(0);
 //exit;
 writeln('VEIVAA');
+//vvmat.list(0);exit;
 vvmat.veivaa;
 
 exit;

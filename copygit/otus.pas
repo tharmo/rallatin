@@ -35,7 +35,9 @@ type tvvmat=class(tobject)  //VAIHDETAAN TÄHÄN
   onjo:array of byte;//isot
   maxval:longword;
   dotmat:tvvmat;
-  procedure karsiklust;
+  clusters: array of trec;static;
+  ccount:word;static;
+  procedure karsiklust(limi:word);
   function rlen(rivi:word):word;
   function tot(rivi:word):longword;
   procedure sortrow(rivi,arlen:word);
@@ -56,6 +58,7 @@ type tvvmat=class(tobject)  //VAIHDETAAN TÄHÄN
   Property Items[i,j : word]: trec  Read getrec ; Default; //Write setrec;
   function veivaa:tvvmat;
   function counts:tvvmat;
+  procedure sanatklus;
 end;
 
 procedure testsort(var ap: word;len:word);
@@ -86,6 +89,8 @@ begin
  write('didread');
 end;
 
+
+
 procedure tvvmat.norm;
 var i,j:word;sum:longword;
 begin
@@ -99,25 +104,212 @@ begin
   end;
 end;
 
+procedure tvvmat.sanatklus;
+var dota,dotb:tvvmat;i,j,ii,iii,jj,jjj,c:word;lis:string;  sum:longword;aii,ajj:trec;
+   bigit:array[0..7] of trec;
+   clusw,clusw2,cluslens,cluslens2:array of word;//trec;
+   cocs:array of word; wclus,wclus2:array of word;
+   function bb(w,v:word):word;
+   var p:word;
+   begin
+     result:=0;if v=0 then exit;
+     if bigit[7].v>=v then exit;
+     //write('+');
+     try
+     //write(^j,v,':');     for p:=1 to 7 do write('_',bigit[p].w);
+     for p:=1 to 7 do      if v>bigit[p].v then begin result:=p;break; end;
+     if result=0 then exit;
+     if result<7 then move(bigit[result].w,bigit[result+1].w,(7-result)*4);
+     except write('fail:',v,'=',result,' '); end;
+     bigit[result].w:=w;
+     bigit[result].v:=v;
+     //write(' =',result);//,':',w,'_',v,' ');
+   end;
+   procedure addw(w,clu:word);
+   begin
+   end;
+var ival,iival,jval,kompis:word;
+begin
+    //for j:=1 to ccount do  begin   write(' ',clusters[j*64].v);end;//  for jj:=0 to 2 do   write(' ,',sanat[clusters[j*64+jj].w],clusters[j*64+jj].v); end;
+    //exit;
+ setlength(wclus,rows);
+ setlength(wclus2,rows);
+ setlength(cluslens,ccount+1);
+ setlength(clusw,(rows+1)*128);
+ setlength(cluslens2,ccount+1);
+ setlength(clusw2,(rows+1)*128);
+   for i:=2 to rows do
+   begin
+      setlength(cocs,(1+ccount)*(1+ccount));
+      //if onjo[i]<>0 then    continue;
+      fillchar(bigit[0],4*8,0);
+      for j:=1 to ccount do //if clusters[j*32
+      begin
+        sum:=0;
+        //jval:=(clusters[j*32].v div 100)+100;  // nollasolun vali = valien summa...  500 ..10000 nyt 5..1000
+        for ii:=1 to MIN(cols-1,20) do  if mx[I*cols+ii].w=0 then break else
+        begin
+          begin
+            kompis:=mx[I*cols+ii].w;
+            try
+            for jj:=1 to 30 do if clusters[j*64+jj].w=0 then break else
+            begin
+              if mx[I*cols+ii].w=clusters[j*64+jj].w then
+              begin
+                   inc(sum,2);//min(mx[I*cols+ii].v,2));//clusters[j*32+jj].v));
+                   //write('+');//,sanat[clusters[j*32+jj].w],clusters[j*32+jj].v,'/',mx[I*cols+ii].v);
+               end;
+              for iii:=1 to 3 do if mx[kompis*cols+iii].w=0 then break else //i:n kompiksen kompis
+                if mx[kompis*cols+iii].w=clusters[j*64+jj].w then
+                begin
+                 inc(sum,1);//clusters[j*32+jj].v);
+                 //write('#');;
+                end;
+            end;
+            except writeln(^j,'fail:isoksmen');end;
+          end;
+        end;
+        //if sum>50 then writeln('    @',sanat[i],'/',sanat[clusters[j*32].w],' =',sum,' ');
+        bb(j,sum);
+      end;
+     if i mod 500=0 then write('  ',sanat[i],'/',SANAT[CLUSters[BIGIT[1].W*64].w]);
+     if bigit[1].v<1 then continue;
+     wclus[i]:=bigit[1].W;
+     if bigit[1].v<bigit[2].v*2 then wclus2[i]:=bigit[2].W;
+  end;
+   for i:=1 to rows-1 do
+   begin try
+    if wclus[i]=0 then continue; //write(wclus[i],'.',cluslens[wclus[i]],' ');
+    if wclus[i]>=ccount then continue;
+    if cluslens[wclus[i]]>127 then CONTINUE;
+    inc(cluslens[wclus[i]]);
+    clusw[wclus[i]*128+cluslens[WCLUS[i]]]:=i;
+    //write(wclus[i],'.',cluslens[wclus[i]],' ');
+    if wclus2[i]=0 then continue; //write(wclus[i],'.',cluslens[wclus[i]],' ');
+    //if wclus2[i]<wclus[0 then continue; //write(wclus[i],'.',cluslens[wclus[i]],' ');
+    if wclus2[i]>=ccount then continue;
+    inc(cluslens2[wclus2[i]]);
+     clusw2[wclus2[i]*128+cluslens2[WCLUS2[i]]]:=i;
+   except WRITE('!!!',I,'/',WCLUS[i],'!!!',cluslens[WCLUS[i]],' ');END;
+   end;
+   write('aaaaaaa');
+   for i:=1 to ccount do WRITE(' -',cluslens[i]);
+   for i:=1 to ccount-1 do
+   begin
+    try write(' (',cluslens[i],')');
+    IF CLUSLENS[I]<2 THEN continue;
+      write(^j^j,sanat[clusters[i*64].w],': ');
+      IF CLUSLENS[I]<1 THEN continue;
+      for j:=1 to cluslens[i]-1 do
+       if clusw[i*128+j]>0 then write(' ',sanat[clusw[i*128+j]]);
+      write(' * ');
+      for j:=1 to cluslens2[i]-1 do
+       if clusw2[i*128+j]>0 then write(' ',sanat[clusw2[i*128+j]]);
+     except writeln('!!!',i);end;
+   end;
+   exit;
+   for i:=1 to ccount do
+   begin
+     if cocs[i*ccount+i]>1 then
+     write(^j,i,sanat[clusters[i*64].w]);
+    for j:=1 to ccount do if cocs[i*ccount+j]>1 then
+     write('  ',sanat[clusters[j*64].w],cocs[i*ccount+j]);
+   end;
+end;
+
 function tvvmat.veivaa:tvvmat;
-var dota,dotb:tvvmat;i:word;lis:string;
+var ORIGx,dota,dotb:tvvmat;i,j,ii,jj,c:word;lis:string;  jval,sum:longword;
 begin
  //for i:=1 to rows do list(i);exit;
+  mply2;exit;
  dotmat:=tvvmat.create(rows,cols,sanat);
+ //ORIG:=tvvmat.create(rows,cols,sanat);
+ //ORIG.readmat('dotx.mat');
+ setlength(clusters,512*64);  ccount:=0;
  //dotb:=tvvmat.create(rows,cols);
  //dota:=self;//
  //dota:=
- write(^j,'^mply');//,dotmat=nil);
+{ write(^j,'^mply');//,dotmat=nil);
  //karsiklust; writeln('kertomaton matriisi'); exit;
  mply2;
- dotmat.karsiklust;
+ write(^j^j^j,'^MMMMOPPPPPPPPPPPPPPLLLLLLLLLLLLYYYYYYYYYYYY');//,dotmat=nil);
+
+ dotmat.savemat('dotx'+'.mat');
+ //dotmat.karsiklust(10000);
+ //dotmat.readmat('dotx'+'.mat');
+ }
+ //mply2;
+ //dotmat.savemat('dotxx'+'.mat');
+// if 1=2 then
+ // skaalaus meni mplyssä pieleen, ruma korjaus;
+  if 1=1 then for i:=1 to rows do
+  begin jval:=0;
+    //write(^j,sanat[mx[i*cols].w],' ');//,i*cols].v div 100);  //lieko nollasolu laskettu?
+    for j:=1 to cols do
+    begin
+     if mx[i*cols+j].w=0 then break;
+     mx[i*cols+j].v:=mx[i*cols+j].v div 100 +1;
+      //write(sanat[clusters[i*32+j].w],'.',clusters[i*32+j].v);  //lieko nollasolu laskettu?
+      inc(jval,mx[i*cols+j].v);
+    end;
+    //write(' ==',jval div 1, ' / ',mx[i*cols].v div 1);
+    mx[i*cols+j].v:=jval;
+  end;
+ for i:=1 to 15 do
+ begin
+    c:=0;
+    karsiklust(1000-(50*i));
+    for j:=1 to rows-1 do if onjo[j]>0  then inc(c);
+   // writeln(^j,c,'********** ',i,' ******************************** ',ccount,^j);
+    if ccount>511 then break;
+ end;
+ writeln(^j^j,c,'CLUSTERS ',ccount,'::',c,^j);
+
+ for i:=9991 to ccount do
+ begin jval:=0;
+   write(^j^j,sanat[clusters[i*64].w],' ',clusters[i*64].v div 100);  //lieko nollasolu laskettu?
+   for j:=1 to 64 do
+   begin
+    if clusters[i*64+j].w=0 then break;
+     if j<2000 THEN write(sanat[clusters[i*64+j].w],'',clusters[i*64+j].v,' ');  //lieko nollasolu laskettu?
+     inc(jval,clusters[i*64+j].v);
+   end;
+   write(' ==',jval div 1);//, ' / ',clusters[i*32].v div 100);
+   clusters[i*64].v:=jval;
+ end;
+ //exit;
+ //readln;
+ sanatklus;
+ exit;
+ dota:=tvvmat.create(rows,cols,sanat);
+ dota.readmat('dot0'+'.mat');
+    dota.sanatklus; exit;
+ for i:=1 to ccount do
+ if clusters[i*32].w=0 then break else
+ begin
+  WRITELN(sanat[clusters[i*32].w],'::');
+     for j:=0 to 32 do if clusters[i*32+j].w=0 then break else write(' ',sanat[clusters[i*32+j].w],clusters[i*32+j].v);
+  writeln(^j);
+ end;
+
+
+
+ exit;
+ dotmat.dotmat.onjo:=dotmat.onjo;
+ dotmat.karsiklust(500);
+ dotmat.onjo:=dotmat.dotmat.onjo;
+ //FILLCHAR(DOTMAT.DOTMAT[0],COLS*ROWS*4,0);
+ dotmat.karsiklust(5);
+ dotmat.onjo:=dotmat.dotmat.onjo;
+ dotmat.karsiklust(5);
  write(^j,'OK1 kerrottu matriisi');//,dotmat=nil);
+
  exit;
  //dotmat.list(0);
  //dota.dotmat:=tvvmat.create(rows,cols,sanat);
  dotmat.mply2;
  write('ok2');
- dotmat.dotmat.karsiklust;
+ dotmat.dotmat.karsiklust(5000);
  //dotb.list(0);
  //dotmat.dotmat.mply2;
  exit;
@@ -141,7 +333,7 @@ begin
    //exit;
    //dota.clear;
    writeln('****************************veivattu',i);
-   if i=4 then dotb.karsiklust;
+   if i=4 then dotb.karsiklust(5000);
    dota.onjo:=dotb.onjo;
    //setlength(dotb.onjo,0);
    //setlength(dotb.onjo,rows);
@@ -290,17 +482,18 @@ begin
 
 end;
 
-procedure tvvmat.karsiklust;
+procedure tvvmat.karsiklust(limi:word);
 var //s,rs,cs,cc,alku,loppu,i:word; hits:longword;
   maxis,maxis2:array of trec;
 
-  function bigs(w:word;v:word;mm:pword;picks:word):word;
+  function bigs(w:word;v:longword;mm:pword;picks:word):word;
   var j,k:word;p:pointer;pw:pword; //mmax:
    begin
     try
+    v:=min(65000,v);
     result:=0;
     //v:=v div 100;
-    for j:=0 to picks do
+    for j:=1 to picks do
     if (mm+j*2+1)^<v then
     begin
         try
@@ -318,82 +511,131 @@ var //s,rs,cs,cc,alku,loppu,i:word; hits:longword;
     end;
     except writeln('failbig');end;
    end;
-var i,j,v1,j2,i2,posi:word;rsum,csum,usum:longword;onjot:tlist;
+var i,j,v1,j2,i2,c,posi,cluscount,counted:word;rsum,CCSUM,usum:longword;newoli:array of byte;//onjot:tlist;
+  bval:longword;
 begin
- writeln('karsi');
- setlength(maxis,128);
+ setlength(newoli,rows);
+ for i:=1 to rows-1 do newoli[i]:=onjo[i];
+ setlength(maxis,256);
  setlength(maxis2,128);
-  for i:=2 to rows-1 do     //sortataan painon mukaan
+ for i:=2 to rows-1 do     //sortataan painon mukaan
+ iF OnJO[i]=0 then
   begin
-   rsum:=0;
+   //write(' ',sanat[i]);
+   rsum:=0;c:=0;
    if mx[i*cols].w=0 then continue;
-   //write(sanat[i],'..clust ');
    // if v1<mx[s*cols+2].v then;
-   for j:=2 to 20 do        //1 vai 0 ... käki kukkuu
+   for j:=2 to 62 do        //1 vai 0 ... käki kukkuu
       if mx[i*cols+j].w=0 then break else
-      if mx[i*cols+j].w=i then begin write('&%');continue;end else
-       //if mx[s*cols+i1].v*3<vi1 then break else
-        inc(rsum,mx[i*cols+j].v div 100);
-   if rsum<10 then continue;
-   bigs(i,rsum,@maxis[0],128);//,maxis);
+      if mx[i*cols+j].w=i then begin
+      // TRY dec(rsum,2+mx[i*cols+j].v div 10);;continue;EXCEPT WRITE('');END;
+      end  //HJOSKUS MENEE PIELEEN L. MIINUSMER
+
+       else
+      if onjo[mx[i*cols+j].w]<1 then  //uusia ei viel huomioida
+      begin //if mx[s*cols+i1].v*3<vi1 then break else
+      try
+        inc(rsum,2+mx[i*cols+j].v div 1);
+        inc(c);
+        except WRITE('FAILSORT');end;
+       end;
+    //if limi>50000 then   begin  // if rsum<10 then continue;   end;
+    //if c<4 then continue;
+    posi:=bigs(i,rsum,@maxis[0],128);//,maxis);
+    //if posi>0 then if posi<5 then write(sanat[maxis[posi].w],posi,'.',rsum,' ');
   end;
 
-  for i:=991 to 63 do          //listataan clusteriparien yhdeteisest sanat
-  // if i in [4,29,31] then
-  begin
-     write(^j^j,i,'::',sanat[mx[maxis[i].w*cols].w],maxis[i].v,': ');
-     for j:=1 to cols do
-         if mx[maxis[i].w*cols+j].w>1 then
-       write(sanat[mx[maxis[i].w*cols+j].w],mx[maxis[i].w*cols+j].v div 100,' ');
-  end;
-  write('******************\\\\\\\\\\\\');
-  onjot:=tlist.create;
   for i:=1 to 127 do
   //if i in [4,29,31] then
   begin
      try
-     csum:=0;  //sum of words  shared with previous
+     ccsum:=0;  //sum of words  shared with previous
      usum:=0;  //sum of previously unused
-     write(^j^j,'||',i,' ',maxis[i].w ,sanat[mx[maxis[i].w*cols+1].w],maxis[i].v,': ');
-     for i2:=1 to 127 do if i=i2 then write('') else // begin onjot.add(pointer(mx[maxis[i].w].w*cols));end else
-      //if i2 in [4,29,31] then
-      if maxis[i].w=mx[maxis[i].w*cols+i2].w then continue else
+      if newoli[maxis[i].w]>0 then continue; //NYT UUDETKIN HUOMIOIDAAN
+      ccsum:=0;usum:=0;
+      for j:=2 to 62 do if  NEWOLI[mx[maxis[i].w*cols+j].w]<1 then inc(usum,mx[maxis[i].w*cols+j].v) else inc(ccsum,mx[maxis[i].w*cols+j].v);
+      //if usum<limi then continue;
+      //if usum>limi then
+      posi:=bigs(mx[maxis[i].w*cols].w,usum,@maxis2[0],30);
+      //write(sanat[mx[maxis[i].w*cols].w],posi,' ');
+      //if limi<500 then write(posi,'.',usum,' ');
+     // continue;
+      //if onjo[mx[maxis[i].w*cols+j].w]<1 then
+     except write('fail???');end;
+     try
+      //bval:=mx[maxis[i].w*cols+1].v;
+      counted:=0;
+      for j:=1 to 127 do if mx[maxis[i].w*cols+j].w=0 then BREAK ELSE //30 isointa merkataan käytetyiksi
       begin
-        rsum:=0;
-        if mx[maxis[i].w*cols+i2].w=0 then break;
-        for j:=1 to 63 do
-          if onjot.indexof(pointer(mx[maxis[i].w*cols+j].w))>0 then  write('') else
-            begin
-            //inc(usum,mx[maxis[i].w*cols+j].v);
-            for j2:=1 to 63 do
-              if mx[maxis[i].w*cols+j].w=mx[maxis[i2].w*cols+j2].w then begin write('');
-              inc(rsum,min(mx[maxis[i].w*cols+j].v,mx[maxis[i2].w*cols+j2].v));
-            end;
-        end;
-        //csum:=csum+rsum;
-        //write('+',rsum);
-        if rsum>3000 then    write(^j,' [',i2,sanat[mx[maxis[i2].w*cols].w],'/',rsum ,'] ');
-      end;
-      csum:=0;usum:=0;
-      for j:=1 to 62 do if  onjot.indexof(pointer(mx[maxis[i].w*cols+j].w))<0 then inc(usum,mx[maxis[i].w*cols+j].v) else inc(csum,mx[maxis[i].w*cols+j].v);
-      writeln(^j' === shared;',csum,' /unique: ',usum div 1);
-      for j:=1 to 62 do if  onjot.indexof(pointer(mx[maxis[i].w*cols+j].w))<0 then
-               //if mx[maxis[i].w*cols+j].v>300 then //if mx[maxis[i].w*cols+j].w=300 then
-      if usum>5000 then
-       begin onjot.add(pointer(mx[maxis[i].w*cols+j].w));
-         write('+',sanat[integer(onjot[onjot.count-1])],mx[maxis[i].w*cols+j].v);
-       end else write('.');
-       if usum>5000 then posi:=bigs(mx[maxis[i].w*cols].w,usum div 1,@maxis2[0],40);
-       write('[[[',posi,sanat[mx[maxis[i].w*cols].w],']]]');
-     except write('!?!');end;
+        //if mx[maxis[i].w*cols+j].v>bval div 15 then  //mikä ois hyvä kynnysarvo?
+        begin
+          inc(NEWOLI[mx[maxis[i].w*cols+j].w]);
+          counted:=j;
+        end;// else break;
+        // write(' ',sanat[mx[maxis[i].w*cols+j].w],mx[maxis[i].w*cols+j].v);
+      end;// else write('.');
+      // write('==',posi);  write(' /S:',csum,' /U:',usum div 1);//write('[[[',posi,sanat[mx[maxis[i].w*cols].w],']]]');
+     except write('fail !?!');end;
   end;
-  write('////////******************!');
-  for i:=0 to 63 do begin try
-    write(^j^j,sanat[maxis2[i].w],maxis2[i].v,':');//list(maxis2[i].w);
-    for j:=1 to 63 do if mx[maxis2[i].w*cols+j].w=0 then break else write(' ',sanat[mx[maxis2[i].w*cols+j].w]);
-    except write('nono');end;
+  //writeln('////////******************!');
+  //for i:=0 to 15 do  write(^j^j,'!!!',bval,sanat[maxis2[i].w],maxis2[i].v,' (',counted,'):');//list(maxis2[i].w);
+  for i:=0 to 15 do
+  begin
+    try
+    if maxis2[i].w=0 then continue;
+    bval:=mx[maxis2[i].w*cols+2].v div 3;
+    ccsum:=0;
+    c:=0;
+    inc(ccount);  //aloitetaan ykkösest
+    if ccount>511 then exit;
+    except write('nono1');end;
+    try
+    //write(^j^j,'??',bval,sanat[maxis2[i].w],maxis2[i].v,' (',counted,'):');//list(maxis2[i].w);
+    for j:=1 to 63 do if mx[maxis2[i].w*cols+j].w=0 then break else  //mitä laitetaan mukaan klusteriin
+    if onjo[mx[maxis2[i].w*cols+j].w]=0 then
+    if (mx[maxis2[i].w*cols+j].v>bval) or (c<10)  then
+    begin
+      inc(c);
+      inc(ONJO[mx[maxis2[i].w*cols+j].w]);
+      //csum:=0;
+      //write(' .',sanat[mx[maxis2[i].w*cols+j].w],mx[maxis2[i].w*cols+j].v div 1);
+      //if c>15 then break;
+      //begin
+      clusters[ccount*64+c].w:=mx[maxis2[i].w*cols+j].w;
+      clusters[ccount*64+c].v:=mx[maxis2[i].w*cols+j].v div 1;
+      inc(ccsum,mx[maxis2[i].w*cols+j].v div 1);
+      //end;
+    end;
+    clusters[ccount*64].w:=mx[maxis2[i].w*cols].w;
+    clusters[ccount*64].v:=ccsum ;
+    //write('===',ccsum);
+  except write('nono:',ccsum);end;
   end;
+  //writeln('***************************************************');
 end;
+
+{for i2:=1 to 255 do //if ii2 then //write('') else // begin onjot.add(pointer(mx[maxis[i].w].w*cols));end else
+begin
+   rsum:=0;
+   if i=i2 then continue;
+   //if mx[maxis[i].w*cols+i2].w=0 then break;
+   for j:=1 to 63 do
+       //if onjot.indexof(pointer(mx[maxis[i].w*cols+j].w))>0 then  write('') else
+//      if onjo[mx[maxis[i].w*cols+j].w]=0 then  //write('.') else
+   begin
+       //inc(usum,mx[maxis[i].w*cols+j].v);
+      for j2:=1 to 63 do
+      if mx[maxis[i].w*cols+j].w=mx[maxis[i2].w*cols+j2].w then
+      begin //write('?');
+            inc(rsum,min(mx[maxis[i].w*cols+j].v,mx[maxis[i2].w*cols+j2].v));
+      end;
+   end;
+   //csum:=csum+rsum;
+   //write('!',rsum);
+   if rsum>5000 then  write(' [',i,' ',i2,sanat[maxis[i2].w],'/',rsum ,'] ');
+ end;}
+
+
 procedure tvvmat.mply2;//:tvvmat;
 var cs,cc:word;eidotmat:tvvmat; posi,arlen,s,i1,i2,j1,j2,ii,lim,vi1,v12,vj1,vj2,wi1,k:word;
  hits, vtot:longword;
@@ -403,21 +645,24 @@ isosca,isotasx,isotbs:array of trec;
 rst:string;
 begin
  //try
- lim:=18;
+ lim:=63;
  setlength(isomat,rows);
  setlength(isosca,cols);
  //setlength(isotas,cols);
  dotmat:=tvvmat.create(rows,cols,sanat);
- write('^mply2:',rows,'/',cols);
+ write(^j'^mply2:',rows,'/',cols);
 
  //for s:=1 to 10 do begin isosca[s].v:=100-s*10;isosca[s].w:=s;end;
  //isoko(4263,2,cols,@isosca[0]);
  //isoko(2743,3,cols,@isosca[0]);
  //isoko(5,997,cols,@isosca[0]);
+ //list(500);
  write('onksioso');
  for s:=2 to rows-2 do
  begin
-  //if s mod 1000=2 then
+  //if s<>500 then continue;
+  if s mod 100=1 then
+  write(' ',sanat[s]);
   try
      // if mx[s*cols].v>200 then continue;
 //    if mx[s*cols].v<25000 then continue;
@@ -429,34 +674,40 @@ begin
    //continue;
    rs:=@mx[s*cols];
    vtot:=0;
-   //write(' ',s);
    //continue;
    for i1:=1 to lim-1 do
    begin
      ri1:=@mx[rs[i1].w*cols];
-     Vi1:=rs[i1].v;
-     if vi1<200 then continue;
+     if rs[i1].w=0 then continue;
+     //write(^j^j,'********',sanat[mx[s*cols+i1].w],mx[s*cols+i1].v,' ');
+     //if vi1<50 then continue;
      wi1:=rs[i1].w;
-     //write(^j,'   *',i1,sanat[rs[i1].w],ri1[i1].w,':');
 
      for i2:=1 to i1-1 do //lim-1 do
      begin
-       if rs[i2].v<100 then continue; // vi1 on aina pienempi, olivat sortattuja
+       Vi1:=rs[i1].v;  // vi1 on aina pienempi, olivat sortattuja
+       if rs[i2].v<10 then break;
+       if onjo[rs[i2].w]=1 then break;
        ri2:=@mx[rs[i2].w*cols];
+       //write(^j^j,'    * ',sanat[ri2[i2].w],vi1,':');
        //write(^j,'       ',i2,sanat[rs[i2].w]);
        for j1:=1 to lim-1 do
        begin
+         //if s=17 then if i1=35 then if i2=34 then write('?',i2);//,',',mx[rs[i2].w*cols].w,',',mx[rs[i2].w*cols].v,' ',i1);
+         //if s=17 then if i1=35 then if i2=34 then write(^j,'XX:',i1,',',mx[rs[i2].w*cols].w,',',mx[rs[i2].w*cols].v,' ',j1,'!');
+         //write('+',sanat[ri1[j1].w],'/');        continue;
          rj1:=@mx[ri1[j1].w*cols];
          Vj1:=min(ri1[i1].v,vi1);
-         if vj1<100 then continue;
+         if vj1<10 then break;
          for j2:=1 to lim-1 do
          begin
            try
-           if ri2[j2].w<>ri1[j1].w then continue;
+           if ri1[j1].w<>ri2[j2].w then continue;
            vj2:=min(vj1,ri2[j2].v);//rj2:=@mx[ri2[j2].w*cols];
-           if vj2<10 then continue;
-           //write(^j,sanat[r1s[i1].w],'/',sanat[rs[i2].w], '::',sanat[ri1[j1].w]);
-           inc(vtot,vj2);
+           if vj2<10 then break;
+           //write(' ',sanat[ri2[j2].w],vj2) ;
+
+           inc(vtot,vj2 div 10);
            inc(isomat[ri1[j1].w], vj2 div 10);
            except write(' XXX:',isomat[ri1[j1].w],sanat[ri2[j1].w],'/',min(vj1,ri2[j2].v));end;
          end;
@@ -472,7 +723,7 @@ begin
   // continue;
    //setlength(isosca,0);  setlength(isosca,cols);
    for i1:=1 to rows-1 do
-   if isomat[i1]<100 then continue else
+   //if isomat[i1]<iso then continue else
    for j1:=1 to cols-2 do
       if isosca[j1].v<isomat[i1] then
       begin
@@ -498,7 +749,10 @@ begin
       //write(^j,sanat[s],'///');//,sanat[rs[i1].w]);//, '::',sanat[ri1[j1].w]);
       for i1:=1 to cols-1 do dotmat.mx[s*cols+i1].v:=isosca[i1].v;
       for i1:=1 to cols-1 do dotmat.mx[s*cols+i1].w:=isosca[i1].w;
+
       dotmat.mx[s*cols].w:=s;
+    //   if s=17 then write('&????',vtot);//,i2);//,',',mx[rs[i2].w*cols].w,',',mx[rs[i2].w*cols].v,' ',i1);
+    vtot:=min(vtot,65000);
       dotmat.mx[s*cols].v:=vtot;
       //continue;                            ;
 //     if //((vtot>3*(mx[s*cols].v+1))) //paino korostunut kerrottaessa
@@ -557,7 +811,7 @@ begin
        //fillchar(mutuals[0],64*4,0);
        //rst:=(^j^j+'**********************'+^j+sanat[s]+':;');
        wrs:=@mx[s*cols];  //s-sanan coco-listan alku
-      //writeln(^j^j,'...',sanat[s],mx[s*cols].v);
+      //writeln(^j^j,'.   ..',sanat[s],mx[s*cols].v);
        //toti:=(wrs+1)^ div 100;
       // if toti<1 then continue;
       //if tot(s)>10000 then continue;
@@ -767,7 +1021,7 @@ begin
    if w=0 then begin alku:=1;loppu:=rows;end else begin alku:=w;loppu:=w;end;
 
     //if alku=loppu then
-    //writeln(^j,'list ',rows,'*',cols,' ',alku,'...',loppu);
+    writeln(^j,'list ',rows,'*',cols,' ',alku,'...',loppu);
     writeln;
     for rs:=alku to loppu do
     begin
@@ -775,8 +1029,8 @@ begin
       cc:=mx[rs*cols].v;
       //if cc<100 then continue;
       if mx[rs*cols].v<1 then continue;
-      if alku=loppu then
-      write(^j,' ',sanat[rs],'::','(',cc,')');
+      //if alku=loppu then
+      write(^j^j,' ',sanat[rs],'::','(',cc,')');
       //if len(rs)>30 then
       for cs:=1 to cols-1 do //min(len(rs),cols) do
       begin
@@ -788,17 +1042,18 @@ begin
         //inc(hits,mx[rs*cols+cs].v);
         //if mx[rs*cols+cs].v=1000 then
         inc(hits,mx[rs*cols+cs].v);
-        if alku=loppu then
+        //if alku=loppu then
         write(' |',sanat[mx[rs*cols+cs].w],':',pre);//,'[',indexof(rs,mx[rs*cols+cs].w));
         except write('failmx:',rs,'/',cs,':',mx[rs*cols+cs].w);end;
       end;
       write(' ==',hits);
       try
       //if alku=loppu then
-      bigs(rs,hits);
+//      bigs(rs,hits);
       except writeln('nobigdeal:',rs,':',hits); end;
     end;
-    if alku=loppu then exit;
+    //if alku=loppu then
+    exit;
     writeln('-----------------------');
   //exit;
  //setlength(mx,0);
@@ -898,6 +1153,7 @@ begin
   maxval:=0;
   setlength(onjo,rows);
   sanat:=sans;
+
   //setlength(isot,rows);
   //isot:=tlist.create;
   //onjolist.

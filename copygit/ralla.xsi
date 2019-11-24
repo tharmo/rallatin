@@ -153,6 +153,24 @@ class name=riimit
          #print kumps[$2],$2
        }
     '''
+ testspar
+  pre
+    xse:gawk in="both2.rel"  : '''
+        BEGIN {  PROCINFO["sorted_in"]="@val_num_desc";  }
+     {   
+       if ($1!=p1) { 
+          res=p1 "," kumps[p1] ","
+          x=0;
+          for (i in kumps) if (i!=p1) { res=res i "," kumps[i] ",";
+            x++;if (x>63) break
+            }
+          print res    #"both2.spar"
+          p1=$1
+          delete(kumps)
+         }
+         kumps[$2]=$3 
+       }
+    '''
  
  painota 
   pre

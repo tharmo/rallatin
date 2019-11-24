@@ -1,0 +1,242 @@
+2grammeista kaivettua
+coocs
+didreadVEIVAA
+
+
+2417CLUSTERS 224::2417
+
+ ahdas_kamari ajettua_mekko enenevä_hämmästys helppo_saksa humoristinen_kirjailija härnätä_kiljua ilmestyä_kirjailija johdanto_kirjailija jumaloida_kunnioitus kassa_miljoona kauhu_hämmästys kilistellä_konjakki kiristyä_mekko kollega_opiskella kosmeettinen_sivistys kumouksellinen_enemmistö kuppa_konjakki kuulakka_kirkas kyynel_kirkas käteinen_miljoona laaja_lahti laite_sivistys lauta_mekko loimottaa_soihtu luonteva_viehättävä lyönti_tuppi markiisi_katsahtaa narttu_kuono nykiä_mekko ostjakki_kukkula papu_ruis pelata_miljoona pettämätön_horjumaton piisi_soihtu pirahtaa_kirkas plootu_miljoona portteri_konjakki radikaali_enemmistö rakkaus_hämmästys riisto_sivistys sairaus_hämmästys silmu_lehvä syksyinen_kirkas särmä_tuppi tunteilla_hämmästys tykistö_upseeri töksähtää_hevonen viittoa_kulku vitkastella_katsahtaa vuorata_mekko ärtyisyys_hämmästysaaaaaaa
+
+mekko:  juova *  ahdas ahdata ahne alaston arkkitehti autere elävöittää erittyä erottaa evä galvanoida goottilainen haarniska haipua halkeilla harja hattara hauta heilauttaa helakka hellitä helmi hiivata hipiä hopea hopeainen hopeinen huiskia hyppynen häipyä hämy hämärä höltyä ihastuttava imeytyä joustava jykevä jäkälä jättiläismäinen kaapata kaareutua kaartua kahina kahle kaivella kalkutella kalleus kallis kalpea kalu kalvakka kalvas kangastus kapea karaatti karahtaa karma kasata kasautua kastaa kastella katkaista katko katos kaunis kaunistaa kehrä kellahtaa kellertävä kerääntyä kiemurrella kiillottaa kiiltää kireä kivestää kokoilla kopata kortti kuiva kuivattaa kukittaa kullastaa kulmikas kulta kultainen kumartua kuohkea kuono kuristaa kutkuttaa kämmen käpälä käännellä laasta leijailla leikellä levätä louhia luiskahtaa läpi mustelma nahka nainen nakerrella nousta nuortea nuorukainen nupi painautua paketti paljastua parraton pee pisaroida polvi pusertua pätkä pölähtää rakentua rasia rasvata ripottaa ristiä ritari riuhtoa salkku selvitellä sotkuinen sukkula sulloa sumuta suopunki sylkeä sänky tanakka tempoa töhertää uinailla unhola vaarna vartalo venytellä vihmoa vuoto yhdistää
+
+konjakki:  kiehuttaa *  sukkula sulloa sumuta suopunki sylkeä sänky tanakka tempoa töhertää uinailla unhola vaarna vartalo venytellä vihmoa vuoto yhdistää kaivo kapusta kasvis kaupitella kielletty kirnu kopistaa korkki kutsua käristää laimentaa laitto lei leipuri liha liika luumu läski maiskuttaa maksuton manna margariini munata muru murunen mättää nälkiintyä orgaaninen parka pelaaja pettu pihvi piki porista päärynä raakata rasvainen ruskistaa savustaa silakka silava silli sisältö sitruuna sotkea suolata syövyttää säilöä sämpylä tarvike tipahtaa utare valu varras viili viipale virtsa
+
+miljoona:  korvaus *  ansio askele aulis basaari edellinen edullinen ehta eläjä hyväksyttävä hyväksyttää isännyys jaos jokunen kaikenlainen kaupita keruu kerätä kestitys kokonainen kolehti kontu korvaamaton kuudes lyhentää lykkäytyä mäntyinen namunen paino perjantainen päteä roju romu ruukki saanto saituri seuraaja sijainen suoritella taattu tiistainen valtuus ylvästellä
+
+sävel:  kolke *  ammunta avajainen balladi eloisa elää haikea heiketä heikko heleä hempeys hengähdys hiiskaus hiljaisuus hirmuinen hirnunta hirveä hirvittävä hivellä hongisto huojutella huojuttaa huokailla huokaus hurma huumata huumori hyppy hyrinä hyväily hyörinä hälinä häly ihastuttaa ilkamoida impi irvistellä jumalainen juominki juopunut jyminä jymistä jymy jymähdys jyrinä jyristä jyry jyrä jyrähdellä jyrähdys jyrähtää jyräys jyske jyskytys kali kalke kamala karjunta kauhea kiehtoa kiireinen kilistä kiljunta kirkua kirous kisailla kitinä kohina kohu kolina kolista kolkutus korahdella korviasärkevä koveta kuiskailu kuiskutus kumina laantua lakka lakkaamaton lauhkea leivonen lempo lintunen lirinä liverrellä loppu lyönti lähetä marssia melske melu metakka meteli miellyttävä miellyttää mutina mylvinä nakutus naputus neitonen nukuttaa nurina pakina parkua pauhina pauhu peli pelottava pila porilainen puhallella puhe pyydellä pöyristyttää rasahdus rasta ratsastus risahdus ritinä ruikutus rukka ryhdikäs ryske rytinä rähinä rähäkkä räiske räjähdys rätinä sanoma sekaantua sekava seurata sipsutus sukkeluus sulho sulostuttaa supatus tanssiainen taukoamaton teennäinen tempo tenhota tohina tohista touhu tärisyttää tärähdys uikuttaa ukkonen uudistua vaimentaa vaimeta viehättävä viehättää viejä vilkas vinkua visertää voihke yskiä
+
+kirkas:  kultainen *  räjähdys rätinä sanoma sekaantua sekava seurata sipsutus sukkeluus sulho sulostuttaa supatus tanssiainen taukoamaton teennäinen tempo tenhota tohina tohista touhu tärisyttää tärähdys uikuttaa ukkonen uudistua vaimentaa vaimeta viehättävä viehättää viejä vilkas vinkua visertää voihke yskiä ien ihailla iho ilma innota juomu juopa juova jäinen kaasu karsi kaste katoavaisuus kaukaisuus kaunotar kekäle kierähtää kihahtaa kilpi kipinä kipuna kokko kolea koreus kulo kuuma kyly kyntteli laava leimu leimuta leiskua lempi leuto liekki liekuttaa liesi lieska lietso loimottaa loimu loimuta lämmitellä lämmittää lämmitä löyly neitseellinen nuotio palaa palata palava palko palo paloa panettaa perkele polttama polttava päre rauta riutua roihu roihuta rovio räiskyä sammuttaa sammutus savuta suitsea sulous suvinen säkä tipahdella tulevaisuus tulvia tuulinen usvainen viiletä
+
+soihtu:  suitsuttaa *  amppeli elvyttää halko hehku häärätä janota karistaa kaski katku krapu paistua palsamoida poro tupakoida
+
+poimu:  vetävä * !!!9
+
+
+lehvä:  kukkeus *  apila armas banaani erä etana haara haasia haiskahtaa hedelmällinen henkäys hietikko hirsinen hoikka home humina huokonen huurre härmä höylätä ihme immyt itikka itää kannikka karsta kesäinen keuhko keväinen kivetä kivi korveta kouluttaa kuiskuttaa kukkea kumpu kylvää kylvö kypsä kätkö käyskellä laiho lapsonen laskija maatua matelija mieltyä muona mädäntyä niittää olki oras orastaa pelto persikka pähkinä ripotella risu ritistä roska ruis siemen sieni simpukka sisilisko syksy tarha tiainen tuhkata tunkio tähkä uinua vanheta viikuna vikkelä viserrellä
+
+lahti:  kuljettaa *  aaltoilla aho aina ajokki alava alinen alusta amiraali ammottaa asuja asumus asuttaa aukeama aukio autio avaruus edusta elellä elementti erakko haaraantua harhailla harjanne harju heiluri heitellä hiekkainen hiihdellä hiihtäjä hiihtää horna huimaava hukuttaa hurme huuhtoa hyppäys ilmasto isäntä jaksaa junailija juosta jyrkkä jäätikkö kadotus kaivos kallio kallioinen kalteva kapula karavaani karehtia keikahtaa keinu keli kelkka kenttä kepeä kiehahtaa kierrellä kierä kihistä kiidättää kisko kita koho koskea kotoisa kouru kuha kuilu kujanne kukkula kuleksia kulkija kummuta kunnas kuohua kuohuinen kuohunta kuohuta kurimus kutu kyntää laakso lakea lakeus laskettaa liti liukas loiva lokki lorina luikerrella luistaa luistin lähestyä lähteä lähtijä läikähtää maa maasto made mahtaa mahtava majesteetillinen matala matruusi metsäinen miehistö miehittää miero murtua mutka mutkikas myllertää myrskyinen myrskytä niellä nielu notko nummi paisua paisuttaa perkaus perääntyä piltti poikkeama ponnistella portugalilainen puhuri pullistaa pursua pursuta puustelli pyydys pyydystellä pyörre pyörteinen rintama risteilijä roiskua sade sihistä suistaa suistua sulku suoni syöksyä syöksähtää syöstä syötti taimen teini tulva tuulla tyyntyä uhmata valtava varakas vetinen viemäri vihainen vihuri viittoma vinha virrata viskoa vuolle vyöryttää ämmä ärjyä
+
+keitto:  viipale *  portugalilainen puhuri pullistaa pursua pursuta puustelli pyydys pyydystellä pyörre pyörteinen rintama risteilijä roiskua sade sihistä suistaa suistua sulku suoni syöksyä syöksähtää syöstä syötti taimen teini tulva tuulla tyyntyä uhmata valtava varakas vetinen viemäri vihainen vihuri viittoma vinha virrata viskoa vuolle vyöryttää ämmä ärjyä kala kalastus karamelli kasari kastike kattila kauha kaupata keitos keitto keittäjä keittää kelvata kiehauttaa kiehua kirsikka lanttu muna muu nakertaa nauris nelikko palvata papu peruna pihistä pilata porkkana potaatti rehu riisi sukuinen survoa tomaatti valmistella
+
+ruis:  vetinen *  ahtaa haravoida heinä hiven jauhe kampe karista kasvattaa korsi lanta lato lelu paloitella pilaantua pinaatti pivo sipuli säännötön varsta
+
+tähdätä:  viuhua *  hipaista isku jänne jännittää kalikka kallo karttu keila kohottaa kouria kuperkeikka laimi lyödä pamahdus paukahdus piippu raketti sinkoilla soidin suhahdella tuiskuta vonkua
+
+hämmästys:  ilmainen *  ahtaus aiheuttaja aistillinen ajattelemattomuus ankaruus armeliaisuus arvailla arvonta autuaallinen aviollinen ehtymätön eloisuus eläimellinen entinen epäilyttävä eriskummainen erityinen este haitata halveksia hankaluus harmillinen harras hellä hellätä helpottaa hengitys herja hetki hiukka hoito huoata huojentua huoleton huudahtaa huutava hytistä hyvyys hämmentyä hämmästyä hätkähtää hätäillä iankaikkinen ies ikuinen ikuistaa ilmeikäs isällinen iäinen jakamaton jumaloida juonikas juoppous juro jäntere kaamea kammoa kangistaa katsanto katsella kauheus keripukki keventää kiduttaa kiihdyttää kiitollinen kiivastus kiusaus kivuta kohdella kohmettua kohtalo kolera kovuus kuiskata kummitus kunnioittava kuvittelu kähistä kärsimätön laimentua laimeta lempeys lepo liehakoida lihavuus liikkumaton loppumaton loukkaantua loukkautua luottamus luulottelu menetys merkitsevä merkki muistutella munaskuu muodollisuus musertava mörkö naisellinen nivel nolo nurkua nyyhkyttää nöyryys osoite osoittaa osoitus painama palkita pelkuruus pettyä pikkumainen pilkka pitkällinen potilas puhista päättävä raaja raihnainen rauhoittua raukea rettelö reumaattinen riitaisuus rohkaisu rumeta ryhti sairas sairastaa sairastua sopu suopeus sydämellinen sykkiä tartuttaa totinen tuberkuloosi tunnustus tuntuva turva tutista uinailu unhottaa uni uupua vaeltaja vahinko vaikeus vaino vakavuus valitettava vamma vastustella viehätys viivytys vimma voivotella värjöttää yllyttää
+
+kohista:  ärjyä *  ryhti sairas sairastaa sairastua sopu suopeus sydämellinen sykkiä tartuttaa totinen tuberkuloosi tunnustus tuntuva turva tutista uinailu unhottaa uni uupua vaeltaja vahinko vaikeus vaino vakavuus valitettava vamma vastustella viehätys viivytys vimma voivotella värjöttää yllyttää puhkua pyörryttää rae talttua temmellys temmeltää tuhoisa vimmastua vimmattu viskautua viuhua
+
+kukkula:  nummi *  aidata alho aro astella astin asua asukas asustaa asutus aukea aukko avara eristää eteläinen haltija harha hongikko huvila itäinen kaartaa kaitainen kaivanto kasvisto katto katu kaukainen kaveta kivistää kolkka kolkko kolo kovertaa kuja kuljeksia kuljeskella kävellä käytävä lapa linna lovi maalauksellinen palatsi raivata raunio taajeta tasaantua
+
+tuppi:  lyönti *  asetti automaattinen ennättää hammastaa hana heilua heitto hellittää hiota huiska huiskauttaa huiskuttaa häntä jousi kaari kalina kalske kamara kampi kannus karaistua kiekko kilahtaa kilpailija kiristellä kolahtaa kopauttaa koputella koukku kovis kovistaa kuolettaa kurittaa kuve lennättää luodikko läjäyttää murskata murskautua musertua musketti nokka nuoli ojentaa paini paukutella paukuttaa pieksää piestä pihti piiska pistooli pyssy revolveri rykiä sahra sarvi seppo sirppi suhahtaa tuoni tutustuttaa uhata varustaa vetävä viuhahtaa
+
+tuoksuta:  noeta *  kiehtova
+
+upseeri:  rykmentti *  aito aseistaa hajaantua huovi kaleeri keisarillinen kelpo kolmas komennella kuriiri kusi kusta käsky liiga liittolainen lähetti nimittää nujertaa palvelija patteri prinssi rohkea ryhmittyä rynnistys ryssä seurue sulloutua takavarikoida tulittaa tulkki vouti
+
+melu:  yskiä *  etäinen haukunta hiljainen hiljetä huhuta humu huutaa huuto häiritä hätäinen hävitys jylinä kahakka kammottava kamppaus kantautua kapse karjahdus kauhistuttaa kiista kiljahdus kilvoitus kirkaisu kirkuna kiukkuinen kolahdus kolaus kolke kopista kopse mellastaa myrsky otella pamaus paremmuus paukaus pauke paukkina porina raivoisa raivota sukeutua sykintä sysäys tietää toistua uusiutua vihollisuus yöllinen ärjyntä
+
+hevonen:  pulska *  aurata haka harppaus hissi hyrrätä illastaa istuin kaivattaa karata ketterä keventyä kevetä kiitää kompastella kulu loikkaus luikkia luistava nopea nopsa propelli pukki pysty raskas rääkätä seimi tärinä tömistä vastuu vieriä viisari vitka värttinä
+
+kirjailija:  korjaus *  aikuinen aines ajo akatemia amerikkalainen ammatti anatomia arabialainen arpajainen arviointi arvokas arvostella cicero dosentti edustaa epäämätön estetiikka eurooppalainen filosofia filosofinen fysiikka geologinen haastella iltama intelligentti juttelu järisyttää jättiläinen kahdeksas katekismus keskustelu kunniallinen lausunto lehtinen luettava lukema manne myöhäinen opisto piplia profeetta pätevä rekisteri sirkus summittainen suomi suullinen säännös tavailla toimitella virheellinen yhdeksäs ymmärtäväinen
+
+lammas:  ynistä *  ankka ansa elefantti elävä emo etsiskellä haaska haavoittaa haavoittua hai hanhi hiiri hukka hurtta hylje hätyyttää intiaani jälki kirgiisi kissa koiras koni kontio kurnia kyyhkynen kärppä leopardi loikata loukku lude majava mateleva metsäläinen metsästys metsästäjä metsästää munia naaras näätä otso pahna pantteri peto pilttuu poikanen pyydystää pyytäjä pötkiä raiskata repo ryöstää saalis saalistaa sadin saukko siitos syöpä torakka vaania vainu vainuta vikistä väijyä
+
+saksa:  ääntää *  helppotajuistaa kirjain kirjoittaa kirjoituttaa kollega kopio kopioida muukalainen sanelu tekstata
+
+kamari:  lattia *  aitio askarrella aukinainen aukoa edestakainen eräs esteri hengästyä hirsi hirttäytyä horjahdella huumautua hääräillä iikka iltanen instanssi iso istahtaa istuutua isännöidä jakkara jutella jäännös kahvila kalmisto kansi kappeli kapsäkki karsina kartano kasa kehto kerros keskimmäinen kievari kiikuttaa kioski kivitys kiwi kompastua kulmaus kyyristyä kätkyt käärö laakea lava lavitsa liikahtaa lipas litistyä loinen lokero luhistua luokki luola luotta lämmitys läävä maha murskaantua mutteri narina paja pankko penkki penkoa pinota putoama riihi rilli ryömiä seisoa seistä sinetöidä sohva toimeton tonkia torkkua tuhto tuoli täyte vingahtaa
+
+kunnioitus:  vilpittömyys *  armahtava esine hartaus hellyys herttainen hoivata horjua horjuttaa horjuva huomaavainen huomio iankaikkisuus järkkyä kiittämättömyys kumartaa kääntymys lahjoittaja liitto lohdullinen luja lujittua mairitella miehuullinen parhain peloton pettämätön pontevuus pysyä rikkoa sankarillinen suojelu suopea suosio säännöllisyys taipumaton tinkimätön toivottaa tuki uskoa vahvistua vannoa varma varmistua vasalli vissi
+
+haukka:  västäräkki *  huuhkaja hypellä hypähdellä hyristä höyhen joutsen kana keijukainen keko kesy kimmota kiuru leija pallo retkeily
+
+sohva:  vuode *  havahtua hetkinen hoiperrella houria huoahtaa huokaista hyllyä joutilas jäädä kontata koroke kuopata kyyry kömpiä lattia miettiä rampa vartoa
+
+sivistys:  hidastuttaa *  ahertaa ahkeruus aikainen aikomus aineistaa aistillisuus ajallinen ajattelija alje alustava ammoinen analyysi antiikki antiikkinen apostolinen apu arvelu arvostelu asiallinen asioida askare aste asteittainen avu avustaa avustaja draamallinen edustava ehdoton enentyä ennätys erinäinen erota esitelmä esitys etsiskely fantasia filosofi hallitseva haluta harjoitella hauskuus hedelmällisyys hedelmättömyys heikentyä heikontua heimo hekuma helppo henkilö herännyt herännäisyys hidastua historia historiallinen hommata huolellisuus huolimaton huonontua huonota hupi hämmästyttää ihminen ilahduttaa ilahtua innostunut jako johtaja julkinen jumalallinen jälkeläinen jälkimmäinen järjestyä järjestäjä järki kaappaus kaikkinainen kalevalainen kasti katsaus kaunistella kehitellä kelvollinen kerho keskustella klassillinen klubi korjaus kristitty kumouksellinen kuulustelu käytetty laji lakkauttaa likeinen lähtö mahdottomuus maisteri maltillinen matematiikka matkustus murros muunnella muunnos muuntaa muuntua neuvo oikeisto olento olettaa osoittautua pakollinen paluu papisto perinne periytyä perus pohtia ponteva päästä rahvas ratkaiseva runollisuus ryhmä sama sattuma sattumus selkkaus selostaa seuraus sitkeys sivistymätön skolastinen solu sopivaisuus sotku suhteellinen suku sukupuutto sulautua suotuinen suotuisa syntymä säädyllisyys säännöllistää tarkastelu tartunta tehdä teho terveydellinen terästyä tiedustelu todistus toimitus toistainen toteuttaja toteutuma totuttaa totuus tutkittaa työläs täyttymys vaativa vaihdos valppaus valvoa vastaisuus vastustaa vaurioittaa viisaus viivyttää voida äärellinen äärimmäisyys
+
+suomennos:  virallistaa *  selostaa seuraus sitkeys sivistymätön skolastinen solu sopivaisuus sotku suhteellinen suku sukupuutto sulautua suotuinen suotuisa
+
+sentti:  pisiä *  kolmannes
+
+heiluttaa:  sätkytellä *  heristellä hykerrellä koivuinen lyöjä
+
+raivo:  ärsyttää *  hillitty hillitä hillitön hima himo himota hohottaa hoilata hoppu hurjuus hyrähtää hysteerinen julmistua kiiru kiivas kuohahdella kuohuttaa leppyä purra raivokas raivotar raju reuhata reutoa riehua rähistä sadatella tapella tappelu tuima tuiskia tuisku tuivertaa tuoksina ulvoa valtimo vingunta yltyä
+
+kauhea:  varoa *  altis ankara armoton hirvetä hirvittää hirvitä häikäilemätön influenssa inhottaa kammottaa kohdata koitua kova leppymätön siitä tiukata tiukentaa tämmöinen uhkaava äskeinen
+
+varkaus:  pilkkaaja *  ajattelematon alentua alistua armahtaa ennakko haastattaa harjoittaa hirviö huonous häijy hävettää häviö ilkeä julistaa juoni juoru kapinoitsija kerettiläinen kiro kiusaaja kuolemattomuus laiton lunastus mallastaa manata messias noita peikko pelastaa pelastua peljätä petollinen pinne pirullinen rikkoja roskata röyhkeä saatana sensuuri seuraamus sietää sikiö syntinen tulevainen turmio vainooja vakuuttaa vale vanhurskaus varomaton vehje vehkeily vietellä väittää
+
+ilves:  äristä *  arka haukkua hirvi hyppiä ilves jänis jänö jätti karhu karhuta kauris kerjetä kesyttäjä kesyttää kettu kiljuva kirppu koipi koira käärme leijona loikkia myyrä narttu norsu nälkäinen otus pakolainen penikka pentu peura purema pyynti raadella raato raivostua riista rotta siittää susi säikäyttää tappaa tappaja tiikeri ulista villi ärhennellä
+
+yksilöllinen:  äärellinen *  analoginen arvata eittämätön eliö entistää erehtyä erikoinen erikoisuus erilainen erilaistua erinomainen harvinainen havaita herkistyä herkkä miehevä polveutua risteytys risteytyä tarkistaa varova varovainen
+
+katsahtaa:  notaari *  arvoisa arvosteleva astahtaa ehdotella emäntä epäilyttää esitellä haettaa harhama herttuatar himokas huti huudahdella hypähtää hätääntyä ihastua ilkkua irvistää kamreeri kanslisti kappalainen karsas katse kavahtaa kreivi kuraattori kurottautua kätellä kömpelö lepyttää lisensiaatti lordi marski mietiskellä mikki mummo neiti neuvoa nuhdella ohikiitävä pastori pysyttäytyä pälyillä rakastua saamaton sammaltaa sananen seisoma seuralainen säälittävä tuikea tyttö täti uninen
+
+sitoa:  yhdistää *  irrottaa katka kiertelevä kurkottaa kytkeä pitentää raahata riuhtaista sätkytellä vitsas
+
+loikoa:  vartoa *  asettua heittäytyä hervoton hievahtaa istua kiepsahtaa kohottautua kuorsata laittautua lepuuttaa lepäillä levähtää loikoa loikoilla lojua lysähtää lyyhistyä lyykähtää maata makailla makuu matkaaja noja nojailla nukahtaa nukkua nukkuja ojentautua paneutua piehtaroida ponnahtaa retkahtaa retkottaa riisuutua selusta sikeä siveetön topata uinahtaa ummistaa vaipua vaivuttaa valve venyä vieri virua vuode
+
+laatikko:  säilö *  aukaista avain avata hylly kaappi kirstu koppa kudin kuore laatikko vakka
+
+ooppera:  sirkus *  katsomo
+
+sydämellinen:  varoitus *  imarrella imartelu jäähyväinen kiitellä kiitos kiittää kiltti kirjeellinen kohteliaisuus kohtelias kumarrella kumarrus kunnioittaa käytös liitos niiata nuhteeton nöyrä onnitella onnittelu palkollinen pelastaja rehellinen sallimus seurustelu sisarellinen suosiollinen sydämellisyys tervehdys tervehtää terveinen toivotus toverillinen tuttava tuttavallinen tylyys töykeä veljellinen viittaus
+
+piirittää:  vartiosto *  aseeton gootti hankkiutua hyökkääjä hävittää kaupunki kukistaa linnoittaa linnoitus piirittäjä piiritys pommitus puolustautua räjäyttää varustella yrittää
+
+kavala:  vietellä *  eksyttää herjata hiisi hirttää hitto houkkio houkutella hupsu ilkeys juljeta julkea julmuri jumalaton juolahtaa kaikenmoinen katala kavaltaja kavaluus kuolevainen ladella laiska laiskuri lasketella menettely millainen minkälainen moinen moukka pakana panetella petos petturi pettäjä polo rakastaja raukka renttu sellainen senkki säälittää temppu tomppeli tuhma tuommoinen typerä uskalias viheliäinen voi
+
+alakuloisuus:  munaskuu *  lientää
+
+sateinen:  viiletä *  helteinen hämärtää ilmastaa ilta kylmä palella pureva pyryttää talvi viluinen
+
+henkäys:  vaivaton *  haukkoa henkiä huokua janottaa kosteus lauha
+
+vuolas:  vuoto *  limata tykyttää ukkostaa
+
+opiskella:  verstas *  esitelmöidä harjoittelu iätä lehtori neuvokas pyrkijä tottumaton
+
+kostuttaa:  vari *  herahtaa hyytyä kostua
+
+enemmistö:  virka *  alustus asetus diktaattori edustaja ehto erehtymätön inspehtori kabinetti kansleri kehotus keräytyä kirjelmä kirjuri kokoonpanna kokoontuma kokoustaa kosija kroisos kumota kutsu kuvernööri käynnistää listata lupa lähettää ministeri myöntymys perustella sovinto säädös tarjous ukaasi valmistava varaton virasto välitys
+
+kummastua:  mikroskooppi *  epäilevä epäileväinen ihmetellä jenkki kummeksia kysyvä liikuttua muljauttaa mura naurahdella nolostua
+
+keisari:  ylhäisyys *  armahdus esittelijä germaani hienosto kehottaa konsuli kosia lykkäys lähetys lähetystö ministeristö naatti perhe pormestari presidentti senaatti senaattori suostumus totella valtuuttaa
+
+sumu:  tomuta *  hajota hautautua hälvetä hävitä tietämätön
+
+jatkua:  äskeinen *  aihe ainainen aine alituinen auttaa diplomaattinen edeltää hankala hiiskua hupaisa jatko johdos julkistaa kamppailla karttaa keskeyttää keskinäinen kestävä lykätä nostaja osittainen pidetä ratkaista riita selviytyä syntyä toimituttaa tora torjua uudistaa vaikeuttaa verkkainen vitkallinen välttyä välttää
+
+laji:  äärimmäisyys *  elin eroavaisuus erotus verbi
+
+kiljua:  tapella *  hurjistua kiljua kinner krokotiili murista nuuskia rakki sättiä ulvahtaa ärsyttää
+
+horjumaton:  ymmärtämätön *  horjumaton järkkymätön järkähtämätön järkähtää lahjomaton laillisuus lannistua lujuus luotettava luottaa murtumaton otaksua päätös rehellisyys rohkeus tahto uskallus usko vahva vakaa vakuutus vanhurskauttaa varmuus vastoa
+
+viehättävä:  viehätys *  enin haaveilla haaveksia hengetär henki hurmata ihanuus ihastella ihmetyttää iäisyys kauneus kehua kerskata kukkeus käyttäytyminen käyttäytyä luottavainen rakastaa vaatimattomuus viattomuus älykäs
+
+kärsiä:  välttää *  alainen ansaitsematon arvaamaton arveluttava ennustella estellä etsin haitta huojentaa hyödytön häätää joutua kapitalismi kestää kohtalokas koventaa laillistaa napista orjuuttaa parantaa parantumaton pelätä potea sovitella suoriutua tapahtua tarpeeton välittää
+
+edellytys:  tutkittaa * 
+
+sankka:  taajeta * !!!100
+
+
+jäykistyä:  värjöttää *  harteva haukotella hervahtaa hervota hintelä hyydyttää karmi koukistua kylmentyä luiseva notkahdella oikaista ruhjoutua suora veltto vieteri
+
+kurja:  voi *  hullutus hylkiö häpeämätön hävytön hölmö ilkiö irstas joukkio kavala kehdata kehno kelvoton kiittämätön kirota kirottu konna kuje kunniaton kunnoton kurja kätyri köyhä lapsellisuus lurjus luulla mokoma nahjus narri nulikka orja ovela paatua paatunut pelkuri perhana poloinen raukkamainen roisto sydämetön tolvana tunnoton tuollainen turvaton tyhmä uskaltaa uskoton valehdella veijari vetelys viekas viitsiä
+
+neitsyt:  voitelu *  anteeksiantamus buddhalainen egyptiläinen halventaa häpäistä häväistä kaitselmus kirkko kolminaisuus maallikko muhamettilainen palvelu palvonta patriarkka pelastus polvistua protestanttinen sanastaa siunaus vapahdus vihittää
+
+luettelo:  rekisteri *  lomake
+
+lunastaa:  takavarikoida *  halullinen kampsu pakaasi
+
+ranne:  vitsas *  iestää sätkiä
+
+jonkinlainen:  vissi *  estää häiriytyä perheellinen
+
+rasitus:  leini *  reumatismi vaurio vähyys
+
+häväistys:  vainooja *  kuritus nuhde
+
+keskustelu:  vaellus *  istunto jupakka kina kinastelu neuvottelu ottelu tinka vertailu
+
+tappelu:  vihollisuus *  kysely laimea lakko mellakka oleskelu pohdinta retki sota taistelu vaellus
+
+mutkitella:  teini *  kulkuri viittoa
+
+syytetty:  seuraamus *  hakija kajottaa kohtuus martioida oikeus sabatti soveliaisuus todistella täytyä vakuutettu
+
+tapaus:  vaihdos *  elämys hupainen juoruta juttu kasku kelpoisuus kerrottava keskeytys kohtaus leike lystikäs sutkaus
+
+tervehdys:  älykäs *  hyvästellä hyvästi raakalainen rakastettava tottelevainen
+
+asunto:  rustholli *  kortteeri lampuoti lesti talollinen työteliäs
+
+mehu:  limata *  sose
+
+multa:  pivo *  tomuta
+
+kohauttaa:  supattaa *  arvella asessori diakoni hokea höperö iiri lady lohdutella markiisi mylläri
+
+viides:  yhdeksäs *  lohko luokka välskäri
+
+matematiikka:  skolastinen *  kimnaasi kirurgia kymnaasi lukio mantu opettajatar raskia rehtori seminaari virka
+
+sisar:  äiti *  eukko halailla halata hoidella itsellinen kaima mies puoliso rakastavainen rakastella tuleva vaalia vainaa
+
+ahkeruus:  valppaus *  kestävyys koetella miehuus notkeus sitkeä tilitys täsmällisyys urheus uutteruus
+
+joulu:  vihkiäinen *  ohjelmallinen perjantai pitämä pitää
+
+huolestua:  tylsistyä *  ivailla kyyneltyä masentunut mietteliäs vakainen
+
+väite:  väitös *  huhu kielto laki lupaus perusteeton rajain sopimus syyttömyys sääntö tabu tosi verstas väärä
+
+kirjoa:  töhertää *  virallistaa
+
+talvi:  viluinen *  lippo paleltua sompa tuiskuttaa värjötellä
+
+sälyttää:  vietävä *  kantamus kohtu kumara
+
+pyörä:  värttinä *  hurista hyrrä jarru kela kone koneisto moottori napa viivästyä
+
+parata:  vamma *  apteekki heikentää heikontaa hourailla kannattavuus kemisti kirurgi kohmelo kätilö
+
+peruuttaa:  ylittää *  julistaja kohtuullisuus kuuliainen menetellä myöntyä nöyrtyä tottelevaisuus vaata vahvistaa vahvistus valallinen vedota
+
+vapahtaja:  vapahdus *  armias armo auttaja autuus jumala katuvainen kausi laupeus laupias luoja madonna neitsyt paastota palvoa pyhimys rukoilla siunata vapahtaja varjella
+
+merkillinen:  yllättävä *  järkyttävä kertoma
+
+katolinen:  vihittää *  alttari apostoli dogmi ehtoollinen evankelinen hautaus hurskas jumalinen juutalainen katolilainen katolinen kuuluttaa kävijä luterilainen morsiuspari munkki pappi piispa protestantti pyhittää pyhä pyhättö rippi saarnata sakramentti uskovainen vihkiä voitelu
+
+vahinko:  viivytys *  ikävyys turma
+
+koitua:  viejä *  aavistamaton auttamaton enne mainittava pelastautua saattaa sanottava toivottu tuntuma tuottava varmistaa varoa
+
+musertaa:  rusentaa *  hauras kaataja murentaa silputa
+
+kulku:  vitkallinen *  hidastaa joutuisa kiirehtää käynti liikenne pako vaivalloinen
+
+pyyntö:  viittaus *  empiä kieltäytyä kontrahti muisku myönnytys nurista pyyntö sovittelu taipuisa toivomus varoitus velvoitus
+
+toive:  toivomus *  haave hanke luulo saavuttamaton
+
+kookas:  vartalo *  kokematon köyristyä näppärä nätti ojennus pyylevä
+
+joutava:  ylvästellä *  harmittaa hullu höpistä koko monenmoinen perättömyys perätön semmoinen ula
+
+toteuttaa:  vihi *  turha
+
+kiroilla:  ärhennellä *  härnätä itkettää noitua riidellä riivata rupi ruveta uhkailla äristä
+
+värisyttää:  värjötellä *  jäädyttää jäämä raihnas
+
+sääntö:  tabu *  määräys neuvoja noudattaa pakottaa sapatti sovinnaisuus säätää vaatimus ylittää
+
+luokka:  välskäri *  filistealainen kerroksinen kerrostaa lohkoa tapaaminen
+
+kuje:  sutkaus *  kekseliäs kepponen metku nokkela sukkela taidokas tepsiä veitikka veruke
+
+perusteellinen:  toimituttaa * 
+
+omistaja:  ruukki *  luopio oleilla perijätär rustholli tilallinen
+
+turmio:  turmio *  romahdus
+
+rakas:  vainaa *  isätön iäkäs kaksonen lapseton naimaton orpo pohatta rakas rakastettu rakka reilu rusthollari sureva syleillä äiditön
+
+potilas:  näkyvyys *  imettäjä itävyys lääkäri parantua parata sairaala työllisyys vaaratondidcoocs
