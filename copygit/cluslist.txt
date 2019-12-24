@@ -1,0 +1,294 @@
+semantiikka trallatin dorun
+xcoocs
+xcoocs
+didreadihmevoeivi
+
+320********** 1 ******************************** 8
+
+
+583********** 2 ******************************** 16
+
+
+803********** 3 ******************************** 24
+
+
+1041********** 4 ******************************** 32
+
+
+1241********** 5 ******************************** 40
+
+
+1463********** 6 ******************************** 48
+
+
+1662********** 7 ******************************** 56
+
+
+1837********** 8 ******************************** 64
+
+
+2025********** 9 ******************************** 72
+
+
+2164********** 10 ******************************** 80
+
+
+2339********** 11 ******************************** 88
+
+
+2494********** 12 ******************************** 96
+
+
+2719********** 13 ******************************** 104
+
+
+2876********** 14 ******************************** 112
+
+
+3064********** 15 ******************************** 120
+
+
+
+3064CLUSTERS 120::3064
+
+
+
+siitä 5840: huolia518 syy387 johtua333 riippua262 kulua255 huoli221 todistus202 puhua184 tuntea170 ilmoittaa149 tieto129 vakuuttaa125 huolehtia119 varma115 huomauttaa109 lähteä104 ajastaa93 tunnettu92 makuuttaa91 vakuutettu91 ilo87 kysymys87 tehdä86 osa84 iloita82 seurata78 kärsiä78 käsitys70 syntyä70 juuria68 antaa66 selvä65 lausunto64 tae62 luopua60 kiitos56 merkki55 välittää54 kertoa53 juuri50 ilmoitus49 päästä49 riippuma48 lukea47 kiittää46 päättää46 määräys45 selko45 epäilys43 keskustella43 työstää42 hyötyä39 seura36 tietää35 hyöty35 maksaa34 muistuttaa34  ==5840
+
+vuosi 4721: täyttää305 edellinen302 entää283 aika254 alusta206 alustaa205 loppu175 kymmenen170 alku159 viisi120 alunen110 ikäinen109 usea109 alus108 seuraava108 kerrata105 vanha103 kaksi100 kolme97 ajaa88 koko87 pari74 ensimmäinen70 muutama66 puoli64 kerta64 sama57 myöhä56 markka53 viimeinen53 sata50 neljä49 vastaava45 aikainen44 kuu44 toinen43 moni43 kuusi43 verrata42 toimia41 alkaa40 ilmestyä40 vastata40 vasta40 kestää39 vaihde39 ikä38 uusi38 perustaa35 yksi35 toiminta33  ==4721
+
+hinta 4638: halpa712 korkea491 huokea394 alentaa391 kohtuullinen359 halva233 myydä203 helppo166 tehdas156 kallis126 alennus117 kohota75 nousta72 nousu71 niisi70 korottaa67 alhainen66 määrätä51 pii50 edullinen49 vuoksi49 laskea45 aleta44 ostaa44 piletti43 haima42 käypä41 tavara40 hintainen371  ==4638
+
+ilmata 3575: raitistaa1399 raitti776 raitis692 hengittää149 kylmätä143 raikastaa87 puhdas86 keuhko85 tyhjätä79 räjäyttää79  ==3575
+
+rakas 5868: puoliso322 kunnioittaa293 äiti292 vaimo289 poika286 ystävä217 tytär209 isä205 veli191 lapsi173 mies157 omainen153 lukija130 sisar127 vainaja94 muisto88 siunata65 kutsua64 kutsu51 pienokainen50 koti38 täti33 sisko33 käydä31 opettaja31 rakastaa2246  ==5868
+
+olla 3738: tulla331 voida324 pitää204 hyvä171 voi151 oikea122 nähdä116 syyttää102 muuttaa96 sukia93 saattaa93 aina91 mahdollinen79 saapua78 näyttää76 tosi67 tapahtua61 mahdollistaa57 paljo56 sanoa54 tilaisuus54 tahtoa53 kuulla53 täysi52 laki51 mennä50 suu50 huomata50 ainoa50 suka47 luulla47 sellainen45 silla45 kuolla45 katsoa44 silta44 sattua43 täytyä42 mieli42 puhe39 liika37 parka35 mahdoton34 joutua34 mennyt34 oikeuttaa33 kova33 oikeus30 näkyä30 parempi29 olmi41  ==3738
+
+silmä 3700: ummistaa220 sulkia216 omia179 sininen169 sulkea167 avata147 näkemä115 loistaa102 pistää100 luoda98 katsella76 pidetä75 musta71 pitämä68 oma68 ruskea65 sielu64 harmaa63 nostaa57 kirkas53 tumma51 tarkka50 iskeä50 kyynele49 kääntää47 karsas47 suora45 säteillä44 paljas43 tuijottaa42 aueta40 aukaista40 avoin39 umpi39 säkenöidä38 silmätä36 räpäyttää33 sokea32 loistava32 säihkyä31 kyynel31 salamoida28 peittää27 avautua26 etu26 uni25 kohdata24 kantaa23 vasen23 uskoa23 usko22 kaunis22 tarkastaa22 palaa21 ihminen20 yleisö20 silmäillä316  ==3700
+
+alainen 3321: tarkastus371 keskustelu295 valvonta212 holhous200 käsittely193 käsitellä173 harkinta118 pohdinta111 vaikutus108 kohtalo99 hallinto82 syyte75 suojelus59 rangaistus58 tutkimus50 paine45 tuomio45 äänestys45 johto43 hoito40 tutkinto39 kohdella38 riita38 muutos37 sorto36 kehitys35 hyökkäys33 pai33 käsky30 tarkastelu29 laitos29 syytös28 liitto26 korjaus24 arvostelu23 säännöstely23 suunnitella23 kanne22 alaisuus353  ==3321
+
+lyödä 2749: leima462 laimi433 kello297 vedota174 veto112 rikki100 puukko85 nyrkki81 kullata77 takainen73 häntä73 rinta70 sydän67 lukko65 hetki61 leikki55 käsi54 leikkiä48 taata46 pää42 kortti42 lauta38 salama33 otsa31 lyöjä130  ==2749
+
+huomio 3524: kiinnittää1026 ottaa585 herättää308 ota212 ansaita123 kiintyä119 erityinen97 erikoistaa97 eritä92 olettaa92 kohdistaa92 suuri91 jättää77 enempi65 herätä60 ottava52 yleistää52 yleinen47 vakava45 huomioida192  ==3524
+
+punainen 2845: lippu290 ristiä247 lanka215 risti132 ruusu118 poski107 tupsu106 väri104 armeija97 huuli94 nauha82 langata74 viiva67 valo62 paketti60 kaarti59 nenä55 tukka54 huippu48 tiili43 purppura40 lyhty40 kynä39 täplä37 pilkku37 hohtaa37 kirjain32 viini32 hehkua31 kukka31 kasvo31 veri29 matto28 paita28 vaate26 lakki25 meri25 marja24 hame24 pieniä23 neilikka23 mökki23 itku22 liekki22 pallo22  ==2845
+
+tauti 2549: sairastaa509 pitkällinen378 tarttua360 tarttuma206 murtaa132 sairastua94 oire88 ankara76 lyhyt72 ehkäistä69 saastuttaa69 hivuttaa60 laatu57 äkillinen53 tuntematon53 potea45 levetä39 tautinen189  ==2549
+
+senaatti 3757: anoa384 myöntää361 nimittää155 hylätä136 päätös116 esitys113 yhtyä109 ehdottaa92 käskeä88 esittää88 lähettää80 keisarillinen79 pyytää71 ehdotus67 lykätä62 asettaa57 hyljätä53 jäsen47 suostua47 kirjelmä46 esitellä45 myöntyä44 laatia42 alistus39 nykyinen39 puoltaa37 ryhtyä36 anomus35 hallita34 kehottaa31 tiedustella28 kanslisti25 luvata25 vahvistaa24 istunto23 kääntyä21 määrä21 pyy20 menettely20 menetellä19 enemmistö19 molempi19 kumota19 asetti18 sallia17 silloinen16 alistaa16 erota16 senaattori758  ==3757
+
+kilo 2544: penni423 netto339 painoinen284 säkki220 miljoona146 tuore128 säe96 heinä92 painava90 suolata59 äyri50 tuhat43 hehtaari41 maito39 pussi36 sokeri36 painama34 painaa34 paino33 sunnuntai32 jauho32 voittaa32 mallas30 kaura29 kiloinen166  ==2544
+
+tuuli 2700: puhaltaa507 suunnata312 temmata221 vieno187 kylmä105 suunta99 voima84 heikko77 puoleinen76 tuhka58 osoittaa57 huono53 puhallella50 purje49 paha45 välinen45 suojata43 pohjoinen42 pieksää38 puuska38 kaataa35 iloinen35 loma35 nopeus33 henkäys33 tyyntyä32 raikas30 tuima29 suoja28 väli28 akana27 kuljettaa27 humina25 kiihtyä24 raju24 navakka23 lennättää23 haitta23  ==2700
+
+ääri 4122: pöytä712 ikkuna212 liesi155 hauta121 nuotio117 alttari115 istua111 akkuna105 paari101 vuode91 kehto80 piano71 kone55 pulpetti49 takka48 arkku45 sali40 täyttyä37 rukki35 valkea35 uuni34 kirjo33 lasi33 kirja32 seisoa29 lamppu29 työ28 flyygeli28 radio24 sana23 seimi22 ruuma22 ruumis22 peili20 kätkyt20 lämmitellä19 tuli18 rukka17 raamattu17 hella17 pata16 pullo16 äärimmäinen1268  ==4122
+
+kieli 2849: suomi555 ruotsi364 vieras170 englanti165 venäjä129 saksa120 selvätä110 ranska105 taito98 suomentaa76 latina75 opetus72 vierastaa66 taitaa61 virallinen57 omata56 oppia49 kotimaistaa45 taitava43 kansa36 kreikka34 toistaa28 käyttää28 kumpi28 unkari26 kirjoittaa25 puhuva23 hillitä23 mykkä23 kannel23 opettaa22 taitamaton20 kansallinen20 muu19 side19 lehtori18 italia18  ==2849
+
+ruis 2560: tynnyri500 olki265 oras165 kappa135 kylmetä107 jauhaa103 litra97 tähkä90 kylvää90 laiho81 kylpeä70 siemen70 hehto68 leikata55 leikkuu55 kylvö50 puhdistaa48 lako41 heilimöidä39 sato36 tähkiä36 jauhattaa33 tulli31 olka29 hedelmöidä29 jyvä29 puida27 kilo23 laiha22 leikkuuttaa21 korsi21 hinta20 tuleentua20 turmella18 kylmettyä18 viljelys18  ==2560
+
+korko 3612: kasvaa683 maksa227 talletus196 prosentti187 raha171 muuttua166 tili162 laina82 vuotuinen72 liikkuva68 käteinen68 juosta62 hyvittää57 määrätty52 pysyvä49 rahasto49 liikkua48 lisätä46 velka42 liittää34 maksamaton31 kanta29 pankki28 langeta27 sijoittaa25 korkuinen951  ==3612
+
+julistaa 2368: haettaa602 virkkaa450 hakea316 virka212 evankeliumi86 sota85 kuollut65 mitätön54 perätön54 toimi52 kilpailu46 lakko44 sanoma39 sanottu36 kunta34 konkurssi32 julistaja161  ==2368
+
+nuori 1993: tyttö352 nainen296 naida148 eräs97 herra96 karja93 tuoda92 polvi63 henkilö60 neitonen57 väki56 erä52 elää49 rouva48 elämä48 neiti47 joukko42 metsä39 varsi37 taiteilija33 upseeri32 pappi31 vuo31 neito30 nuorikko64  ==1993
+
+hammas 4221: kynsiä681 purra409 kynsi280 kalista147 pursi143 kiristellä115 valkoinen113 harjata91 piippu67 terävä63 kiristää49 naula38 mädätä38 naulata35 kolo35 välkkyä33 terve33 pestä31 kipeä30 hammastaa1790  ==4221
+
+juoma 2302: päihdyttää470 väkevä324 mieto267 päihtyä132 teettää113 juopua83 anniskelu79 juovuttaa65 kahvi51 nauttia51 tislata51 kaupata48 virkistää47 olut46 kahmia36 lasillinen36 kauppa36 alkoholiton35 nautinto32 kuppi32 terveellinen31 miinata29 lakata28 juomari180  ==2302
+
+itse 1965: hankkia223 asia168 elättää117 pidättää109 ampua86 paikka84 uhrata65 tila58 hirttää57 löytää53 surmata51 hoitaa51 tunnustaa48 pettää48 pelastaa47 juoda45 valita45 valmistaa42 tappaa41 kukkia40 kieltää40 kehittää39 puolustaa39 syyllinen37 teko36 loukata34 tunti32 onnellinen30 tähti30 unohtaa29 kyetä29 parantaa29 omistaa28 valittaa28 kustantaa27  ==1965
+
+syvä 2653: rivi210 suru199 juurtua103 huoata87 tunkeutua75 hiljaisuus69 kumartaa69 kaipaus68 vaipua65 kiitollisuus64 miete58 painua58 vako52 haava52 synty49 kuoppa47 vajota43 vesi42 kyntää41 huokaus41 kerros34 vakaumus31 sääliä30 syöpyä30 kuilu28 rotko27 salaisuus27 sääli27 pinta27 kunnioitus27 haapa27 olemus25 kaivaa24 vetää24 hartaus24 ryppy23 hengähtää23 kumarrus23 laakso22 tunne22 lumi21 entistää21 ajatus21 jalka21 ulottua21 kaipuu21 tunkea20 vallita19 kaivo19 oja18 käyvä18 totuus18 rakkaus17 merkitys17 metri17 syvällinen347  ==2653
+
+aurinko 1957: paistaa620 paiste373 säde342 paahtaa148 lasku90 lämmittää74 lämpö65 paahde63 polttaa58 pimetä44 kiertää42 polttama38  ==1957
+
+vartalo 2345: hoikka189 notkea159 kookas137 hento124 ojennus120 kierto115 taivutus106 hennoa59 solakka47 kumara45 sorja44 myötäillä44 täyteläinen44 taivuttaa42 sorea42 norja39 siro39 jäntevä38 ryhdikäs36 suoristua33 ojentua32 oikaista32 komea32 joustava32 tanakka31 joustaa28 koukistua24 verhota23 kiertyä22 köyristyä22 vapista22 kumartua21 roteva21 voimakas20 taipua19 ojentaa19 kuihtua18 nuorekas17 verho16 tukeva15 suoristaa15 muodoton14 kumarainen14 väristä14 pyöritys14 vartavastinen306  ==2345
+
+kulkunen 3049: kilistä1330 kilinä972 helinä240 kili207 helistä206 helähtää25 helkkyä24 soida15 kilkkaa15 helistellä15  ==3049
+
+häiskä 4354: huiskia2482 huiska1839 jyskytellä26 pilkkiä2 kuiskia2 lattia1 heitellä1 pilkki1  ==4354
+
+hienontaa 2042: sipuli511 manteli260 tilli180 pinaatti125 pippuri102 raastin87 liiduta87 kardemumma68 ripotella58 kaali47 liitu43 meirami41 haarukka41 pähkinä40 porkkana40 inkivääri39 aluna34 mauste34 huhmar30 munata30 ruskistaa29 kaneli27 sieni27 turve24 paju19 jauhe19  ==2042
+
+askel 1821: nopea176 ohja163 ohjata155 askele152 astua136 hidas70 ratkaista69 horjua65 raskas56 päästää49 pitkä44 kiireinen41 horjuva41 keveä40 ratkaiseva35 ripeä33 lähempi32 hiipiä30 kiiri29 lähestyä28 edistyä26 kiirehtiä25 kiire25 johtaa24 hiipivä24 reipas24 sataa23 peräytyä21 kiiruhtaa21 kuulua20 kuulumaton20 porras20 hiljainen19 jokainen17 lähetä17 kepeä17 kevyt17 kulkea17  ==1821
+
+pitäjä 1874: liti178 esitelmä128 raja124 sijaita118 kotoisa94 kotoinen91 mainita84 tuma77 kirkko77 käräjä72 samastaa61 setä58 talollinen48 asua36 luento35 tupa33 yhteinen32 alue32 läpi28 makasiini28 piiri27 lahti26 asuma25 maanantai23 puola22 mäki22 rajata21 purkaa21 asukas21 tiistai20 julkinen17 pappila17 koloa16 kauppias16 kylä16 ruotsalainen16 oleva15 niemi14 lääni14 löytyä14 perjantai14 pitäjäläinen43  ==1874
+
+säestys 1662: torvi342 kitara221 kantele194 urku162 orkesteri156 luuttu119 harmoni86 laulaa48 törmä46 viulu42 sitra36 soitto32 hanuri32 säestäjä146  ==1662
+
+este 2919: laillistaa1319 laillinen690 ilmaantua622 satu108 voittamaton55 poistaa45 panna26 odottamaton23 raivata17 minkäänlainen14  ==2919
+
+menettää 2443: henki513 järki233 tajunta183 maltti121 tuomita81 näkö64 kunnia56 arvo56 muutto50 merkitä48 rohkeus47 luottamus45 terveys40 teho38 omaisuus38 pelätä37 armo37 maku35 kaikki35 toivo35 varata32 peljätä30 itsenäisyys30 peli30 muisti28 vapaus28 kausi24 ote23 maine22 julistaa22 kuulo22 palkka20 asema20 menetys320  ==2443
+
+toteuttaa 2016: käytäntö265 suunnitelma193 tuuma124 aate113 aie107 hanke94 ohjelma93 pyrkiä82 tarkoitus64 koettaa64 uudistus52 tuumata48 yritys45 yrittää42 aikomus39 unelma37 tahto36 ihanne31 käytännöllistää31 käytännöllinen31 niittää30 uhkaus29 toive29 pystyä27 vaikea26 edeltäjä26 aikoa25 vaatimus24 pyrkimys24 jäädä20 edellyttää20 toivomus20 rumeta18 tuottaa17 järjestelmä16 pikainen15 onnistua15 toteuttaja44  ==2016
+
+sää 1917: sateinen274 suotuisa165 tuulinen125 kaunistaa117 kolea87 lämmin87 suosia86 aurinkoinen78 leuto69 suo67 pilvinen62 selkeä53 tyyni48 kostea42 kuiva38 kesäinen35 suotuinen35 lauha34 sumuinen33 myrskyinen32 lämpöinen31 kuivaa27 poutainen26 jatkua25 seljetä24 syksyinen24 ihana23 vaihtelu21 vaihdella21 lämmetä20 keväinen20 lauhtua17 herttainen16 ennustaa15 helteinen14 millainen13 tali13  ==1917
+
+jatkaa 2297: matkata616 matka604 opinto178 matta115 kokoustaa81 liike60 taistelu54 entinen50 malka35 lehtiä35 haluta34 rata32 keskeytyä31 kulku30 juhla29 tullata27 neuvottelu27 luku26 neuvotella25 lehti24 jälki22 kirjoittaja21 opiskelu20 suku19 rauha18 jatkaja84  ==2297
+
+selkä 1263: ratsu261 taka232 hevonen221 reppu87 aasi60 selkonen41 köyry39 nojata39 kontti34 pyörä30 laukku29 leveä29 siintää28 köyristää28 kameli27 lentää26 karmia26 järvi26  ==1263
+
+ukkonen 1771: jyristä449 jyrinä296 jyrä146 jyrähdellä142 jylinä97 jyrähtää86 jyristää78 jylistä75 johdatin47 jyrähdys45 pauhata41 sumuta38 nuoli27 jyräys25 isku23 iskemä23 nuolla22 kaukainen22 sade20 kumea19 rae18 tapainen17 jyminä15  ==1771
+
+nauru 2066: purskahtaa477 raikua131 heleä124 makea120 kaikua82 äänekäs62 pakahtua61 hilpeä54 kaikuva54 pidätetty52 remahtaa48 kajahtaa46 pidätellä45 pilkallinen44 pidentää39 vääntelehtiä33 remakka32 kajahdella29 sydämellinen25 ulvoa25 räjähtää25 ivallinen24 hillitty23 helakka22 ilkkua22 pyrskähtää20 hillitön19 katketa19 raakata17 hohotus16 tauko16 kamala16 pirullinen16 alainen16 säestää16 helmeillä15 ilkeä15 puhjeta15 raaka15 kiemurrella15 kaamea15 hysteerinen14 lakka13 hytkyä13 vallaton13 helähdellä13 vapauttaa13 naurunalainen27  ==2066
+
+kuuluva 1756: ammatti536 ala523 tehtävä220 ryhmä93 irtain78 luokka58 ääni54 pesä50 tarve40 esine36 aine34 hallittu34  ==1756
+
+mieliä 1614: kiitollinen115 teli113 innostua80 innostunut77 palata72 harras66 tyytyväinen59 rohkea52 kysyä52 tee52 jännittää45 pala40 liikuttaa39 elävä36 masentua33 turvallinen32 masentunut32 luottavainen30 nuori29 saada29 rauhallinen28 valoisa27 haikea27 tyytyä27 katkera27 estää26 nöyrä26 säilyttää25 virkistyä23 murtua23 huutaa23 yltää23 apea21 siitä21 pysyä21 luottaa20 kaivata20 lausua20 herkkä20 paloa19 vilpitön19 mielle45  ==1614
+
+oksa 1670: puu129 palmu99 vihreä89 karsia85 ylin81 koivu77 mänty69 tuuhea59 pensas58 alin52 puistaa46 taittaa42 pihlaja33 katkoa33 taittua31 kuivua30 paksu29 tammi29 riippuva24 kataja24 puinen24 latva23 puhdistua21 levittää20 hyppiä19 tuomi19 petäjä18 lintu17 hypellä17 ripustaa16 honka16 alaston16 taitella15 kuivettua14 totinen14 leppä13 ojennella13 notkua13 runko13 talvehtia13 katkeilla13 vahva12 pensa12 lehtevä12 lehmus12 alempi11 karsi11 oksainen134  ==1670
+
+vauhti 1769: huimata457 hiljentää233 huimaava165 hurja161 vinha148 huima141 täky116 kiitää71 kiihdyttää42 hiljetä40 hurmata38 luja31 lisä30 hidastaa28 tasainen27 hirmuinen22 hidastua19  ==1769
+
+runsas 1576: valikoida288 valikoima276 varasto148 siunaus141 mitta122 hedelmä100 saalis55 tavallinen55 lahja44 kokoelma44 kuvitus40 kannatus38 menekki30 palkita25 annos23 saali23 käyttö22 tuotanto22 tulo22 kolmannes20 palkkio19 tumallinen19  ==1576
+
+kutoa 1580: sukka351 verkko249 kangastaa245 kangas243 ryijy84 lanko69 villa57 hämähäkki42 sarka41 lyijy35 lyijytä34 sutata26 kutoja104  ==1580
+
+muotoinen 1343: neliö219 kolmio219 ympyrä202 kartio82 suppilo71 kuvio66 soikio62 kaari56 päärynä43 rengas38 lieriö36 ellipsi35 apina33 soikea31 kiila27 putki27 kuutio26 silinteri25 levy23 keila22  ==1343
+
+keittää 1441: peruna118 ruoka117 puuro112 muna95 liemi75 riisi69 pehmeä60 soppa46 höyry43 viina41 kypsä35 munia34 liha31 mesi30 vihannes29 kala25 krapu25 miina24 peru23 kasvis23 suola22 saippua22 seostaa22 velli21 rapu21 mehu21 kuoria21 herne20 lipeä20 keitto20 vedellä19 seos16 hillo16 pontikka16 öljytä16 öljy15 emäntä15 kuori14 sose13 liimata12 kinkku12 sahti12  ==1441
+
+infinitiivi 2227: instruktiivi742 illatiivi577 inessiivi421 abessiivi266 adessiivi106 objekti37 translatiivi34 verbi24 partitiivi16 subjekti4  ==2227
+
+näköinen 1571: miellyttää95 mieltyä90 surkea84 hauska75 miellyttävä73 siistiä72 synkkä64 miettiä61 viaton50 siisti47 epäilyttää45 omituinen37 hapan34 viisas34 huolestua33 vaatimaton31 miettiväinen31 surullinen31 outo31 juhlallinen29 ruma28 kauhea24 murheellinen23 kurja23 sievä23 nolo21 uhata20 väsynyt20 arvokas20 uhkaava19 hämmästyä19 vihainen19 huoleton19 kummallinen19 soma18 hieno18 olento17 onneton16 epäilyttävä16 ystävällinen16 mahtaa16 tyytymätön15 väsyä15 tyhmä15 herkullinen14 nuorukainen13 pelästyä13 julma13 villi12  ==1571
+
+yhtiö 1444: osakas208 sääntö208 niminen157 osake133 voitto95 palvelus65 konttori64 osuus55 keskinäinen53 isännöitsijä43 osallinen43 hallitus36 harjoittaa33 suorittaa29 palvelu26 edustaa24 uusia23 yksityinen23 muodostaa22 johtaja21 yhtiöittää83  ==1444
+
+pataljoona 1176: kasarmi251 komentaja164 päällikkö134 kanslia104 marssia57 komentaa56 rykmentti40 miehistö40 saarnaaja38 luutnantti34 marssi31 täkäläinen29 septetti26 ampuja25 soittaja25 hajottaa23 upseeristo23 seitsikko20 adjutantti19 vahvuinen19 ampu18  ==1176
+
+riisua 1737: aseistaa587 ase327 takki288 kenkä162 turkki77 saapas64 naamio56 housu53 naamari52 hattu40 nuttu31  ==1737
+
+kulma 1474: katu319 katua275 tora264 tori253 rypistää150 posti67 latu58 aste43 koillinen23 puisto22  ==1474
+
+historiallinen 1658: romaani324 museo213 taustaa109 katsaus106 näytelmä104 tausta75 tapahtuma58 kehiä56 kertomus54 kirjallisuus45 vaihe37 vaiheittaa36 taus33 teos30 ilmiö27 menneisyys26 draama25 tau25 olo23 aines22 tapaus21 linna19 bibliografia17 lähde17 pohjata17 materialismi16 arpoa16 todellisuus15 pohja15 lukeminen14 kuvaus14 filmi13 bibliografi13 nähtävyys12 novelli11  ==1658
+
+maja 1558: matala340 manala283 maallinen278 mana209 harja55 somistus50 köyhä41 riutua34 pystyttää33 ovi28 majailla207  ==1558
+
+halko 2157: syltä396 hakata202 hakkuu170 syli161 hakkuuttaa116 hankinta106 pilkkoa83 sahata42 kuorma31 pino31 hakkauttaa31 ajo29 lastata28 latoa25 pituinen19 kulutus18 kuormata18 kuusinen18 halkoa633  ==2157
+
+vilu 1273: värinen290 värjöttää252 värjötellä121 hytistä114 puistattaa87 väristää74 vavista36 kärsä34 värisyttää31 marista27 viluinen207  ==1273
+
+korva 1544: kuuro395 kallistaa255 kuiskata167 kantautua80 tukkia79 höristää54 heristää52 huumata41 punastua38 särkeä37 suhista37 humista37 tukki34 kuultaa31 vihloa30 kuunnella29 hivellä29 juures25 suhina24 vahinko24 kuultava23 suoda23  ==1544
+
+parras 1565: ajattaa331 naureskella203 ajella161 nauraa149 sivellä109 silitellä79 myhäillä73 pyyhkiä67 mutista59 hymyillä43 ajeluttaa37 silittää30 naurahtaa27 pistellä27 hymähtää24 hypistellä21 olematon18 takkuinen17 parraton90  ==1565
+
+miekka 1574: tuppi299 paljastaa245 terä104 kahva101 vyö80 heiluttaa60 huotra55 vannas42 hukkua42 kärki37 mitellä34 takoa29 hioa29 verinen27 lävistää26 kuve22 aura22 kalske21 käyrä20 ruostua20 siepata19 heilua18 tulinen18 työntää18 teroittaa17 terästää17 lape16 hukka15 hukata15 kohottaa15 hiota13 sivaltaa13 ritari12 lyönti12 heilutella12 mittelö12 miekkailija17  ==1574
+
+huumori 1750: höystää477 leppoisa103 taju93 kyllästää73 hersyä71 mehevä66 hurtti63 räiskyvä56 räiskyä48 rehevä42 verraton42 pilkahdus41 sävyttää37 pursuta36 tajuta34 hurtta31 harmiton27 värittää27 pulputa24 älykäs23 tajuinen23 valloittava22 kirkastaa20 kultainen19 pilke19 ymmärtävä18 ehtymätön16 leppeä15 keventää15 miehekäs15 pursua15 pilkahtaa14 pirteä14 kirpeä13 ehtyä13 pulppuilla12 hirtehinen12 uhkua11 naurattaa10 maustaa10 välke10 veikeä10 läpitunkema10  ==1750
+
+kerma 956: hapattaa252 vatkata208 kirnuta97 jäähdyttää86 hapata55 pastöroida49 rasvaton43 vispilöidä37 hapatus30 hyydyttää27 meijeri23 happamaton21 kermainen28  ==956
+
+vaalea 1001: kihara225 hius152 valtiollinen111 kunnallinen90 keltainen84 väre41 suhteellinen39 jouhi37 äänestää34 puku32 tuleva31 sini27 rautias26 osallistua25 sinistää24 viiksi23  ==1001
+
+pelata 1008: ottelu200 joukkue192 otella190 tennis79 shakki65 biljardi45 turnaus38 lauantai31 divisioona27 pokeri27 puolustus25 bridge24 nappi22 lohko22 voittaja21  ==1008
+
+lammas 1299: nahka156 eksyä128 kadota89 paimentaa76 laidun73 keritä70 susi51 raadella48 keriä47 kaitsea46 teurastaa43 ruokkia37 paimen34 määkiä31 kaita29 lauma29 karitsa29 löysä29 vuohi25 ruokki25 repiä24 palvata19 ruokinta16 johdattaa15 raato14 syödä14 kadottaa14 haaskata14 laiduntaa14 lauhkea13 syöpä13 lammasmainen34  ==1299
+
+allegro 3710: moderato2467 vivace1090 andante104 motto21 sonaatti13 harppu11 tempo4  ==3710
+
+valaa 1453: vannoa251 pronssi165 tinata92 betoni82 vaski63 uskollisuus60 kipsi58 tina53 betoninen49 kannu36 pyhä36 väärä35 sementti32 muotti32 sinkki28 hohde28 kaava27 pronssinen26 kulti25 aurinko24 metalli24 kaavata23 kynttilä20 kulta19 teräs16 loiste16 vannottaa15 rauta14 kuutamo13 kirjasin13 hymy13 hehku12 savi11 kirkkaus11 tela11 myrkky10 kirjake10  ==1453
+
+laine 1321: loiskia234 läikkyä114 loiske107 liplattaa106 vyöryä90 kuohua59 lampi57 lastu51 huuhdella44 huuhtoa42 keinua36 loiskinta35 vilpoinen33 vilpoisa32 liplatus31 loiskua30 vaahdota25 lastuta22 lyödä19 kimallella18 ulappa17 laulava16 lempi15 kellua14 keikkua14 mahtava13 vieriä12 ajelehtia12 lepattaa12 nostattaa11  ==1321
+
+pelto 1230: muokata111 piennar110 viljellä82 lannoittaa78 viljeltyä64 pientare52 ojittaa49 perata46 malminen35 malmi32 torppa28 aari28 lanta28 vilja27 valmis26 sulaa26 viljava25 kivinen23 naapuri23 talo22 aukea22 raataa20 kartano19 mullata19 sula19 kuokkia18 reuna18 laita17 läheinen17 aita15 multa14 siementää14 aaria14 höyste14 polku13 noki13 kuhilas13 lainehtia12 ruis12 korjata12  ==1230
+
+filosofia 2098: maisteri482 kandidaatti457 tohtori238 lisensiaatti120 professori86 alje52 historia37 idealistinen17 kandi17 teoreettinen13 filosofinen579  ==2098
+
+kahle 1209: orjuus123 orja93 katko89 katkaista88 kytkeä87 orjuuttaa70 kirvota61 jäinen55 vapautua46 sitoa41 pimeys40 saatana36 synti27 juoppous25 kirvoittaa23 katka20 kietoa19 kalina19 rautainen19 aineellisuus16 katkeama14 kapitalismi13 talvi13 kalistella13 irtautua13 särki12 komistaa11 himo11 kahlehtia112  ==1209
+
+pasuttaa 2470: kiisu1275 pyriitti1195  ==2470
+
+etsiä 1285: poliisi185 osasto173 turha91 poli81 pola80 turvata75 paikata58 apu57 pelastus56 onni47 katse35 ruveta34 vastaus30 turva30 heittää28 itse27 lohdutus27 pakottaa26 sopiva24 keino23 vallata23 silmä19 tie19 parannus19 turma18  ==1285
+
+suoni 1225: virrata223 hyytyä155 jähmettyä133 virta118 sykkiä83 kalkkiutua67 tykyttää67 virtailla67 hyytymä43 tykytys40 jähmettymä35 pullistua34 paisua24 juoksuttaa23 iskettää22 kohista22 sykkää21 jyskyttää18 kiehua16 seinämä14  ==1225
+
+tamma 898: tiine194 astuttaa185 varsa169 tiu100 varsoa60 raudikko55 ori36 litistä34 litistää33 tii32  ==898
+
+savu 1194: tupruta155 tukehtua135 sakea134 tupakka78 sake77 kitkerä59 tupruttaa53 sankka53 hälvetä37 tuprutella31 koho29 leijailla28 sinertävä27 mustata25 haju25 sikari25 sinertää25 ruuti24 haihtua23 mustua23 suitsuta22 tukahduttaa19 tuoksua17 peittyä15 kärytä14 savuinen41  ==1194
+
+rinne 1383: vuori303 jyrkkä168 harju165 tunturi154 kukkula96 loiva82 eteläinen68 kallio57 metsäinen45 vaara35 kumpu29 itäinen28 alppi19 kiivetä18 muori17 rinnus99  ==1383
+
+suistua 1887: kiska585 kisko499 raide206 lisko96 auto40 vaunu31 veturi24 juna21 rekka18 lista18 suitsea349  ==1887
+
+pyssy 1256: ladata299 laueta257 laukaista156 lata148 pauke71 laukaus53 paukkua47 paukahtaa35 pidellä29 luoti26 hana24 latinki24 seinä19 kantama18 pamahtaa17 tähdätä17 otin16  ==1256
+
+kemiallinen 1264: laboratorio312 kokoomus179 pesu130 teollisuus114 reaktio90 analyysi82 prosessi47 ominaisuus38 menetelmä38 tuote34 valmiste33 laite28 pumpuli25 torjunta22 sekoitus17 energia17 teknologia16 yhdiste14 aineistaa14 koe14  ==1264
+
+asunto 1778: vapaa661 vapa548 velallinen66 vuokrata49 rakentaa46 koulu32 keittiö27 huone26 vala25 läheisyys24 tavata24 perhe19 kalustaa19 puute18 vuokra17 lapseton17 edusta14 etsiä14 poistua13 pormestari12 pieni12 ahdas11 sopia11 kunnollinen11 lääkäri11 käsittää11 toveri10 opisto10 kamari10 piha10  ==1778
+
+tulos 1267: saavuttaa157 toivottu135 vaalia83 tyydyttävä69 tyydyttää67 maali60 vaali57 taloudellinen57 lopullinen56 toivoa53 parhain46 erinomainen40 paras37 myönteinen36 rahallinen34 huomattava29 peruste28 näkyvä26 vertailu22 julkaista22 positiivinen21 vaikuttaa20 kielteinen19 kokeilu19 tuottava19 odottaa19 muodostua18 tähänastinen18  ==1267
+
+halullinen 1721: ostaja784 huutaja344 hankkija110 urakoitsija92 vuokraaja75 hakija69 nähtävä57 ottaja38 pätevä37 päteä33 teloittaa21 ilmoittautua20 urakka17 tarjooja12 myyjä12  ==1721
+
+syrjä 1886: sysätä383 vetäytyä348 väistyä168 pysytellä70 katsoja63 jäätää44 siirtyä37 hypätä32 siirtää28 hypähtää27 jäämä27 uudin25 hiukka25 syrjäinen609  ==1886
+
+käsite 1090: sekaannus87 selventää86 abstraktinen77 uskonnollinen68 höltyä59 hämmennys48 hämmentää45 hämärä39 määritellä39 venyä38 selvitellä35 siveellinen34 sekoittaa30 moraalinen30 oikeudellinen27 selvittää26 sisältyä23 keskeinen22 määrittely20 selvittely20 selvetä19 sotkea18 juridinen16 määritelmä15 sisällyttää15 selvitä12 hämmentyä12 sekainen11 vakiintua11 ilmaista10 laaja10 sekavuus10 rikos9 matemaattinen9 sisältö9 tuttu9 operoida9 relatiivinen9 rappeutua8 vanhentua8 vastakkainen8  ==1090
+
+ruoste 2879: raiskata1866 raiska960 saostua11 syövyttää10 kaapia7 salvata6 roisto5 suojella5 esto5 raappia4  ==2879
+
+suuruinen 1453: manttaali527 summa137 stipendi95 saaminen81 maila69 painos59 rupla52 avustus45 kappale37 kruunu36 palkinto35 eläke34 sakko29 palsta28 tonni27 martta27 suurus135  ==1453
+
+käki 1987: kukkua1016 kukunta769 kukahtaa113 kukuttaa28 kuusikko18 välittyä10 helkytellä9 sukkula9 elättäjä8 kukahdus7  ==1987
+
+langaton 1523: lennätin583 sähkötys458 sähköttää361 viestintä34 puhelin25 pisiä15 sähkö14 keksijä12 pisi12 lähetin9  ==1523
+
+järjestys 1694: säätää249 palauttaa185 mukainen67 häiritä50 valvoa42 sisäinen38 valvoja36 rikkoa34 säännöllinen31 pito29 moittia29 noudattaa27 kirkollinen22 luonto20 järjestyä835  ==1694
+
+viettää 1548: yö195 joulu173 kesä109 hää95 ilta91 päivätä74 lapsuus66 vanhuus54 päivä47 valmistautua35 nuoruus29 kokoontua24 juhlia24 hetkinen22 häkä21 juhannus21 iltama21 viikko18 pääsiäinen17 rinne16 yhdistys15 vuosi14 tapa13 ehtoollinen13 uneton13 vietävä328  ==1548
+
+kita 1150: ammottaa359 niellä170 ahnas133 pohjaton68 nielaista52 horna43 ahmia42 leijona34 syöstä33 kiljuva31 syytää27 avara26 kiljua22 peto21 krokotiili20 aukoa19 helvetti19 avonainen17 ahmaista14  ==1150
+
+kääriä 1255: hiha324 rulla98 paperi92 riepu83 vaippa66 liina59 peite59 kapalo51 huopa50 mytty43 lakana36 ryysy34 rääsy25 huimia21 dynamo21 viitta20 peitteinen18 huivi18 paletti16 lahje16 kaula14 harso13 peitto13 käärö12 repaleinen11 huovata11 nyytti11 repale10 peitta10  ==1255
+
+henkinen 1000: riento116 kyky113 harrastus102 taso69 pyrintö62 ravinto50 kulttuuri49 pyrintä46 edistys38 suhde25 virkistys24 sivistys24 ponnistus23 aarre23 herätys22 kasvatus21 tarmo17 komitea17 kehittyä16 huolto16 nälkä16 kurjuus15 joustavuus15 työskentely14 köyhyys14 nuoriso14 kypsyys13 perintö13 vireys13  ==1000
+
+laiva 1060: kapteeni142 kannella105 kansi104 poiketa86 poikkeava67 lähtö56 upota45 menevä42 purjehtia36 upottaa24 kylki22 säännöllistää21 matkustaja21 satama19 sivu19 venäläinen19 vaihtaa18 lasti18 suomalainen17 matkustaa17 viedä17 ankkuroida16 päällystö14 laituri14 keula12 masto12 vihollinen12 kari12 aino11 ankkuri11 varustaa11 laivaaja20  ==1060
+
+koskea 919: säännös153 asetus146 kirjoitus68 mietintö57 sopimus55 juttu47 kohta37 uutinen36 maattaa32 järjestää30 kuulutus28 seikka27 tilata27 maata26 patentti25 kirje25 säädös25 laistaa24 tiedustelu22 koskelo29  ==919
+
+puolue 936: suomalaistaa102 edustaja90 ehdokas80 sosialistinen78 kommunistinen65 taho64 lainen56 porvarillinen45 poliittinen44 lukeutua36 järjestö28 katsoma27 liittyä24 puhuja23 listata22 demokraattinen21 kokous21 liberaalinen21 ruotsalaistaa21 puolueellinen68  ==936
+
+kavio 1751: kapse722 kopse349 kopina87 töminä77 juovikas77 mustuttaa53 kengittää40 vuolla35 kuopia22 kirjava16 välttävä13 kopista12 viirullinen11 halkeama11 antura11 kapsaa10 kavuta205  ==1751
+
+aiheuttaa 1223: kustannus70 häiriö63 vaikeus50 kuolema40 tuho38 vaurio36 meno35 ongelma33 työttömyys32 suura31 sairaus29 vaurioittaa28 vilkas28 onnettomuus28 kulu27 haitata25 palo25 rasitus24 tauti23 tappio21 palko20 hankaluus18 asiakas18 vamma16 alkoholi15 pelko15 räjähdys15 tuntuva15 hätä14 bakteeri13 kärsimys13 valtio12 ikävyys12 keskeytys12 tuhota11 aiheuttaja318  ==1223
+
+morsian 1459: kihlattu472 kihlata433 sulhanen69 noutaa48 sulho29 kota28 ylkä26 koto20 kuuluttaa19 suudella17 murhata16 rakastettu13 ryöstää13 kihla12 pukea11 vihkiä9 sormus9 lahjoittaa9 suloinen8 huntu8 rakas8 surra8 uskollinen8 sormi8 toti8 itkeä7 rikas7 vanhempi7 tervehtiä7 morsio122  ==1459
+
+päällystää 977: sametti130 asfaltti105 sohva93 silkki72 verka69 aikuinen64 pelti52 plyysi38 kumi36 tyyny35 kupari34 laatta29 marmori21 linoleumi19 tuoli18 palttina18 kaakeli17 katto16 hopea15 nikkeli14 istuin13 merino13 punainen12 kautsu12 tuohi12 pahvi10 sora10  ==977
+
+pyydystää 1269: riista71 hiiri66 rotta59 perhonen48 kettu47 ansa44 hylje31 kärpänen30 paula28 hyönteinen28 perhostaa26 saalistaa25 siika24 ankerias22 kuha20 otus20 made17 saukko16 lohi16 nuotta15 kielletty15 loukku15 jänis14 valas14 haavi13 silakka13 turska13 perho12 sadin12 luvallistaa12 sammakko11 silli11 muikku11 rysä11 kärppä9 talas8 orava8 ahma7 käyte7 elefantti7 pääskynen7 hauki7 pyyhe379  ==1269
+
+muistaa 1467: maistaa319 monistaa220 syinen200 mainen170 ehta56 ehto47 jaksaa40 erottaa36 maa36 meistää21 muistama322  ==1467
+
+taipumus 1453: luontainen393 synnynnäinen168 taiteellinen111 perinnöllinen71 rikollinen60 musikaalinen55 soitannollinen42 luonnollinen39 viitata39 yksilöllinen35 jonkunlainen23 runollinen22 lihoa21 periytyä16 erikoinen14 kirjallinen13 ilmetä12 taipuva319  ==1453
+
+kipinä 814: singahtaa138 singota127 sinkoilla79 lennähtää70 sytyttää53 syttyä52 kyteä51 sammuttaja46 jumalallinen34 jumalainen32 lentävä25 sammua25 lennellä19 leimahtaa18 innostus15 välähtää15 jumaluus15  ==814
+
+vääntää 1333: vitsa434 kampi106 niska106 vivuta63 avain53 kammeta48 nappula46 veivi42 kiero36 vipu35 katkaisija35 ruuvi33 naama25 kanto20 tahko17 kivi17 vitsas15 tahkota15 kivetä14 ratti13 napista13 kanki12 veistää12 tulpata11 vääntö112  ==1333
+
+hermo 1101: lepuuttaa120 rauhoittaa71 ärtyä65 kysyvä59 rasittua58 tärisyttää42 jännittyä41 kuluttaa39 kura36 kuri34 rauhoittua33 vahvistua30 kiihottaa27 rasittava26 kutkuttaa26 ärsyttää25 pilata21 tyynnyttää20 rasittaa20 pila19 teräksinen16 jännitys16 hallinta13 jännittävä12 kireä12 viihdyttää11 liihottaa11 menettää9 ärtyisä9 liiallinen9 raastaa9 kiihottua8 koetella8 kestävä8 pilaantua7 hallitseva7 karaistua7 lamautua7 heikontua7 hermoilla103  ==1101
+
+vara 865: kerätä106 luovuttaa102 kertyä85 liietä71 koota49 vastainen49 tarvita45 riittää44 tallettaa40 käytetty37 sattuma29 tuhlata27 säästää23 uskottu23 valinta22 keräys19 vastaisuus18 kartuttaa16 kassa15 jakaa15 aineellinen15 tarpeellinen15  ==865
+
+rumpu 1252: päristä550 pärinä282 päristää181 rämistä44 räminä38 pyöriä35 kumista20 paukuttaa18 isota16 kalvo14 rumuus54  ==1252
+
+kuninkaallinen 921: majesteetti288 palatsi173 korkeus123 prinssi74 pappeus67 ooppera38 papisto34 aitio24 prinsessa23 julistus20 seurue20 hovi19 jahti18  ==921
+
+naisellinen 977: sulous105 vaisto70 kainous66 viehkeys55 sulo53 turhamaisuus47 viehkeä32 viekkaus30 hempeys30 pehmeys28 kauneus27 uteliaisuus27 hellyys21 lempeys21 viehätys20 hempeä19 ylpeys18 hyve18 keimailu15 arvokkuus14 hienous14 prinsiippi14 viehättävä13 linjakkuus12 ujous12 eleganssi11 herkkyys11 kaino10 viehättää9 hentous8 heikkous8 häveliäisyys8 aisti7 logiikka7 charmi7 naisellisuus110  ==977
+
+iho 939: kesiä92 ruskettua88 hieroa55 arka51 sileä39 elvyttää35 halkeilla33 rasvainen32 karaista29 kuivata28 imeytyä28 huokonen25 ravita22 vahingoittaa21 vaalea21 nuorentaa20 pinna20 kosteus19 rikkoutua17 kalpea16 hangata15 ruiskuttaa15 vaaraton15 nuortea15 ravitseva14 kuivattaa13 voidella13 hilseillä13 rohtua11 pehmoinen11 puhdistus11 ihokas102  ==939
+
+puro 942: liristä196 liri117 solista103 lorista100 liriä52 solina49 uoma41 lirinä40 porista37 sola26 pienoinen25 vuolas24 ranta24 lorina24 perkaus22 juokseva22 luikerrella16 tukkeutua12 paisuttaa12  ==942
+
+monikko 1056: genetiivi298 nomini251 nominatiivi192 imperatiivi153 imperfekti42 partisiippi40 pronomini30 pääte20 tunnus19 muodostus11  ==1056
+
+tiheä 687: asutus153 metsikkö95 viidakko74 pensaikko63 sumu56 pensasto26 ympäröidä24 sulloa23 sivuta22 pyydys18 kampa15 toistua15 näreikkö13 sulloutua13 tahti12 tihku65  ==687
+
+popliini 1426: sanforoida641 vettähylkivä620 merseroida146 huppu15 tiivis2 silitä1 pusero1  ==1426
+
+suksi 1803: luistaa125 hiihtää68 liukua53 sauva39 tervata38 luisto37 survaista31 liukas28 mallinen25 luistava23 rasvata21 lipsua19 hiihdellä18 voitelu17 luisti17 kainalo15 sujahtaa15 sukkela15 talvinen13 sujauttaa12 suihkia11 liukuma10 sujua10 kunnostaa10 hiihtäjä9 harjoitus9 jäätyä9 lasketella9 hanki8 lipsahtaa7 suksia1082  ==1803
+
+tilanne 843: vallitseva84 vaarallinen51 helpottaa47 kiusallinen41 pahentaa33 pohtia32 tukala31 tällainen31 arvioida25 kuvata24 taloudellistaa23 vaikeuttaa23 tarkastella22 selostaa22 selviytyä20 parata20 kärjistyä19 poliittistaa19 pulmallinen18 arvostella17 kestämätön16 helpottua16 suhtautua16 samanlainen16 sekava16 harkita15 tarkkailla15 kärjistää15 helpota14 kiristyä14 tutustua14 minkälainen13 sotilaallinen13 luoma13 kuva12 tietty12 aiheuttaa11  ==843XXXXXXXXXXX++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++aaaaaaa -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -0 (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1)didcoocs

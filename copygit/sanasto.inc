@@ -125,7 +125,7 @@ var lk,vo,ko,sa,lkn,von,kon:word;//lks,vos,kos,sas:string;
     if kons[kon].v=kons[kon].h then thisko:='xx' else
     thisko:=kons[kon].v+kons[kon].h;
     if kons[kon].voklka<>von then uusvok;// else nomore:=true;
-    if kons[kon].v<>kons[kon].h then writeln('<b>[',kons[kon].v,kons[kon].h,']</b>') else writeln('');
+    //if kons[kon].v<>kons[kon].h then writeln('<b>[',kons[kon].v,kons[kon].h,']</b>') else writeln('');
     nomore:=false;
 
     //if sa<kons[kon].ekasana+1 then conti

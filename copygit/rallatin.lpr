@@ -68,8 +68,26 @@ begin
    end;
    if paramstr(1)='sema' then
    begin
-     writeln('2grammeista kaivettua');
+     writeln('semantiikka trallatin dorun');
      coocs;
+
+     write('didcoocs');
+     terminate;exit;
+    // sanasto.free;
+   end;
+   if paramstr(1)='relas' then
+   begin
+     writeln('semantiikka trallatin dorun');
+     gutrelas;
+
+     write('didcoocs');
+     terminate;exit;
+    // sanasto.free;
+   end;
+   if paramstr(1)='list' then
+   begin
+     writeln('listamat');
+     listamat;
      write('didcoocs');
      terminate;exit;
     // sanasto.free;

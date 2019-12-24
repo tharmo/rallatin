@@ -1,0 +1,2 @@
+cat $1 |grep --color=always  $2 -a |LC_ALL=fi_FI.ISO-8859-1 less -R
+
