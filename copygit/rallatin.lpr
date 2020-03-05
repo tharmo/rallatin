@@ -70,7 +70,7 @@ begin
    begin
      writeln('semantiikka trallatin dorun');
      coocs;
-
+     // joutava;
      write('didcoocs');
      terminate;exit;
     // sanasto.free;
@@ -84,9 +84,19 @@ begin
      terminate;exit;
     // sanasto.free;
    end;
+   if paramstr(1)='wikspar' then
+   begin
+     writeln('wikisynonyymt');
+     wiktospar;
+
+     write('didcoocs');
+     terminate;exit;
+    // sanasto.free;
+   end;
    if paramstr(1)='list' then
    begin
      writeln('listamat');
+
      listamat;
      write('didcoocs');
      terminate;exit;

@@ -5,7 +5,7 @@ unit otus;
 interface
 
 uses
-  Classes, SysUtils,math;
+  Classes, SysUtils,math,twmat;
 {
  sortattava (tai indeksoitu?) lista jossa lukuja ja niihin liittyviä arvoja
  low.level muistinsiirtoja
@@ -14,7 +14,7 @@ uses
 var debug:boolean;
 VAR oliso:boolean;
 
-type trec=record w,v:word;end;
+//type twv=record w,v:word;end;
 
 type twarray=class(tobject)
   arr:array of word;
@@ -27,15 +27,18 @@ type twarray=class(tobject)
   procedure clear;
   constructor create(le:word;sa:tstringlist);
 end;
+type tocmat=class(tobject)  //VAIHDETAAN TÄHÄN
+    wrds:array of tintlist;
+end;
 type tvvmat=class(tobject)  //VAIHDETAAN TÄHÄN
-  mx:array of trec; //EIKU TEHDÄÄN VAAN YKSI ISO DATABLOCKKI JOHON VIITATAAN POINTTEREILLA
+  mx:array of twv; //EIKU TEHDÄÄN VAAN YKSI ISO DATABLOCKKI JOHON VIITATAAN POINTTEREILLA
   rows,cols:word;
-  //len:word;  //joka rivin eka trec kertoo sanan ja rivin pituuden?
+  //len:word;  //joka rivin eka twv kertoo sanan ja rivin pituuden?
   sanat:tstringlist;
   onjo:array of byte;//isot
   maxval:longword;
   dotmat:tvvmat;
-  clusters: array of trec;static;
+  clusters: array of twv;static;
   ccount:word;static;
   procedure karsiklust(limi:word);
   function rlen(rivi:word):word;
@@ -48,14 +51,15 @@ type tvvmat=class(tobject)  //VAIHDETAAN TÄHÄN
   procedure clear;
   procedure list(w:word);
   constructor create(r,c:WORD;sans:tstringlist);
-  function getrec(i,j:word):trec;
-  procedure setrec(const i,j:word);
+  function getwv(i,j:word):twv;
+  procedure setwv(const i,j:word);
   function mply:tvvmat;
   procedure mply2;//:tvvmat;
+  procedure wikimply;//:tvvmat;
   procedure savemat(fn:string);
   procedure readmat(fn:string);
   procedure norm;
-  Property Items[i,j : word]: trec  Read getrec ; Default; //Write setrec;
+  Property Items[i,j : word]: twv  Read getwv ; Default; //Write setwv;
   function veivaa:tvvmat;
   function counts:tvvmat;
   procedure sanatklus;
@@ -105,10 +109,10 @@ begin
 end;
 
 procedure tvvmat.sanatklus;
-var dota,dotb:tvvmat;i,j,ii,iii,jj,jjj,c,incls:word;lis:string;  sum:longword;aii,ajj:trec;
-   bigit:array[0..7] of trec;
-   clusw,clusw2:array of word; //muutetaan treciski myös;
-   cluslens,cluslens2,cluscors:array of word;//trec;
+var dota,dotb:tvvmat;i,j,ii,iii,jj,jjj,c,incls:word;lis:string;  sum:longword;aii,ajj:twv;
+   bigit:array[0..7] of twv;
+   clusw,clusw2:array of word; //muutetaan twviski myös;
+   cluslens,cluslens2,cluscors:array of word;//twv;
    cocs:array of word; wclus,wclus2:array of word;
    function bb(w,v:word):word;
    var p:word;
@@ -458,8 +462,8 @@ end;
 
 
 
-function tvvmat.getrec(i,j:word):trec;begin try result:=mx[i*cols+j];except write('-ng');end;end;
-procedure tvvmat.setrec(const i,j:word);begin end;
+function tvvmat.getwv(i,j:word):twv;begin try result:=mx[i*cols+j];except write('-ng');end;end;
+procedure tvvmat.setwv(const i,j:word);begin end;
 
 function tvvmat.cindexof(rivi,vari:word):word;
 var i,xw:word;
@@ -592,7 +596,7 @@ end;
 
 procedure tvvmat.karsiklust(limi:word);
 var //s,rs,cs,cc,alku,loppu,i:word; hits:longword;
-  maxis,maxis2:array of trec;
+  maxis,maxis2:array of twv;
 
   function bigs(w:word;v:word;mm:pword;picks:word):word;
   var j,k:word;pw:pword; //mmax:
@@ -742,129 +746,295 @@ begin
    if rsum>5000 then  write(' [',i,' ',i2,sanat[maxis[i2].w],'/',rsum ,'] ');
  end;}
 
+procedure tvvmat.wikimply;//:tvvmat;
+var lista:tintlist;i,j,k,j2,sanam,hits,misses:word;
+  sanaj,sanak,sanaj2:twv;oli,toti:word;  //mikä er0?
+begin
+  // sana sanalta köydään kaikkien sananyymien kaikki sanayymit ja sortataan sitten esiintymien määrän mukaan
+   lista:=tintlist.create;    ///nyt vielä vakimittainen, staattisella arraylla, Yhden sanan kumppanilista
+   writeln('********!*********::');
+   for i:=2 to rows do
+   begin
+    if sanat[i]<>'kuolema' then continue;
+     write(^j'X*******************************************:',sanat[i],mx[i*cols].v,'::');
+     toti:=0;
+     if 1=0 then
+     for j:=1 to cols do if mx[i*cols+j].w=0 then break else
+     begin sanaj:=mx[i*cols+j];inc(toti,mx[i*cols+j].v);write(^j^j,' ',sanat[sanaj.w],'\',sanaj.v,': ');
+     for j2:=1 to cols do if mx[sanaj.w*cols+j2].w=0 then break else write(' ',sanat[mx[sanaj.w*cols+j2].w],'\',mx[sanaj.w*cols+j2].v,': ');
 
+     end;
+     writeln(^j'=',toti);
+     lista.clear;
+      try
+
+     for j:=1 to cols do      //kaikki sanam kumppanit
+     begin
+       sanaj:=mx[i*cols+j];
+       if sanaj.w=0 then break;
+       //sanam:=(1000*sanaj.v) div toti;
+       write(^j'  +',sanat[sanaj.w],sanaj.v);//,'/',sanam,'!  ');
+       //lista.incr(sana.w,sana.v);
+
+       for j2:=1 to cols do //sanan muut kumppanit
+       begin //if j2>16 then break;
+         try
+         if j2=j then continue;
+         sanaj2:=mx[i*cols+j2];
+         if sanaj2.w=0 then break;
+         //write(^j,'    ',sanat[sanaj2.w]);
+         // sanam:=min(sanam,(1000*sanaj.v) div mx[sanaj2.w*cols].v);
+         for k:=1 to cols do //esiintyykö toka kumppani ekan kumppani kumppanilistassa
+         begin //if k>16 then break;
+           sanak:=mx[sanaj2.w*cols+k]; //if k<10 then write('(',sanat[sanak.w],')');
+           if sanak.w=0 then break;
+           if sanak.w<>sanaj.w then continue;
+           sanam:=min(sanam,(1000*sanak.v) div mx[sanaj.w*cols].v);
+           hits:=0;
+           //if sanaj2.w<>sanak.w then continue;
+             //sanan kumppani esiintyy toisen kumppanin listassa
+             //if sanat[sanak.w]='ura' then
+             write('  [',sanaj.v,'>',sanat[sanak.w],sanak.v,'<',sanat[sanaj2.w],sanaj2.v,']');//,'/',mx[sanaj2.w*cols].v,' ');
+             sanam:=min(sanam,(1000*sanaj2.v) div mx[i*cols].v);
+             //sanam:=min(sanam,sanaj2.v);
+             //write('+',sanat[sanak.w],min(sanak.v,sanaj.v));
+             //if lista.len<256 then
+             try
+             inc(hits,sanam);//sanam); eieiei pitäis kasvattaa vain jos toi sana oli noteerattava
+             //if sanat[sanak.w]='kaviaari' then writeln(^j,'@@@',sanat[i],' ',sanat[sanaj.w],' ',sanat[sanak.w],' ',sanat[sanak2.w],' ',hits);
+             //lista.incr(sanak2.w,sanam);//sanam);
+             except writeln(^j'\\\NONo:',sanat[i],j2,'.',lista.len,'_',hits);end;
+           end;
+         //write('+',sanat[sanak.w],min(sanak.v,sanaj.v));
+         //if sanat[sanak.w]='ura' then writeln(^j,'###',sanat[i],' ',sanat[sanaj.w],' ',sanat[sanak.w],' ',hits);
+         except write(^j,'nonono:',hits);end;
+
+         lista.incr(sanak.w,hits);
+       end;
+     end;
+    except writeln(^j^j'nomply***');end;
+    continue;
+    try
+     lista.sortv;
+     for j:=1 to lista.len do
+       write('_',sanat[lista.items[j].w],lista.items[j].v);
+     writeln;
+     exit;
+     for j:=1 to lista.len do
+     begin
+       sanaj:=lista.items[j];oli:=0;
+       if lista.items[j].w=0 then continue;
+       if lista.items[j].v<1 then continue;
+       misses:=0;hits:=0;
+       write(^j'  !',sanat[sanaj.w],sanaj.v);
+       for k:=1 to cols do //moniko tark sanan kumppaneista
+       begin
+          sanak:=mx[sanaj.w*cols+k];
+          if sanak.w=0 then break;
+          write(^j'    ??',sanat[sanak.w],sanak.v);
+          oli:=0;
+          {for j2:=1 to lista.len do if j=j2 then continue else
+           begin if sanak.w=lista.items[j2].w then
+            begin write('+',lista.items[j2].v,' ******');oli:=sanaj.v;break;end;
+           end;//onko kump kump itse kump
+          if oli>0 then inc(hits,oli div 100) else inc(misses,sanaj.v div 100);//mx[sanak.w*cols].v+1);
+          }
+          for j2:=1 to cols do //if j=j2 then continue else
+           begin sanaj2:=mx[i*cols+j2];
+              if sanaj2.w=0 then break;
+             //write('-',sanat[sanaj2.w]);
+             if sanak.w=sanaj2.w then
+             begin write('+',lista.items[j2].v,' ******');oli:=sanaj.v;break;end;
+           end;//onko kump kump itse kump
+          if oli>0 then inc(hits,oli div 100) else inc(misses,sanaj.v div 100);//mx[sanak.w*cols].v+1);
+        end;
+        write(^j'                                       ___',sanat[lista.items[j].w],'.',hits,'.',misses,'/');
+     end;
+    except writeln('***');end;
+    writeln('------------------------------');
+  end;
+
+end;
 procedure tvvmat.mply2;//:tvvmat;
-var cs,cc:word;eidotmat:tvvmat; posi,arlen,s,i1,i2,j1,j2,ii,lim,vi1,v12,vj1,vj2,wi1,k,
+var cs,cc:word;eidotmat:tvvmat; posi,arlen,s,i1,i2,j1,j2,ii,lim,vi1,v12,vj1,vj2,wi1,k,hits:integer;
   vms,vmi1,vmi2,vmj1,vmj2  //marginaaleihin suhteutetut arvot
-  :longword;
- marg1,marg2,hits, vtot:longword;
+  :longint;
+ marg1,marg2, vtot:longword;
 
-  rs,ri1,ri2,rj1,rj2:^trec;
+  rs,ri1,ri2,rj1,rj2:^twv;
 isomat:array of word;
-isosca,isotasx,isotbs:array of trec;
-rst,rst2:string;
+isosca,isotasx,isotbs:array of twv;
+rst,rst2:string;      rl:tlist;
 
   procedure _list;
-   var i,j:word;  rs1,RS2,RS3:string;oliw:integer;
-  begin //write(^j^j,':::',sanat[s],';;  ');
-  // for i:=0 to 62 do if mx[s*cols+i].w>0 then write('~',i,sanat[mx[s*cols+i].w],mx[s*cols+i].v);
-  // writeln;
-  // for i:=0 to 62 do if isosca[i].w>0 then write(' ^',i,sanat[isosca[i].w],isosca[i].v);
-    RS1:='';RS2:='';RS3:='';
-    for i:=0 to 62 do if isosca[i].w=0 then continue else
-    begin
+   var i,j:word;  rs1,RS2,RS3:string;oliw,oliv:integer;
+  begin
+    RS1:='';RS2:='';RS3:='';rl.clear;hits:=0;
+    for i:=1 to 62 do if isosca[i].w=0 then continue else
+    begin   //kaikki dotmatriisin korrelaatit
       OLIW:=-1;
-      for j:=0 to 62 do if mx[s*cols+j].w<1 then continue else if isosca[i].w=mx[s*cols+j].w then begin write('');oliw:=j;break;end;// else write('');
-      if oliw>=0 then rs1:=rs1+' '+sanat[isosca[i].w]+inttostr(isosca[i].v)+'/'+inttostr(mx[s*cols+oliw].v)+' ' //+inttostr(mx[mx[s*cols+i].w*cols].v)
-       else rs2:=rs2+' '+sanat[isosca[i].w]+inttostr(isosca[i].v)+'/'+inttostr(mx[isosca[i].w*cols].v);
+      for j:=0 to 62 do if mx[s*cols+j].w<1 then continue else if isosca[i].w=mx[s*cols+j].w then begin if j=62 then write(^j'FULL');oliw:=j;break;end;// else write('');
+      // oliko myös alkmatriisissa
+       //if oliw>=0 then begin rs1:=rs1+' '+sanat[isosca[i].w]+inttostr(isosca[i].v)+'/'+inttostr(mx[s*cols+oliw].v)+'/'
+       //+inttostr(mx[isosca[i].w*cols].v);
+       // oliko myös alkmatriisissa
+        if oliw>=0 then begin rs1:=rs1+'  '+sanat[isosca[i].w]+inttostr(isosca[i].v)+'/'+ inttostr(mx[s*cols+oliw].v);
+       end else begin inc(hits);rs2:=rs2+' '+sanat[isosca[i].w]+inttostr(isosca[i].v);end;//*100 div mx[isosca[i].w*cols].v) ;end;
        //if oliw=0 then write('.',);
     end;
-    for i:=0 to 62 do if mx[s*cols+i].w<1 then continue else
-    begin    //
+    //write(^j^j,s,':::',sanat[s],';;  ');
+    for i:=1 to 62 do if mx[s*cols+i].w<1 then continue else
+    begin    //etsi mx:stä ne jotka eivät tulleet mukaan..
       oliw:=-1;
-      for j:=1 to 62 do if isosca[j].w=0 then continue else if isosca[j].w=mx[s*cols+i].w then begin oliw:=j;break;end;
-        if oliw<0 then rs3:=rs3+' '+sanat[mx[s*cols+i].w]+inttostr(mx[s*cols+i].v);
+      for j:=0 to 62 do if isosca[j].w=0 then continue else if isosca[j].w=mx[s*cols+i].w then begin oliw:=j;break;end;
+      if oliw<0 then begin rl.add(pointer(mx[s*cols+i].w));rs3:=rs3+' '+sanat[mx[s*cols+i].w]+inttostr(mx[s*cols+i].v)+'/'+inttostr(mx[mx[s*cols+i].w*cols].v);end;
         //write(oliw);
     end;
-    if rs3<>'' then
+    //if s=20524 then for i:=0 to 20 do write('* ',sanat[isosca[i].w]+inttostr(isosca[i].v)+'/'+inttostr(mx[s*cols+i].v) );
+    //if rs3+rs2<>'' then
     begin
-    write(^j^j,'=',rs1,^j'+',rs2,^j'-',rs3);
-    //for j:=0 to 15 do if mx[s*cols+j].w<1 then continue else write(sanat[mx[s*cols+j].w],',',mx[s*cols+j].v,' ');
-    //write(^j,'      S:');
+    write(^j,sanat[s],'=',rs1,']',^j'+',rs2,^j'-',rs3,':',^j);
+    //writeln('MX:');    for i:=0 to 62 do if mx[s*cols+i].w>0 then write('~',i,sanat[mx[s*cols+i].w],mx[s*cols+i].v);
+    //writeln('Mult:');       for i:=0 to 62 do if isosca[i].w>0 then write(' ^',i,sanat[isosca[i].w],isosca[i].v);
+  // if rs3<>'' then readln;
+    exit;
+    //writeln('***',
+    if rl.count>0 then
+    for i:=0 to rl.count-1 do begin
+    write(^j,'    ---',sanat[mx[integer(pointer(rl[i]))*cols].w],':');
+     for j:=0 to 62 do if mx[integer(pointer(rl[i]))*cols+j].w<1 then continue else
+     begin          //if mx[integer(pointer(rl[i]))*cols+j].w=s then continue;
+
+        write(' ',j,sanat[mx[integer(pointer(rl[i]))*cols+j].w],'',mx[integer(pointer(rl[i]))*cols+j].v,'');
+         if pos(sanat[mx[integer(pointer(rl[i]))*cols+j].w],rs2)>0 then write('**  ');
+         if pos(sanat[mx[integer(pointer(rl[i]))*cols+j].w],rs1)>0 then write('&&');
+     end;
+    end;write(^j,'');
     //for j:=0 to 15 do if isosca[j].w<1 then continue else write(' ',sanat[isosca[j].w]);
     end;
   end;
-
+  var asan,ahit,targ:word;    vmin:longword;  a:word;  d,olijo:boolean;
 begin
+  write(^j,'try:',paramstr(2));
+  a:=0;
+  {for s:=1 to rows-1 do
+  begin
+   for i1:=1 to 62 do
+   begin
+     asan:=mx[s*cols+i1].w;
+     if asan=0 then continue;
+     ahit:=0;
+     for j1:=1 to 60 do if mx[asan*cols+j1].w=s then begin ahit:=j1;break;end;
+     if ahit=0 then write(^j,s,sanat[s]+',',sanat[asan]);
+
+   end;
+  end;
+  write('didid');
+  exit;}
+  d:=paramstr(2)<>'';
+ rl:=tlist.create;
  //try
  lim:=62;
  setlength(isomat,rows);
  setlength(isosca,cols);
  //setlength(isotas,cols);
  dotmat:=tvvmat.create(rows,cols,sanat);
- write(^j'^mply2:',rows,'/',cols);
- write('onksioso');
- for s:=2 to rows-2 do
+  if paramstr(2)<>'' then targ:=sanat.IndexOf(paramstr(2)) else targ:=0;
+ if d then write(^j'^mply2:',rows,'/',cols,'@',targ,paramstr(2));
+ for s:=1 to rows-2 do
+ //for s:=1222 to 1222 do
  begin
-  try
-  except writeln('failiso',s);end;
-  //write(' ',sanat[s]);
+  if targ<>0 then if s<>targ then continue;
    fillchar(isomat[0],length(isomat)*2,0);
-
+   //if (sanat[s]<>'siekailematon') and (sanat[s]<>'julkea') then continue;
    //continue;
    rs:=@mx[s*cols];
-   //write(^j^j'***',sanat[s],rs[0].v,':  ');
    vms:=rs[0].v;
+  if d then  write(^j^j'***',sanat[s],vms,':  ');
    vtot:=0;
+   write(^j,' ',sanat[s]);
    //continue;
-   for i1:=0 to lim-1 do
+   for i1:=1 to lim do
    begin
      ri1:=@mx[rs[i1].w*cols];
      if rs[i1].w=0 then break;
-     vmi1:=5000*rs[i1].v div vms;
-     vmi1:=rs[i1].v;
-     //write(^j'       &',sanat[mx[s*cols+i1].w],mx[s*cols+i1].v,'/',vmi1,': ');
+   //   IF ri1[0].w=s THEN begin writeln(^j'"""');continue;end;
+     vmi1:=1000*rs[i1].v div vms;
+     //vmi1:=rs[i1].v;
+  if d then write(^j^j' &&',sanat[mx[s*cols+i1].w],'/',vmi1,': ');
      //if vi1<50 then continue;
+   //  continue;
      wi1:=rs[i1].w;
-     for i2:=0 to i1 do //lim-1 do
+     if rs[i1].w=s then continue;
+     for i2:=1 to //i1-1 do //
+      lim-1 do
      begin
-       //if i1=i2 then continue;
-       Vi1:=rs[i1].v;  // vi1 on aina pienempi, olivat sortattuja
+       olijo:=false;
+       //Vi1:=rs[i1].v;  // vi1 on aina pienempi, olivat sortattuja
+       if i1=i2 then begin continue;inc(isomat[rs[i2].w], rs[i2].v*2);continue; end;
        if rs[i2].w<1 then break;
-       //if i2=i1 then continue;
-       if onjo[rs[i2].w]=1 then break;
+       //if i2=i1 then continue;                         if onjo[rs[i2].w]=1 then break;
        ri2:=@mx[rs[i2].w*cols];
+       IF ri1[0].w=s THEN break;
+       vmi2:=1000*rs[i2].v div vms;
+       //vmi2:=rs[i2].v;
+       vmin:=min(vmi1,vmi2);
        try
        //vmi2:=5000*ri2[0].v div (vms+1);
-       vmi2:=ri2[0].v;
-       //write(^j^j,'    * ',sanat[ri2[i2].w],vi1,':');
-       except write(^j,'fail ',i2,sanat[s],sanat[rs[i2].w],(5000*ri2[0].v),'/',(vms+1),^j);end;
-       for j1:=1 to lim-1 do
+       //vmi2:=ri2[0].v;
+       rst:='';
+       except write(^j,'fail ',i2,sanat[s],sanat[rs[i2].w],(5000*ri2[0].v),'/',(vms),^j);end;
+       for j1:=1 to lim do // j1=0 or j1=1 ???
        begin
          //if s=17 then if i1=35 then if i2=34 then write('?',i2);//,',',mx[rs[i2].w*cols].w,',',mx[rs[i2].w*cols].v,' ',i1);
          //if s=17 then if i1=35 then if i2=34 then write(^j,'XX:',i1,',',mx[rs[i2].w*cols].w,',',mx[rs[i2].w*cols].v,' ',j1,'!');
-         //write('+',sanat[ri1[j1].w],'/');        continue;
+         IF ri1[j1].w=s THEN continue;
          IF ri1[j1].w=0 THEN break;
-         //IF ri1[j1].w=s THEN CONTINUE;
+         IF ri1[j1].w=s THEN CONTINUE;  //pitäis olla symmetrisia
 
          //rj1:=@mx[ri1[j1].w*cols];
-         vmj1:=min(vmi1,5000*ri1[j1].v div ri1[0].v);
-         vmj1:=min(vmi1,ri1[j1].v);
+         //vmj1:=min(vmi1,5000*ri1[j1].v div ri1[0].v);
+         vmj1:=(1000*ri1[j1].v div (ri1[0].v+1));
+         //vmj1:=(ri1[j1].v);
+         vmin:=min(vmj1,vmin);
          //Vj1:=min(vi1,1000*ri1[i1+j1].v div );
          if vmj1<1 then break;
          for j2:=1 to lim-1 do
+         if ri2[j2].w=0 then continue else
          begin
            if ri1[j1].w<>ri2[j2].w then continue;
+           if j1=0 then if i2=0 then continue;
            //vj2:=min(vj1,ri2[j2].v) div 100;//rj2:=@mx[ri2[j2].w*cols];
            try
            // vj2:=MIN(1000,round(sqrt(vj2+1)));
            //vj2:=min(vj1,ri2[j2].v);//rj2:=@mx[ri2[j2].w*cols];
-           vmj2:=min(vmj1,100*ri2[j2].v div ri2[0].v);
-           vmj2:=min(vmj1,ri2[j2].v);
+           vmj2:=1000*ri2[j2].v div (ri2[0].v+1);
+           vmin:=min(vmj1,min(vmj2,min(vmi1,vmi2)));
+           rst:=rst+(' +'+sanat[ri1[j1].w]+'\'+inttostr(vmin));//+'/'+inttostr(vmi1)+'/'+inttostr(vmi2)+'/'+inttostr(vmj1)+'/'+inttostr(vmj2));    //    continue;
+           ;//else rst:=rst+(' +'+sanat[ri1[j1].w]+inttostr(j1)+inttostr(i2)+'\'+inttostr(vmin));//vmj1,'/',vmj2);    //    continue;
+           //vmj2:=min(vmj1,100*ri2[j2].v div ri2[0].v);
+           //vmj2:=min(vmj1,ri2[j2].v);
            //if vj2<10 then break;
-           inc(vtot,vmj2);
+           inc(vtot,vmin);
            //write(vmj2,' ');
            TRY
            //if vj2>100 then write(^j,sanat[s],^j);
-           inc(isomat[ri1[j1].w], vmj2 );
-          // if ri2[j2].v>30000 then
-          //write('  /',sanat[ri1[j1].w],'<',sanat[rs[i2].w],vmj2);
+           //if (i2=0) and
+           if (ri1[j1].w=s) then
+           inc(isomat[ri1[0].w], vmin)
+           else inc(isomat[ri1[j1].w], vmin);
 
-           except write(' yyy:',ri1[j1].w,'/',isomat[ri1[j1].w],sanat[ri2[j1].w],'/',sanat[ri2[i2].w],sanat[ri1[i1].w],vj2,' ',vj2);end;
+          // if ri2[j2].v>30000 then
+           if d then if not olijo then write(^j'     :',ansiuppercase(sanat[rs[i2].w]),':');       //for j1:=0 to lim-1 do if ri2[j1].w=0 then continue else write('_',sanat[rs[j1].w]);
+           if d then write(' ',sanat[ri1[j1].w],vmin);
+           olijo:=true;
+           except write(' yyy:',vmj2,'/',ri1[j1].w,'/',isomat[ri1[j1].w],sanat[ri2[j1].w],'/',sanat[ri2[i2].w],sanat[ri1[i1].w],vj2,' ',vj2);end;
            except write(' XXX:',isomat[ri1[j1].w],sanat[s],sanat[ri2[j1].w],'/',min(vj1,ri2[j2].v));end;
          end;
 
        end;
+        //   if rst<>'' then  write(^j,'***  ',sanat[s],'  ',sanat[rs[i1].w],vmi1,':',sanat[rs[i2].w],vmi2,':',rst);
+
      end;
    end;
    //if vtot>1 then write(^j,'----',vtot,'-');
@@ -878,16 +1048,20 @@ begin
    begin
      //if isomat[i1]<iso then continue else
      //!!for j1:=1 to cols-2 do
+     //if sanat[s]='ankara' then
+     //if sanat[i1]='kiivas' then write(^j'   !!!',sanat[i1],isomat[i1]);
      if isomat[i1]<1 then continue;
-     //if isosca[lim-1].v>isomat[i1] then continue;   //ei kantsu kokeilla
+     if isosca[lim-1].v>isomat[i1] then continue;   //ei kantsu kokeilla
      for j1:=1 to lim-1 do
-     if isosca[j1].v<isomat[i1] then
      begin
+         //if sanat[s]='ankara' then      if j1=lim-1 then begin write(^j,'*************************************************',sanat[i1],isomat[i1],':::');
+        //   for j2:=1 to lim-1 do write(' ',sanat[isosca[j2].w],isosca[j2].v);      end;
+         if isosca[j1].v>=isomat[i1] then continue;
           try
            move(isosca[j1],isosca[j1+1],(cols-j1-2)*4);
            isosca[j1].v:=isomat[i1];
            isosca[j1].w:=i1;
-           //write('  ',j1,sanat[isosca[j1].w],isosca[j1].v);
+           //write('%  ',j1,sanat[isosca[j1].w],isosca[j1].v);
            //for k:=1 to 10 do if isosca[k].w=0 then break else write('/',sanat[isosca[k].w],isosca[k].v);
            //writeln('!!!');
            break;
@@ -897,7 +1071,8 @@ begin
    end;
    vtot:=0;
    rst:='';
-   if isosca[2].w>0 then _list; //listataan vain jos tarpeeksi
+   //if isosca[2].w>0 then
+   _list; //listataan vain jos tarpeeksi
    for i1:=1 to cols-1 do if isosca[i1].w<1 then break else
    begin //inc(vtot,isosca[i1].v div 10);
       //rst:=rst+(' '+sanat[isosca[i1].w]+inttostr(isosca[i1].v div 1));
@@ -1155,7 +1330,7 @@ begin
 end;
 
 procedure tvvmat.list(w:word);
-var rs,cs,cc,alku,loppu,i:word; hits,hiti:longword;maxis:array of trec;newolis:array of byte;
+var rs,cs,cc,alku,loppu,i:word; hits,hiti:longword;maxis:array of twv;newolis:array of byte;
   //function unibits
 
   function bigs(w:word;v:longword):word;
@@ -1181,7 +1356,7 @@ var rs,cs,cc,alku,loppu,i:word; hits,hiti:longword;maxis:array of trec;newolis:a
     end;
     except writeln('failbig');end;
    end;
-  var w1,w2,pre:word;uusii,vanhoi:longword;
+  var w1,w2,pre:word;uusii,vanhoi:longword; this:word;
 begin
    setlength(maxis,100);
    if w=0 then begin alku:=1;loppu:=rows;end else begin alku:=w;loppu:=w;end;
@@ -1189,13 +1364,14 @@ begin
     //if alku=loppu then
     //writeln(^j,'list ',rows,'*',cols,' ',alku,'...',loppu);
     //writeln;
+    loppu:=rows;//100;
     for rs:=alku to loppu do
     begin
       hiti:=0;
       hits:=0;
       cc:=mx[rs*cols].v;
       //if cc<100 then continue;
-      write(^j^j,'/////',sanat[rs],'::','(',cc,')');
+      write(^j^j,rs,'/',mx[rs*cols].w,sanat[rs],' ',cc,'::');
       if mx[rs*cols].v<1 then continue;
       //if alku=loppu then
       //if len(rs)>30 then
@@ -1211,7 +1387,7 @@ begin
         inc(hits,mx[rs*cols+cs].v);
         inc(hiti);
         //if alku=loppu then
-        write(' |',sanat[mx[rs*cols+cs].w],':',pre);//,'[',indexof(rs,mx[rs*cols+cs].w));
+        write(' (',sanat[mx[rs*cols+cs].w],')',pre);//,'[',indexof(rs,mx[rs*cols+cs].w));
         except write('failmx:',rs,'/',cs,':',mx[rs*cols+cs].w);end;
       end;
       write(' ==',hits,'/',hiti);
@@ -1271,8 +1447,8 @@ function Compareval(d1,d2:pointer): integer;
 var    p1,p2:pword;
   i1 : word;//(d1^);
   i2 : word;// absolute d2;
-  //i1 : trec absolute d1;
-  //i2 : trec absolute d2;
+  //i1 : twv absolute d1;
+  //i2 : twv absolute d2;
   //ii:word absolute d2;
 begin
     p1:=@(d1+2)^;p2:=@(d2+2)^;

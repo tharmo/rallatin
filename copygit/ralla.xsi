@@ -1,7 +1,247 @@
 class name=riimit
+             
+ wikspar 
+   #xse:shellexec: LC_ALL=C ; sort -V wiki.valids >wiki.srt
+   pre
+      xse:shellexec: ./rallatin wikspar
+ awkspar
+   xse:gawk in="wiki.srt" : '''
+    BEGIN { }
+   
+   '''    
+ wiktest
+    xse:shellexec: LC_ALL=C ;   gawk '  
+     . /title/ {   title=substr($0,index($0,"title")+6);
+     .  title=substr(title,1,index(title,"/title>")-2);
+     . }
+     . /{ { fi/ { print title, $0 >  "turha"
+     . }'  wiki.txt
+   
+ wik
+    xmp
+     ###xse:shellexec: LC_ALL=C ;
+       #. cat fiwiktionary-latest-pages-meta-current.xml |   .  iconv -t ISO-8859-1//TRANSLIT -f UTF-8 > "wiki.txt"
+       . gawk  'BEGIN { sep="]]";FS=sep;OFS=","}
+       . # function alaots(st) { if (index("} 
+       . #NR<1000 { next}
+       . #NR>10000 { exit}
+       . /<comment/ { next}
+       . /\|2\|/{ print title,NR,$0 "!" >"wiki.kaks" }
+       . /\<title/ { 
+         .   if (!skipw && tothit+1>0) {
+         .     if (kathit>0) s=s ";" sk;
+         .     tothit=tothit+kathit;
+         .     #if (index(title,":")==0 && tothit>0)
+         .     print "*" title  s >"wiki.vali"; 
+         .     print "[" title "]  :::"  sk >"kategs/_" kate;
+         .   }   
+         .  kate="yleis";kate2=kate;on=0; 
+         .  s="";sk="";tothit=0;kathit=0;
+         .  title=substr($0,index($0,"title>")+6);
+         .  title=substr(title,1,index(title,"/title>")-2);
+         .  skipw=length(title)<3
+         .  if (index(title,"?")>0) skipw=1
+         .  if (index(title," ")>0) skipw=1
+         .  if (length(title)>15) on=0;
+         .  if (index(title,":")>1) { on=0;skipw=1}; #else { on=1 };next
+       . } 
+       . skipw { next}
+       . /==/ { 
+         .    print "[" title "]  :" sk >"kategs/_"kate;
+         .    print "[" title "]  :" sk >"kategs/titles";
+         .  if (kathit>0) s=s sk # s=s "\n       ," kate sk;#else s=s "#" kathit
+         .  sk=""
+         .  kate=tolower($0);kate=substr(kate,index(kate,"==")+1);gsub(/[ \t\=öäå<>\/]/, "", kate);
+         .  if (index($0,"===")==0) kate2=kate; # vain kaksi =  
+         .  tothit=tothit+kathit;kathit=0;sk=""
+         .  on=1
+         .  if (kate2!="suomi") on=0
+         .  if (kate=="etymologia" ||kate2=="yleis" || kate=="yhdyssanat" || kate=="knnkset" || length(kate)>25) { on=0; }
+         . #if (title=="varis") print title,"/",kate2,"/",kate,":",$0 >"varis"; else { skipw=1;on=0}
+       . }
+       . # { if (title=="varis") { print title,"/",kate2,"/",kate,":",$0 } else next } 
+       . /johdokset/ { 
+          . jo=substr($0,index($0,"{ { joh")+15);
+          . jo=substr(jo,1,index(jo,"}}")-1)
+          . split(jo,jos,"\|"); for (i=2;i<length(jos)+1;i++) { kathit++;sk=sk ";" jos[i] }
+       . }
+       .  on==0 { next}
+       . /\[\[/ { #print skipw,on, $0;next
+       .    for (i=1;i<NF;i++) {
+       .      if (index($i,":")<1) { kathit++;sk=sk ";" substr($i,index($i,"[")+2);
+       .  #if (substr($i,index($i,"[")+2)=="") s=s "!" $0;
+       .   }
+       . #print sk
+       .    }  
+      
+       . } ' wiki.txt 
+       # >testi 
+     xse:shellexec: LC_ALL=C ; gawk ' 
+        . BEGIN { print "alkaa";FS=";";while (getline<"kaavoitetut") { i++;nums[$1]=i; }}
+        . { $1=substr($1,2) ; 
+        .  if (nums[$1]==0) { print "!" $1 ":" $0 >"turha";next}
+        .  resu="";n=0; 
+        .   for (i=2;i<=NF;i++) { 
+        .     if (index($i,"\|")>0) $i=substr($i,1,index($i,"|")-1);
+        .     #if (nums[$i]==0) continue; else { n++;resu=resu $i ",";print  $i,$1 > "wikirev.tmp"} 
+        .     if (nums[$i]==0) continue; else { n++;resu=resu $i ",";print  $i,$1 "\n" $1,$i > "wikiboth.tmp"} 
+        .    }
+        .   if ( resu!="")  print $1 ","resu>"wiki.valids"
+        .   nn[n]=nn[n]+1 ;
+        . #if (n>30) print n, $0,"\n->",resu 
+        . }
+       . END { print "END:" length(nn) 
+       .  for (n=0;n<55;n++) print  n ": " nn[n]
+
+        . }' wiki.vali
+     xse:shellexec: LC_ALL=C ; sort wikiboth.tmp -V > wikiboth.tmp2   
+     xse:shellexec: LC_ALL=C ; cat wikiboth.tmp2  |gawk '
+      . BEGIN  { PROCINFO["sorted_in"]="@val_num_desc" }
+      . function line() { a="";
+      .    for (i in ppp) a=a " " i " " ppp[i];
+      .    return a}
+      . {  #if (NR>100) exit;
+      . if ($1!=p1) { ppp[p2]=n;print p1,nn line();
+      .  p1=$1;delete(ppp);nn=1;n=1;p2=$2;next} 
+      . if ($2==p2) { n++;nn++}
+      . else { ppp[p2]=n;n=1;p2=$2;nn++ } 
+      . # else { pp=pp p2 " " n " ";n=1;p2=$2;nn++ } 
+      . } ' | sort -V  >wikiboth.srt
+/===Numeraali===
+/===Adjektiivi===
+/===Adverbi===
+/===Pronomini===
+/===Substantiivi===  eisaa napa ino
+/===Verbi===
+/=====Yläkäsitteet=====
+/=====Osakäsitteet=====
+/=====Rinnakkaiskäsitteet=====
+=====Rinnakkaismuodot=====
+====Idiomit====
+=====Johdokset=====
+=====Alakäsitteet=====
+
+
+
+
+  
  # WIKTUINARYSTA POIMITUT LIITTYVYIEN SANOJEN LISTAT SANAPAREIKSI
  # cat ../finnwn/lists/fiwn-semrels-extra.tsv |grep topic |gawk 'BEGIN {FS="\t"}{print gensub(" [|] ",",","g",$5) "        "  gensub(" [|] ",",","g",$2)}' |sort -V |iconv -t ISO-8859-1//TRANSLIT -f UTF-8 >fwn_hypers.lst
  # cat ../finnwn/lists/fiwn-semrels-extra.tsv |gawk 'BEGIN {FS="\t"}{print gensub(" [|] ",",","g",$5) "        "  gensub(" [|] ",",","g",$2)}' |sort -V |iconv -t ISO-8859-1//TRANSLIT -f UTF-8 >fwn_sem.lst 
+ suuntiinsa
+  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans fpairs.sans |sort - -k1,1V -k2,2V >wfpairs.tmp
+  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wfpairs.tmp |gawk '{ print $2,$1;print }' |sort - -k1,1V -k2,2V >wfpairs.sans
+  pre
+     xse:gawk oldin=wfpairs.sans in=pairs1.sans: '''
+      BEGIN { while (getline<"kaavoitetut") { i++;nums[$1]=i; } }
+        #NR>100 { exit}
+        p1!=$1 {  
+        print  p1,nn,pp p2,n > "fwa.spar";
+        print nums[p1],nn,ppn nums[p2],n > "fwn.spar";
+        pp="" ;ppn="";
+        p1=$1;nn=0;p2="";n=0
+       }
+       p2!=$2 { 
+        if ($2==p1) { next}
+        if (p2!="") {
+        pp=pp p2 " " n " ";
+        ppn=ppn nums[p2] " " n " ";
+        }
+        n=0;p2=$2}
+       {  n++;nn++} 
+       
+       '''
+ rela
+  pre
+   xse:shellexec: grep -a {/form/x}  u_allrel.spar;./rallatin relas {/form/x}
+   h1: {/form/x} x
+   
+ comporder
+  pre
+   #xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans fpairs.sans |sort - -k1,1V -k2,2V
+   xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans  |sort - -k1,1V -k2,2V 
+    :  | gawk 'p1!=$1 { print p1,nn,pp,p2,n ;pp="";p1=$1;nn=1;p2=$2;n=1;next} p2!=$2 { pp=pp p2 " " n " ";n=0;p2=$2}{  n++;nn++}'  > pairs1.sans
+     #xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans fpairs.sans |sort - -k2,2V -k1,1V
+  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans  |sort - -k2,2V -k1,1V
+   :  | gawk 'p2!=$2 { print p2,nn,pp,p1,n;p1=$1;n=1;pp="";p2=$2;nn=1;next} p1!=$1 { pp=pp p1 " " n " ";n=0;p1=$1}{ n++;nn++}' > pairs2.sans
+  style type=text/css: div { color:green;margin-left:8em}  small { font-size:9px}
+  pre
+   xse:gawk env="LC_ALL=fi_FI.ISO-8859-1" in=pairs1.sans: '''
+      function pr() {  
+       
+        ss="";for (ii in sans1) 
+         if (ii in sans2)
+                ss= ss " " ii  "(" sans1[ii] "/" sans2[ii] ") ";
+         print "<b>++ " ss "!</b>";
+        }
+      function pr1x() { s="";for (i in sans1)  s=s i "[" sans1[i] "] ";print "-" s; }
+      function pr2x() { s="";for (i in sans2)  s=s " " i "(" sans2[i] ") ";print "<em>--" s "</em>"}
+      function pr1() { s="";for (i in sans1) if (!(i in sans2)) s=s i "[" sans1[i] "] ";print "-" s ;}
+      function pr2() { s="";for (i in sans2) if (!(i in sans1)) s=s " " i "(" sans2[i] ") ";print "<em>+" s "</em>"; }
+      function aline1() { delete(sans1); for (i=3;i<NF;i=i+2) sans1[$(i)]=$(i+1)}
+      function aline2() { delete(sans2); for (i=3;i<NF;i=i+2) sans2[$(i)]=$(i+1)}
+      function t(w) { print "<b>" w ":</b>"}
+      BEGIN { PROCINFO["sorted_in"]="@ind_str_asc"} 
+       #NR>5000 { exit}
+      { #print "<b>+" $1 "+</b><small> " $0,"</small><b>",py,"</b>";
+       px=$1;
+       aline1();
+       
+      } 
+       #NR>100 { exit}
+      ($1==py) { t(py);pr();pr1();pr2();print "<hr>"; px="";py="";next}
+      ($1< py)  { #pienempi kuin toisesata jo luettu, printataan  ja jatketaan
+        t(px);pr1x();px="";print "<hr>" ;delete(sans1);next;
+       }
+      ($1 > py)  {  mentiin yli tokasta jo luetusta
+        #print "<div>"
+         while (getline<"pairs2.sans") {  
+           delete(sans2);
+           #print "<b>-" $1 "-</b> <small>:" $0 " </small>"," <b>",NF, px,"</b>" ,"!!!"
+           if ($1==px) { # löytyi sama, printataan molemmat ja pannaan toka muistiin
+            t(px); delete(sans2);  aline2();pr();pr1();pr2();py="";px="";print "<hr>";delete(sans2);delete(sans1); break;
+            }
+           if ($1<px) { # edelleen aakkosissa edellä, printataan ja jatketaan kakkostiedostossa
+             t($1);py="";aline2();pr2x();delete(sans2);print "<hr>"
+           } 
+           if ($1>px) { # meni ohi, printataan s1 ja pannaan muistiin kakkonen
+             t(px);pr1();aline2();py=$1;print "<hr>";delete(sans1);break;  #hypätään takaisin ykköseen
+           } 
+         }
+          #  print "</div>"
+       }
+     '''
+   #pairs2.sans |sort -V > 
+     
+ joinfw
+  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans fpairs.sans |sort - -k1,1V -k2,2V >allpairs.sans
+  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat allpairs.sans| uniq -c |gawk '{ print $2,$3,$1 >"u_all.sans" }'
+  xse:shellexec:  cat u_all.sans |sort -k2 |gawk 'p!=$2 { print p,n;p=$2;n=0} { n=n+$3}'>u_all.counts
+
+  xse:gawk in="u_all.sans": '''
+   BEGIN { while (getline<"u_all.counts") { cc[$1]=$2; }}
+   $1!=p { 
+    print p " " ntot pp>"u_all.spar";
+    print p " " nc pc>"u_allrel.spar";pc="";nc=0;pp="";p=$1;ntot=0
+    
+    }
+   {
+     if ($2==$1) next
+     pp=pp " " $2 " " $3;ntot=ntot+$3 
+     c=int(1000*$3/(cc[$2]+1))
+     pc=pc " " $2 " " c;nc=nc+c 
+     
+     }
+  '''     
+  pre 
+   xse:gawk in="u_allrel.spar": '''
+      BEGIN { while (getline<"kaavoitetut") { i++;nums[$1]=i; }  ;PROCINFO["sorted_in"]="@val_num_desc"}
+   { for (i=3;i<=NF;i=i+2) p[nums[$i]]=$(i+1)
+   for (w in p) { pp=pp w " " p[w] " " ;tot=tot+p[w] }
+   if ($1=="kuusi") print($1 "(" nums[$1]")\n##" pp "\n",$0)
+    print nums[$1],tot,pp>"u_alln.spar";pp="";delete(p);tot=0}
+  '''     
+   
  hyper
   pre
    . rivi
@@ -60,6 +300,27 @@ class name=riimit
        .  }
        .  if ($2!=$3) { pp[$3]=$1+pp[$3];n=n+$1; }
        . }' sensyn.parit
+ synonly
+  pre
+    xse:shellexec: cat syns.spar |
+     . gawk '  
+     . {  
+     . for (i=1;i<=NF;i++) 
+     .   for (j=1;j<NF;j++) 
+     .      if (i!=j)   print $i,$j "\n" $j,$i
+     . }' |sort -V |uniq -c>"synonly.parit"
+    xse:shellexec: gawk '
+       . BEGIN {    while (getline<"kaavoitetut") { 
+       . i++;sanat[$1]=i; }; PROCINFO["sorted_in"]="@val_num_desc"}
+       . { 
+       .  if (p!=$2) { 
+       .   pps=p " " n " ";ppn=sanat[p] "," n ;      
+       .   for (i in pp) { pps=pps " " i " " pp[i];ppn=ppn "," sanat[i] "," pp[i]}
+       .   print pps>"synonlya.spar";print ppn>"synonlyn.spar";
+       .   delete(pp);p=$2;n=0; 
+       .  }
+       .  if ($2!=$3) { pp[$3]=$1+pp[$3];n=n+$1; }
+       . }' synonly.parit
     
  senses    
    xse:shellexec:  gawk '{ print $2,$0}' ../finnwn/index.sense |  sort -V|
@@ -176,7 +437,7 @@ class name=riimit
       } 
        
       ''' 
- # FINNWORDNETISTÃ„ POIMITUT LIITTYVYIEN SANOJEN LISTAT SANAPAREIKSI
+ # FINNWORDNETISTÄ POIMITUT LIITTYVYIEN SANOJEN LISTAT SANAPAREIKSI
  fwnthe
       xse:gawk in="finwnsyno.all": '''
       BEGIN {  eka=1;ekaok=1;while (getline<"kaavoitetut") { i++;sanat[$1]=i; };FS=","}
@@ -198,13 +459,6 @@ class name=riimit
  numertoi   
    xse:shellexec: gakw  '  BEGIN { while (getline<"kaavoitetut") { i++;sanat[$1]=i; }}{ print sanat[$1],sanat[$2],$3}' u_all.setit
 
- joinfw
-  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat wpairs.sans fpairs.sans |sort - -k1,1V -k2,2V >allpairs.sans
-  xse:shellexec: LC_ALL=fi_FI.ISO-8859-1;cat allpairs.sans| uniq -c |gawk '{ print $2,$3,$1 >"u_all.setit" }'
-  xse:gawk in="u_all.setit": '''
-   $1!=p { print p,pp>"turha";pp="";p=$1}
-   { pp=pp "," $2; }
-  '''     
  uusiks  //finwn.parit on viimeisin tiedetty kelvollinen. parit sanoina,sorttaamatta
      xse:gawk in=finwn.parit: '''
           BEGIN { while (getline<"kaavoitetut") { i++;nums[$1]=i; } }
@@ -214,7 +468,7 @@ class name=riimit
       '''    
       #  cp wikisetit.nums u_wik.nums .. wiki oli valmiiksi numeropareina
  
-      xse:shellexec: cat u_fwn.nums u_wik.nums |sort -k1,1g -k2,2g | uniq -c |gawk '{ print $2,$3,$1}>u_all.setit
+      xse:shellexec: cat u_fwn.nums u_wik.nums |sort -k1,1g -k2,2g | uniq -c |gawk '{ print $2,$3,$1}>u_alln.setit
 
 
  joinwnwi
@@ -255,7 +509,7 @@ class name=riimit
   #cat finwn.parit setit.sans |sort -V| uniq -c|gawk '$1>1 {print $2,1000-$1,$3}' |sort -V >wfall.lst
  # wikiparit kumpaankin suuntaan, sorttaamatta, laskematta  wikisetit.sans -sanoina,  wikisetit.nums - numeroina
  #finwn.lst wordnet sanaparit laskettuina(1000-n), sortattuina, kumpaankin suuntaan sanoina
- #wfall.lst ja  finwn.lst joutavat yhteen
+ #wfall.lst ja  finwn.lst joutavat yhteen.. eiks wfall ole jo wiktionary + finwn?
  
  # finwn.nums, wiki.nums, parit numrtoins,  laskettu ja sortattu oikein (?)
  wikilist
@@ -460,11 +714,11 @@ class name=riimit
        }
      { 
      #if (NR>10000) exit 
-     if (a1==$1 && a2==$2) { ## sama pari, ynnÃ¤Ã¤, printataan vasta seuraavalla rivillÃ¤
+     if (a1==$1 && a2==$2) { ## sama pari, ynnää, printataan vasta seuraavalla rivillä
        isoero(an,$4) 
         an=an+$4 
       }
-      else { # uusi pari,ei vielÃ¤ tiedetÃ¤ tuleeko lisÃ¤Ã¤
+      else { # uusi pari,ei vielä tiedetä tuleeko lisää
         print a1,a2,an >"both2.lst"  # printattiin edellinen
          a1=$1;a2=$2;an=$4
        }
@@ -488,7 +742,7 @@ class name=riimit
      }
      END { print tot,toto} #49399104
     '''
- gutcount #jÃ¤i laskemata
+ gutcount #jäi laskemata
    xse:gawk in="gutpairs.lst": '''
          { if ($1!=p) { print p,n >"guts.cnt";n=0;p=$1} 
           n=n+$3 } 
